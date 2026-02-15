@@ -180,6 +180,26 @@ function bindEvents() {
 
   /* ---------- CLICK ---------- */
   document.addEventListener("click", e => {
+      // Export one cluster to PDF
+    // Export ONE cluster (print existing planner UI)
+    const expOne = e.target.closest(".export-cluster-pdf-btn");
+    if (expOne) {
+      const clusterId = expOne.dataset.clusterId;
+      if (!clusterId) return;
+
+      printClusters([clusterId]);
+      return;
+    }
+
+    // Export ALL clusters
+    if (e.target.closest(".export-all-pdf-btn")) {
+      const ids = getAllClusterIdsOnPage();
+      if (!ids.length) return;
+
+      printClusters(ids);
+      return;
+    }
+
     // Add cluster
     if (e.target.closest(".add-cluster-btn")) {
       state.courses[selectedCourse].clusters.push(newCluster());
@@ -582,10 +602,15 @@ function renderAll() {
   const course = state.courses[selectedCourse];
 
   clustersWrap.innerHTML = `
+    <div class="planner-toolbar">
+      <button class="export-cluster-pdf-btn">Export as PDF</button>
+    </div>
+
     ${course.clusters.map(renderCluster).join("")}
     <button class="add-cluster-btn">+ Add Cluster</button>
   `;
 }
+
 
 function renderCluster(cluster) {
   return `
@@ -609,12 +634,21 @@ function renderCluster(cluster) {
 
       ${cluster.days.map(d => renderDay(cluster.id, d)).join("")}
 
-      <div class="cluster-footer">
-        <button class="add-day-btn">+ Add Day</button>
-        <button class="delete-cluster-btn" title="Delete cluster">
-          Delete Cluster
-        </button>
-      </div>
+    <div class="cluster-footer">
+      <button class="add-day-btn">+ Add Day</button>
+
+      <button 
+        class="export-cluster-pdf-btn"
+        data-cluster-id="${cluster.id}"
+      >
+        Export PDF
+      </button>
+
+      <button class="delete-cluster-btn">
+        Delete Cluster
+      </button>
+    </div>
+
 
     </div>
   `;
@@ -825,4 +859,170 @@ function escapeHtml(s) {
 
 function escapeAttr(s) {
   return escapeHtml(s).replace(/"/g, "&quot;");
+}
+
+function toAbsoluteLink(href) {
+  if (!href) return "";
+
+  const s = String(href).trim();
+
+  // Already absolute or special scheme
+  if (/^(https?:)?\/\//i.test(s)) return s;
+  if (/^(mailto:|tel:|#)/i.test(s)) return s;
+
+  // Convert relative or site-relative -> absolute on your domain
+  try {
+    return new URL(s, window.location.origin).href;
+  } catch {
+    return s;
+  }
+}
+
+function buildStudentHandoutHtml({ courseId, clusters }) {
+  const esc = escapeHtml;
+  const today = new Date().toLocaleString();
+
+  const clustersHtml = (clusters || []).map((c, i) => {
+    const title = esc(c.title || `Cluster ${i + 1}`);
+
+    const rows = (c.days || []).map(d => {
+      const resources = (d.resources || []).map(ref => {
+        const res = resolveResource(ref);
+        if (!res) return "";
+
+        const link = toAbsoluteLink(res.link);
+        const text = esc(res.title || "Resource");
+
+        // Real anchor tags = clickable in PDF
+        return `<li><a href="${esc(link)}" target="_blank" rel="noopener">${text}</a></li>`;
+      }).filter(Boolean).join("");
+
+      return `
+        <tr>
+          <td>${esc(d.date || "")}</td>
+          <td>${esc(d.topic || "")}</td>
+          <td>${esc(d.notes || "")}</td>
+          <td><ul>${resources || ""}</ul></td>
+        </tr>
+      `;
+    }).join("");
+
+    return `
+      <section class="cluster">
+        <h2>${title}</h2>
+        <table>
+          <thead>
+            <tr>
+              <th style="width:110px;">Date</th>
+              <th style="width:220px;">Topic</th>
+              <th>Notes</th>
+              <th style="width:280px;">Resources</th>
+            </tr>
+          </thead>
+          <tbody>${rows}</tbody>
+        </table>
+      </section>
+    `;
+  }).join("");
+
+  return `
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>${esc(courseId)} Student Handout</title>
+  <style>
+    body { font-family: system-ui, Arial, sans-serif; padding: 24px; line-height: 1.35; }
+    h1 { font-size: 20px; margin: 0 0 8px; }
+    .meta { opacity: 0.8; margin: 0 0 18px; font-size: 12px; }
+    .cluster { margin: 22px 0 28px; page-break-inside: avoid; }
+    h2 { font-size: 16px; margin: 0 0 10px; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { border: 1px solid #ddd; padding: 8px; vertical-align: top; }
+    th { text-align: left; }
+    ul { margin: 0; padding-left: 18px; }
+    a { word-break: break-word; }
+
+    @media print {
+      body { padding: 0; }
+      a { text-decoration: none; }
+      .no-print { display: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="no-print" style="margin-bottom:12px;">
+    <button onclick="window.print()">Print / Save as PDF</button>
+  </div>
+
+  <h1>${esc(courseId)} — Student Plan</h1>
+  <div class="meta">Exported: ${esc(today)}</div>
+
+  ${clustersHtml || "<p>No clusters found.</p>"}
+</body>
+</html>
+  `.trim();
+}
+
+function openHandoutAndPrint(html) {
+  const w = window.open("", "_blank");
+  if (!w) {
+    alert("Popup blocked. Please allow popups for this site to export PDFs.");
+    return;
+  }
+  w.document.open();
+  w.document.write(html);
+  w.document.close();
+  w.focus();
+
+  // Give the browser a tick to lay out before printing
+  setTimeout(() => w.print(), 250);
+}
+
+function getAllClusterIdsOnPage() {
+  return [...document.querySelectorAll(".planner-cluster[data-cluster-id]")]
+    .map(el => el.dataset.clusterId)
+    .filter(Boolean);
+}
+
+function enterPrintMode(targetClusterIds) {
+  document.body.classList.add("printing");
+
+  document.querySelectorAll(".planner-cluster[data-cluster-id]").forEach(el => {
+    const id = el.dataset.clusterId;
+    el.classList.toggle("print-target", targetClusterIds.includes(id));
+  });
+}
+
+function exitPrintMode() {
+  document.body.classList.remove("printing");
+  document.querySelectorAll(".planner-cluster").forEach(el => {
+    el.classList.remove("print-target");
+  });
+}
+
+/**
+ * Print selected clusters then restore UI.
+ * Uses afterprint + a fallback timeout for browsers that don’t fire afterprint reliably.
+ */
+function printClusters(targetClusterIds) {
+  enterPrintMode(targetClusterIds);
+
+  const restore = () => {
+    exitPrintMode();
+    window.removeEventListener("afterprint", restore);
+  };
+
+  window.addEventListener("afterprint", restore);
+
+  // Print on next tick to ensure DOM updates apply
+  setTimeout(() => {
+    window.print();
+
+    // Fallback restore (covers some Safari/Chromium edge cases)
+    setTimeout(() => {
+      if (document.body.classList.contains("printing")) restore();
+    }, 1500);
+  }, 50);
 }

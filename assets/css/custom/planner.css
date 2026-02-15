@@ -371,3 +371,50 @@ html.planner-restore {
   --exp-text: #3730a3;
 }
 
+/* =====================================================
+   Exporting
+===================================================== */
+
+/* =========================
+   EXPORT / PRINT MODE
+   ========================= */
+
+/* Hide global site chrome + bank (these live outside planner.js) */
+body.printing header.header,
+body.printing nav.nav,
+body.printing #bank-button,
+body.printing #bank-drawer {
+  display: none !important;
+}
+
+/* Hide planner controls */
+body.printing .no-print,
+body.printing .planner-toolbar,
+body.printing .planner-course-toggle,
+body.printing .course-pill,
+body.printing .add-cluster-btn,
+body.printing .add-day-btn,
+body.printing .delete-cluster-btn,
+body.printing .export-cluster-pdf-btn,
+body.printing .export-all-pdf-btn,
+body.printing .day-remove,
+body.printing .mini-remove,
+body.printing .add-resource-btn {
+  display: none !important;
+}
+
+/* Print only chosen clusters */
+body.printing .planner-cluster {
+  display: none !important;
+}
+body.printing .planner-cluster.print-target {
+  display: block !important;
+}
+body.printing footer.footer {
+  display: none !important;
+}
+
+/* Encourage Chrome to keep colors/shadows */
+@media print {
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
