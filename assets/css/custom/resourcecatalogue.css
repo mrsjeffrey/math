@@ -1,0 +1,615 @@
+/* resource-catalogue.css */
+
+:root {
+  --card-bg: #1e1f26;
+  --card-hover: #2a2c36;
+  --accent: #f5c542;
+  --text: #f1f1f1;
+  --muted: #b6b6b6;
+}
+
+/* ❌ REMOVE body styling — PaperMod owns this */
+/*
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #0f1117;
+  color: var(--text);
+}
+*/
+
+.catalogue-wrapper {
+  max-width: 1400px;
+  margin: 2rem auto;
+  padding: 0 2rem;
+}
+
+.catalogue-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+/* Grid stays exactly as you had it */
+.catalogue-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+/* ❌ REMOVE — does nothing useful */
+/*
+.catalogue-grid > :nth-child(n+4) {
+  grid-column: span 1;
+}
+*/
+
+/* Card Styling — unchanged except padding + position */
+.catalogue-card {
+  position: relative;               /* needed for label */
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 3rem 2rem 2rem;           /* extra top space */
+  text-decoration: none;
+  color: var(--text);
+  min-height: 160px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.catalogue-card h2 {
+  margin: 1rem 0 1rem;
+  font-size: 1.25rem;
+  color: var(--text);
+  text-align: center;
+  font-weight: 600;
+}
+
+.course-code {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+/* Hover unchanged */
+.catalogue-card:hover {
+  transform: translateY(-6px);
+  background: var(--card-hover);
+}
+
+/* ✅ NEW: Grade label (only new feature) */
+.grade-label {
+  position: absolute;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  color: #fff;
+}
+
+/* Grade colours */
+.grade-9 .grade-label  { background: #6c8f3d; }
+.grade-10 .grade-label { background: #7FAF8A; }
+.grade-11 .grade-label { background: #2b8c57; }
+.grade-12 .grade-label { background: #2F4F3A; }
+
+/* Responsive — unchanged */
+@media (max-width: 900px) {
+  .catalogue-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 550px) {
+  .catalogue-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.embed-tabs {
+  margin-top: 2rem;
+}
+
+.embed-menu {
+  display: flex;
+  gap: 2rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 1.5rem;
+}
+
+.embed-tab {
+  background: none;
+  border: none;
+  padding: 0.5rem 0;
+  font-size: 1rem;
+  cursor: pointer;
+  color: var(--muted);
+  border-bottom: 2px solid transparent;
+}
+
+.embed-tab.active {
+  color: var(--text);
+  border-color: currentColor;
+  font-weight: 600;
+}
+
+.embed-panel {
+  display: none;
+}
+
+.embed-panel.active {
+  display: block;
+}
+
+.embed-panel iframe {
+  width: 100%;
+  min-height: 600px;
+  border: none;
+}
+/* ============================
+   Grade 9 Math – Strand Layout
+   ============================ */
+
+/* Page wrapper */
+.grade-course {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 4rem;
+}
+
+/* Page title */
+.grade-course h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 3rem;
+}
+
+/* ============================
+   Strand Card
+   ============================ */
+
+.strand-card {
+  position: relative;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+  padding: 2rem 2.5rem 2.25rem;
+  margin-bottom: 2.75rem;
+  scroll-margin-top: 120px;
+
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+}
+
+/* Strand title */
+.strand-title {
+  margin: 0 0 1.5rem;
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+/* ============================
+   Overall Expectation
+   ============================ */
+
+.overall-expectation {
+  background: #f9fafb;
+  border-left: 4px solid #6c8f3d;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* ============================
+   Specific Expectations Grid
+   ============================ */
+
+.expectation-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 0.75rem;
+  margin: 0 0 1rem;
+}
+
+.code {
+  font-weight: 700;
+}
+
+.expectation {
+  background: #f3f4f6;
+  border-radius: 10px;
+  padding: 0.75rem 0.5rem;
+  text-align: center;
+  font-weight: 400;
+  font-size: 0.9rem;
+  cursor: pointer;
+
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.expectation:hover {
+  background: #e5e7eb;
+  transform: translateY(-2px);
+}
+
+/* ============================
+   Arrow Navigation
+   ============================ */
+
+.strand-nav {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.nav-arrow {
+  width: 36px;
+  height: 36px;
+  border-radius: 12px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-decoration: none;
+  font-size: 16px;
+  color: #111827;
+
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.nav-arrow:hover {
+  background: #f3f4f6;
+  transform: translateY(-1px);
+}
+
+/* ============================
+   Responsive tweaks
+   ============================ */
+
+@media (max-width: 600px) {
+  .strand-card {
+    padding: 1.75rem 1.75rem 2rem;
+  }
+
+  .strand-nav {
+    right: 1rem;
+    top: 1rem;
+  }
+}
+
+.view-toggle {
+  display: flex;
+  gap: 12px;
+  margin: 1rem 0 2rem;
+}
+
+.toggle-btn {
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 1px solid #ccc;
+  background: #f8f8f8;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.toggle-btn.active {
+  background: #1f2937;
+  color: white;
+  border-color: #1f2937;
+}
+
+.view-container {
+  display: none;
+}
+
+.view-container.active-view {
+  display: block;
+}
+
+/* ============================
+   Resource Panel (Hidden)
+   ============================ */
+
+.resource-panel {
+  display: none;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  padding: 0;
+}
+
+/* Horizontal scroll rail */
+.resource-track {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+}
+
+/* Hide ugly scrollbar but keep scroll */
+.resource-track::-webkit-scrollbar {
+  height: 8px;
+}
+
+.resource-track::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 4px;
+}
+
+/* ============================
+   Resource Cards
+   ============================ */
+
+.resource-panel {
+  margin-top: 1rem;
+  display: none;
+}
+
+.resource-track {
+  display: flex;
+  gap: 2rem;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+}
+
+.resource-group {
+  min-width: 260px;
+}
+
+.resource-group h3 {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  color: #444;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.resource-card {
+  display: block;
+  background: white;
+  border-radius: 10px;
+  padding: 0.9rem;
+  margin-bottom: 0.75rem;
+  text-decoration: none;
+  color: #222;
+  min-width: 280px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.resource-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+.resource-panel {
+  margin-top: 1.5rem;
+  display: none;
+}
+
+.resource-track {
+  display: flex;
+  overflow-x: auto;
+}
+
+.resource-master-card {
+  background: white;
+  border-radius: 14px;
+  padding: 1.25rem 1.5rem;
+  min-width: 240px;
+  max-width: 240px;
+  box-shadow: 0 8px 12px rgba(0,0,0,0.1);
+  position: relative !important;
+  overflow: hidden;
+}
+
+.resource-track {
+  position: static;
+}
+.resource-group {
+  margin-bottom: 1.25rem;
+}
+
+.resource-group:last-child {
+  margin-bottom: 0;
+}
+
+.resource-group h3 {
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.resource-link {
+  display: block;
+  background: #f7f7f9;
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  color: #222;
+  font-weight: 400;
+  font-size: 0.85rem;
+  transition: background 0.15s ease;
+  max-width: 200px;   /* 👈 control width here */
+  white-space: normal;
+}
+
+.resource-link:hover {
+  background: #ececf2;
+}
+
+.resource-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: centre;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+
+}
+
+.resource-card-icon {
+  width: 50px;
+  height:30px;
+  align-items: right;
+  object-fit: contain;
+  opacity: 0.9;
+}
+
+/* Tag container */
+.resource-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.75rem;
+}
+
+
+/* Add to Plan + button*/
+.add-to-plan-btn {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+
+  background: #f3f4f6;
+  border: none;
+  cursor: pointer;
+
+  display: grid;
+  place-items: center;
+
+}
+
+/* horizontal bar */
+.add-to-plan-btn::before,
+.add-to-plan-btn::after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 2px;
+  background: #374151;
+  border-radius: 1px;
+}
+
+/* vertical bar */
+.add-to-plan-btn::after {
+  transform: rotate(90deg);
+}
+
+.add-to-plan-btn:hover {
+  background: #e0e0e0;
+}
+
+
+/* ============================
+   Active expectation
+   ============================ */
+
+.resource-panel {
+  margin-top: 1.5rem;
+}
+
+.expectation.active {
+  background: #eff5eb;
+}
+
+/* Strand AA – SEL */
+.strand-aa {
+  background: #e8f0fe;
+  color: #1a4ed8;
+}
+
+/* Strand A */
+.strand-a {
+  background: #e6f4ea;
+  color: #137333;
+}
+
+/* Strand B */
+.strand-b {
+  background: #fff4e5;
+  color: #b45309;
+}
+
+/* Strand C */
+.strand-c {
+  background: #f3e8ff;
+  color: #6b21a8;
+}
+
+/* Strand D */
+.strand-d {
+  background: #e0f2fe;
+  color: #0369a1;
+}
+
+/* Strand E */
+.strand-e {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+/* Strand F */
+.strand-f {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+
+.catalogue-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  margin-bottom: 1.25rem;
+  padding: 0.5rem 0.9rem;
+
+  font-size: 0.95rem;
+  font-weight: 500;
+
+  color: #1f2937; /* slate-800 */
+  background: transparent;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.catalogue-back-btn:hover {
+  background-color: #f9fafb; /* gray-50 */
+  border-radius: 16px;
+  transform: translateX(-2px);
+
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+html.catalogue-restore {
+  scroll-behavior: auto !important;
+}
+
+html.catalogue-restore body {
+  visibility: hidden;
+}

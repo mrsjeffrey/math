@@ -7,6 +7,7 @@
 
 <head>
     {{- partial "head.html" . }}
+    <link rel="stylesheet" href="{{ "css/global.css" | relURL }}">
 </head>
 
 <body class="
@@ -23,6 +24,24 @@
     <main class="main">
         {{- block "main" . }}{{ end }}
     </main>
-    {{ partialCached "footer.html" . .Layout .Kind (.Param "hideFooter") (.Param "ShowCodeCopyButtons") -}}
+    {{ partialCached "footer.html" . .Layout .Kind (.Param "hideFooter") (.Param "ShowCodeCopyButtons") -}}  
+    
+<script>
+  // Save scroll position when navigating to Planner
+  document.addEventListener("click", (e) => {
+    const link = e.target.closest('a[href="/planner/"]');
+    if (!link) return;
+
+    // Only save if we're on the Grade 9 Math page
+    if (location.pathname.includes("grade9math")) {
+      sessionStorage.setItem(
+        "grade9math_scrollY",
+        window.scrollY
+      );
+    }
+  });
+</script>
+
 </body>
 </html>
+

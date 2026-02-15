@@ -1,0 +1,375 @@
+/* =========================
+   BANK BUTTON
+   ========================= */
+
+#bank-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+
+  background: #f3f4f6;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  z-index: 9999;
+
+  /* 🔑 IMPORTANT */
+  overflow: visible;
+
+  transition: background-color 0.15s ease, transform 0.15s ease;
+}
+#bank-button:hover {
+  background: #e5e7eb;
+}
+
+#bank-button img {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+/* =========================
+   TOOLTIP
+   ========================= */
+
+#bank-button::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + 12px);
+  left: 50%;
+  transform: translateX(-50%);
+
+  background: #111827;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 500;
+
+  padding: 6px 10px;
+  border-radius: 6px;
+  white-space: nowrap;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+#bank-button:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-4px);
+}
+
+#bank-button.drag-hover {
+  outline: 2px dashed #6c8f3d;
+  outline-offset: 4px;
+}
+
+
+/* =========================
+   Bank Pulse
+   ========================= */
+
+@keyframes bank-pulse {
+  0% {
+    transform: scale(1);
+    background-color: #f3f4f6;
+  }
+  40% {
+    transform: scale(1.08);
+    background-color: #bce1a3; /* 👈 flash colour */
+  }
+  100% {
+    transform: scale(1);
+    background-color: #f3f4f6;
+  }
+}
+
+#bank-button.pulse {
+  animation: bank-pulse 0.45s ease;
+}
+
+/* =========================
+   BADGE
+   ========================= */
+
+.bank-badge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+
+  background-color: #dc2626;
+  color: #ffffff;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  border-radius: 999px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+  pointer-events: none;
+}
+
+.bank-badge.is-hidden {
+  display: none;
+}
+
+/* =========================
+   BANK DRAWER (BOTTOM)
+   ========================= */
+
+#bank-drawer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: 240px;
+
+  background: #ffffff;
+  border-top: 1px solid #e5e7eb;
+  box-shadow: 0 -8px 24px rgba(0,0,0,0.15);
+
+  z-index: 9999;
+
+  display: flex;
+  flex-direction: column;
+
+  transform: translateY(100%);
+
+  pointer-events: auto;
+}
+
+/* ONLY animate when .animate is present */
+#bank-drawer.animate {
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+#bank-drawer.open {
+  transform: translateY(0);
+}
+
+#bank-drawer.drag-hover {
+  outline: 2px dashed #6c8f3d; /* light green */
+  outline-offset: -6px;
+}
+
+
+/* =========================
+   DRAWER HEADER
+   ========================= */
+
+.bank-drawer-header {
+  padding: 0.75rem 1.25rem;
+  border-bottom: 1px solid #e5e7eb;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bank-drawer-header h3 {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+#bank-close {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: #374151;
+}
+
+#bank-close:hover {
+  color: #111827;
+}
+
+/* =========================
+   DRAWER BODY
+   ========================= */
+
+.bank-drawer-body {
+  flex: 1;
+  overflow-x: auto;
+  padding: 0.75rem 1rem;
+}
+
+.bank-empty {
+  color: #fcfcfc;
+  font-size: 0.9rem;
+}
+
+/* =========================
+   BANK LIST
+   ========================= */
+
+.bank-list {
+  display: flex;
+  gap: 0.75rem;
+}
+
+/* =========================
+   BANK ITEM CARD
+   ========================= */
+
+.bank-item {
+  min-width: 240px;
+  background: #fcfcfc;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 0.75rem;
+  cursor: grab;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* =========================
+   ROW 1 — TYPE + REMOVE
+   ========================= */
+
+.bank-item-row-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bank-item-type {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #086902;
+}
+
+/* =========================
+   ROW 2 — TITLE + TAG
+   ========================= */
+
+.bank-item-row-bottom {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.bank-item-title {
+  flex: 1;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #111827;
+  line-height: 1.3;
+}
+
+.bank-item-tags {
+  display: flex;
+  gap: 0.25rem;
+  flex-shrink: 0;
+}
+
+/* =====================================
+   Strand Tag Colours (Shared)
+===================================== */
+
+.exp-tag {
+  font-size: 0.75rem;
+  font-weight: 400;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+/* Strand AA – SEL */
+.strand-aa {
+  background: #e8f0fe;
+  color: #1a4ed8;
+}
+
+/* Strand A */
+.strand-a {
+  background: #e6f4ea;
+  color: #137333;
+}
+
+/* Strand B */
+.strand-b {
+  background: #fff4e5;
+  color: #b45309;
+}
+
+/* Strand C */
+.strand-c {
+  background: #f3e8ff;
+  color: #6b21a8;
+}
+
+/* Strand D */
+.strand-d {
+  background: #e0f2fe;
+  color: #0369a1;
+}
+
+/* Strand E */
+.strand-e {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+/* Strand F */
+.strand-f {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+/* =========================
+   REMOVE BUTTON
+   ========================= */
+
+.bank-item-remove {
+  background: none;
+  border: none;
+
+  /* ⬇️ Bigger clickable area */
+  padding: 8px;
+  margin: -6px; /* keeps layout tight */
+
+  font-size: 14px;
+  cursor: pointer;
+  color: #9ca3af;
+  line-height: 1;
+
+  border-radius: 6px; /* nice hover shape */
+}
+
+.bank-item-remove:hover {
+  color: #dc2626;
+  background: rgba(220, 38, 38, 0.08);
+}
+
+
+/* =========================================================
+   FORCE exp-tag styling inside planner
+========================================================= */
+.planner-resource-tags,
+.expectations-cell {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}

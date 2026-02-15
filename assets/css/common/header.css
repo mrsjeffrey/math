@@ -1,3 +1,12 @@
+/* Make PaperMod header sticky */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--theme);
+}
+
+
 .nav {
     display: flex;
     flex-wrap: wrap;

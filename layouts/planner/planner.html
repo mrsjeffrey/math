@@ -1,0 +1,35 @@
+{{ define "main" }}
+
+{{ $css := resources.Get "css/custom/planner.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}">
+<link rel="stylesheet" href="/css/global.css">
+
+<script>
+  window.RESOURCES = {{ site.Data.resources.resources | jsonify | safeJS }};
+</script>
+
+<script src="/math/js/planner.js" defer></script>
+<section class="planner-container">
+
+  <!-- COURSE TOGGLE BAR -->
+<div class="planner-course-toggle">
+  <button class="course-pill active" data-course="MDH1W">MDH1W</button>
+  <button class="course-pill" data-course="MPM2D">MPM2D</button>
+  <button class="course-pill" data-course="MPM2P">MPM2P</button>
+  <button class="course-pill" data-course="MCR3U">MCR3U</button>
+  <button class="course-pill" data-course="MCF3M">MCF3M</button>
+  <button class="course-pill" data-course="MBF3C">MBF3C</button>
+  <button class="course-pill" data-course="MHF4U">MHF4U</button>
+  <button class="course-pill" data-course="MCT4C">MCT4C</button>
+  <button class="course-pill" data-course="MAP4C">MAP4C</button>
+  <button class="course-pill" data-course="MDM4U">MDM4U</button>
+  <button class="course-pill" data-course="MCV4U">MCV4U</button>
+</div>
+
+<!-- CLUSTERS STACK -->
+<div class="planner-clusters"></div>
+
+
+</section>
+
+{{ end }}

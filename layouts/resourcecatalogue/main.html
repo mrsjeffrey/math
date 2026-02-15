@@ -1,0 +1,116 @@
+{{ define "main" }}
+
+<script>
+  (function () {
+    const fromPlanner = document.referrer.includes("/planner");
+    const lastView = sessionStorage.getItem("lastCatalogueView");
+
+    // Mark that HOME is now the last catalogue view
+    sessionStorage.setItem("lastCatalogueView", "home");
+
+    // Only redirect if:
+    // 1) We came from planner
+    // 2) Last view was a course (not home)
+    if (fromPlanner && lastView && lastView !== "home") {
+      window.location.replace(`/math/resourcecatalogue/${lastView}/`);
+    }
+  })();
+</script>
+
+
+{{/* Load page-specific CSS safely */}}
+{{ $css := resources.Get "css/custom/resourcecatalogue.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}">
+
+<div class="catalogue-wrapper">
+
+  <h1 class="catalogue-title">Ontario Mathematics Resource Catalogue</h1>
+
+  <div class="catalogue-grid">
+
+    <!-- Grade 9 -->
+    <a class="catalogue-card grade-9" href="/math/resourcecatalogue/grade9math" data-course-id="grade9math">
+      <span class="grade-label">Grade 9</span>
+      <h2>Mathematics</h2>
+      <p class="course-code">MDH1W</p>
+    </a>
+
+    <!-- Grade 10 -->
+    <a class="catalogue-card grade-10" href="/math/resourcecatalogue/grade10academic">
+      <span class="grade-label">Grade 10</span>
+      <h2>Mathematics (Academic)</h2>
+      <p class="course-code">MPM2D</p>
+    </a>
+
+    <a class="catalogue-card grade-10" href="/math/resourcecatalogue/grade10applied">
+      <span class="grade-label">Grade 10</span>
+      <h2>Mathematics (Applied)</h2>
+      <p class="course-code">MPM2P</p>
+    </a>
+
+    <!-- Grade 11 -->
+    <a class="catalogue-card grade-11" href="/math/resourcecatalogue/grade11functions">
+      <span class="grade-label">Grade 11</span>
+      <h2>Functions</h2>
+      <p class="course-code">MCR3U</p>
+    </a>
+
+    <a class="catalogue-card grade-11" href="/math/resourcecatalogue/grade11functionsandapplications">
+      <span class="grade-label">Grade 11</span>
+      <h2>Functions & Applications</h2>
+      <p class="course-code">MCF3M</p>
+    </a>
+
+    <a class="catalogue-card grade-11" href="/math/resourcecatalogue/grade11foundations">
+      <span class="grade-label">Grade 11</span>
+      <h2>Foundations for College Mathematics</h2>
+      <p class="course-code">MBF3C</p>
+    </a>
+
+    <!-- Grade 12 -->
+    <a class="catalogue-card grade-12" href="/math/resourcecatalogue/grade12-functions">
+      <span class="grade-label">Grade 12</span>
+      <h2>Advanced Functions</h2>
+      <p class="course-code">MHF4U</p>
+    </a>
+
+    <a class="catalogue-card grade-12" href="/math/resourcecatalogue/grade12collegetech">
+      <span class="grade-label">Grade 12</span>
+      <h2>Mathematics for College Technology</h2>
+      <p class="course-code">MCT4C</p>
+    </a>
+
+    <a class="catalogue-card grade-12" href="/math/resourcecatalogue/grade12foundations">
+      <span class="grade-label">Grade 12</span>
+      <h2>Foundations for College Mathematics</h2>
+      <p class="course-code">MAP4C</p>
+    </a>
+
+    <a class="catalogue-card grade-12" href="/math/resourcecatalogue/grade12datamanagement">
+      <span class="grade-label">Grade 12</span>
+      <h2>Data Management</h2>
+      <p class="course-code">MDM4U</p>
+    </a>
+
+    <a class="catalogue-card grade-12" href="/math/resourcecatalogue/grade12calculusandvectors">
+      <span class="grade-label">Grade 12</span>
+      <h2>Calculus & Vectors</h2>
+      <p class="course-code">MCV4U</p>
+    </a>
+
+  </div>
+</div>
+
+<script>
+  document.addEventListener("click", e => {
+    const card = e.target.closest(".catalogue-card[data-course-id]");
+    if (!card) return;
+
+    sessionStorage.setItem(
+      "lastCatalogueCourse",
+      card.dataset.courseId
+    );
+  });
+</script>
+
+{{ end }}

@@ -1,0 +1,699 @@
+{{ define "main" }}
+
+<script>
+  (function () {
+    // Get the slug from the URL
+    const parts = location.pathname.split("/").filter(Boolean);
+    const slug = parts[parts.length - 1];
+
+    if (slug && slug !== "resourcecatalogue") {
+      sessionStorage.setItem("lastCatalogueView", slug);
+    }
+  })();
+</script>
+
+
+{{ $css := resources.Get "css/custom/resourcecatalogue.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}">
+
+<div class="grade-course">
+<a href="/math/resourcecatalogue" class="catalogue-back-btn">
+  ← All Courses
+</a>
+
+
+<h1>Grade 9 Mathematics (MTH1W)</h1>
+
+<div class="view-toggle">
+  <button class="toggle-btn active" data-view="strand">By Strand</button>
+  <button class="toggle-btn" data-view="unit">By Unit</button>
+</div>
+
+<div class="view-container strand-view active-view">
+<!-- ================= STRAND AA ================= -->
+<section class="strand-card" id="strand-aa">
+  <div class="strand-nav">
+    <a href="#strand-a" class="nav-arrow">↓</a>
+  </div>
+
+  <h2 class="strand-title">Strand AA: Social-Emotional Learning (SEL)</h2>
+
+  <div class="overall-expectation">
+    <strong>AA1 - Social-Emotional Learning Skills</strong><br>Develop and explore a variety of social-emotional learning skills in a context that supports and reflects this learning in connection with the expectations across all other strand.
+  </div>
+
+  <!-- Specific Expectations -->
+  <div class="expectation-grid">
+    <div class="expectation" data-exp="AA1.1">
+      <span class="code">AA1.1</span> – Use self-awareness, self-management, social awareness,
+      relationship skills, and responsible decision-making to support learning and problem solving in mathematics.
+    </div>
+  </div>
+
+  <!-- SHARED RESOURCE PANEL (initially empty) -->
+  <div class="resource-panel" id="resources-aa">
+    <div class="resource-track">
+      <!-- populated dynamically -->
+    </div>
+  </div>
+</section>
+
+<!-- ================= STRAND A ================= -->
+<section class="strand-card" id="strand-a">
+  <div class="strand-nav">
+    <a href="#strand-aa" class="nav-arrow">↑</a>
+    <a href="#strand-b" class="nav-arrow">↓</a>
+  </div>
+
+  <h2 class="strand-title">Strand A: Mathematical Thinking and Making Connections</h2>
+
+  <div class="overall-expectation">
+  <strong> A1 - Mathematical Processes</strong><br>Apply the mathematical processes to develop a conceptual understanding of, and procedural fluency
+with, the mathematics they are learning.
+  </div>
+
+  <div class="expectation-grid">
+    <div class="expectation">
+      <span class="code">A1.1</span> – Identify real-life situations that can be represented mathematically
+      and describe the variables and assumptions involved.
+    </div>
+
+    <div class="expectation">
+      <span class="code">A1.2</span> – Create and refine mathematical models to represent real-life situations
+      using appropriate tools, representations, and strategies.
+    </div>
+
+    <div class="expectation">
+      <span class="code">A1.3</span> – Analyse mathematical models, assess their effectiveness,
+      and make improvements where necessary.
+    </div>
+
+    <div class="expectation">
+      <span class="code">A1.4</span> – Communicate conclusions drawn from mathematical models
+      and describe their limitations.
+    </div>
+ </div>  
+ 
+    <div class="overall-expectation">
+  	<strong> A2 - Making Connections</strong><br>Make connections between mathematics and various knowledge systems, their lived experiences, and
+various real-life applications of mathematics, including careers. 
+ </div>
+
+   <div class="expectation-grid">
+    <div class="expectation">
+      <span class="code">A2.1</span> – Use mathematical reasoning to make and justify conjectures.
+    </div>
+
+    <div class="expectation">
+      <span class="code">A2.2</span> – Identify and explain errors or misconceptions in mathematical reasoning.
+    </div>
+
+    <div class="expectation">
+      <span class="code">A2.3</span> – Evaluate strategies and solutions for efficiency, accuracy, and clarity.
+    </div>
+  </div>
+  <!-- SHARED RESOURCE PANEL (initially empty) -->
+  <div class="resource-panel" id="resources-a">
+    <div class="resource-track">
+      <!-- populated dynamically -->
+    </div>
+  </div>
+</section>
+
+<!-- ================= STRAND B ================= -->
+<section class="strand-card" id="strand-b">
+  <div class="strand-nav">
+    <a href="#strand-a" class="nav-arrow">↑</a>
+    <a href="#strand-c" class="nav-arrow">↓</a>
+  </div>
+
+  <h2 class="strand-title">Strand B: Number</h2>
+
+  <div class="overall-expectation">
+    <strong>B1 - Development of Numbers and Number Sets</strong><br>Demonstrate an understanding of numbers and apply this understanding in various contexts.
+  </div>
+
+  <div class="expectation-grid">
+    <div class="expectation" data-exp="B1.1">
+      <span class="code">B1.1</span> – Represent and compare numbers, including integers, fractions,
+      decimals, and percents, using a variety of tools and representations.
+    </div>
+
+    <div class="expectation" data-exp="B1.2">
+      <span class="code">B1.2</span> – Solve problems involving ratios, rates, and unit rates
+      using proportional reasoning.
+    </div>
+
+    <div class="expectation" data-exp="B1.3">
+      <span class="code">B1.3</span> – Apply proportional reasoning in real-life contexts,
+      including scale drawings and financial situations.
+    </div>
+</div>
+<!-- SHARED RESOURCE PANEL (initially empty) -->
+  <div class="resource-panel" id="resources-b1">
+    <div class="resource-track">
+      <!-- populated dynamically -->
+    </div>
+  </div>
+
+  <div class="overall-expectation">
+     <strong>B2 - Powers</strong><br>represent numbers in various ways, evaluate powers, and simplify expressions by using the relationships
+	between powers and their exponent.
+  </div>
+ <div class="expectation-grid">
+    <div class="expectation" data-exp="B2.1">
+      <span class="code">B2.1</span> – Represent powers with whole-number exponents
+      and describe their meaning.
+    </div>
+
+    <div class="expectation" data-exp="B2.2">
+      <span class="code">B2.2</span> – Apply exponent rules to simplify numerical expressions involving powers.
+    </div>
+
+    <div class="expectation" data-exp="B2.3">
+      <span class="code">B2.3</span> – Use powers of ten and scientific notation to represent
+      and compare large and small numbers.
+    </div>
+  </div>
+  
+  <!-- SHARED RESOURCE PANEL (initially empty) -->
+  <div class="resource-panel" id="resources-b2">
+    <div class="resource-track">
+      <!-- populated dynamically -->
+    </div>
+  </div>
+
+</section>
+
+
+<!-- ================= STRAND C ================= -->
+<section class="strand-card" id="strand-c">
+  <div class="strand-nav">
+    <a href="#strand-b" class="nav-arrow">↑</a>
+    <a href="#strand-d" class="nav-arrow">↓</a>
+  </div>
+
+  <h2 class="strand-title">Strand C: Algebra</h2>
+
+  <div class="overall-expectation">
+    <strong>C1 - Algebraic Expressions and Equations</strong><br>Represent and analyze mathematical relationships using algebraic expressions,
+    equations, graphs, and coding.
+  </div>
+
+  <div class="expectation-grid">
+    <div class="expectation">
+      <span class="code">C1.1</span> – Translate between verbal descriptions,
+      algebraic expressions, and equations.
+    </div>
+
+    <div class="expectation">
+      <span class="code">C1.2</span> – Simplify algebraic expressions involving variables,
+      integers, and whole-number coefficients.
+    </div>
+
+    <div class="expectation">
+      <span class="code">C1.3</span> – Evaluate algebraic expressions by substituting given values for variables.
+    </div>
+</div>
+
+  <div class="overall-expectation">
+    <strong>C2 - Linear Relations</strong><br>Represent, compare, and analyze linear and non-linear relations using various representations.
+  </div>
+
+  <div class="expectation-grid">
+    <div class="expectation">
+      <span class="code">C2.1</span> – Represent linear relations using tables, graphs,
+      equations, and verbal descriptions.
+    </div>
+
+    <div class="expectation">
+      <span class="code">C2.2</span> – Determine and interpret the rate of change
+      from various representations of linear relations.
+    </div>
+
+    <div class="expectation">
+      <span class="code">C2.3</span> – Graph linear relations and interpret key features
+      such as slope and intercepts.
+    </div>
+
+    <div class="expectation">
+      <span class="code">C2.4</span> – Compare linear and non-linear relations using graphs,
+      tables, and equations.
+    </div>
+
+  </div>
+
+  <div class="overall-expectation">
+    <strong>C3 - Coding</strong><br>Solve problems and model mathematical relationships using coding.
+  </div>
+
+ <div class="expectation-grid">
+    <div class="expectation">
+      <span class="code">C3.1</span> – Write and modify code involving variables, loops,
+      and conditionals to model mathematical situations.
+    </div>
+
+    <div class="expectation">
+      <span class="code">C3.2</span> – Use coding to solve problems and represent mathematical relationships.
+    </div>
+
+    <div class="expectation">
+      <span class="code">C3.3</span> – Predict, test, and explain the output of code
+      used to represent mathematical ideas.
+    </div>
+  </div>
+</section>
+
+<!-- ================= STRAND D ================= -->
+<section class="strand-card" id="strand-d">
+  <div class="strand-nav">
+    <a href="#strand-c" class="nav-arrow">↑</a>
+    <a href="#strand-e" class="nav-arrow">↓</a>
+  </div>
+
+  <h2 class="strand-title">Strand D: Data</h2>
+
+  <div class="overall-expectation"><strong>D1 – Data Collection and Representation</strong><br>Collect, organize, represent, and analyze data to draw conclusions and make informed decisions.
+  </div>
+
+  <div class="expectation-grid">
+    <div class="expectation">
+      <span class="code">D1.1</span> – Collect and organize data from primary and secondary sources
+      using appropriate methods and tools.
+    </div>
+
+    <div class="expectation">
+      <span class="code">D1.2</span> – Represent data using charts, tables, and graphs,
+      selecting formats that best suit the data and context.
+    </div>
+
+    <div class="expectation">
+      <span class="code">D1.3</span> – Interpret data representations to identify trends,
+      patterns, and relationships.
+    </div>
+  </div>
+
+  <div class="overall-expectation"><strong>D2 – Data Analysis</strong><br>Analyze data using statistical measures and evaluate conclusions.
+  </div>
+
+    <div class="expectation-grid">
+
+    <div class="expectation">
+      <span class="code">D2.1</span> – Calculate and interpret measures of central tendency
+      to summarize data sets.
+    </div>
+
+    <div class="expectation">
+      <span class="code">D2.2</span> – Compare data sets using measures of central tendency
+      and graphical representations.
+    </div>
+
+    <div class="expectation">
+      <span class="code">D2.3</span> – Draw conclusions from data analysis and assess
+      the reasonableness of those conclusions.
+    </div>
+  </div>
+</section>
+
+<!-- ================= STRAND E ================= -->
+<section class="strand-card" id="strand-e">
+  <div class="strand-nav">
+    <a href="#strand-d" class="nav-arrow">↑</a>
+    <a href="#strand-f" class="nav-arrow">↓</a>
+  </div>
+
+  <h2 class="strand-title">Strand E: Geometry and Measurement</h2>
+
+  <div class="overall-expectation"><strong>E1 – Geometric Relationships</strong><br>Identify and analyze geometric relationships using mathematical reasoning.
+  </div>
+
+  <div class="expectation-grid">
+    <div class="expectation">
+      <span class="code">E1.1</span> – Identify and describe geometric relationships involving angles,
+      triangles, and polygons.
+    </div>
+
+    <div class="expectation">
+      <span class="code">E1.2</span> – Apply properties of angles and shapes to solve problems
+      involving geometric figures.
+    </div>
+
+    <div class="expectation">
+      <span class="code">E1.3</span> – Use geometric reasoning to justify conclusions
+      and explain relationships.
+    </div>
+</div>
+  <div class="overall-expectation"><strong>E2 – Measurement</strong><br>Solve problems involving measurement using appropriate tools, formulas, and strategies.
+  </div>
+ <div class="expectation-grid">
+
+    <div class="expectation">
+      <span class="code">E2.1</span> – Solve problems involving perimeter, area, surface area,
+      and volume of various shapes.
+    </div>
+
+    <div class="expectation">
+      <span class="code">E2.2</span> – Apply measurement concepts to real-life situations,
+      including scale and unit conversions.
+    </div>
+
+    <div class="expectation">
+      <span class="code">E2.3</span> – Use appropriate tools and formulas to measure
+      and calculate geometric quantities accurately.
+    </div>
+  </div>
+</section>
+
+<!-- ================= STRAND F ================= -->
+<section class="strand-card" id="strand-f">
+  <div class="strand-nav">
+    <a href="#strand-e" class="nav-arrow">↑</a>
+  </div>
+
+  <h2 class="strand-title">Strand F: Financial Literacy</h2>
+
+  <div class="overall-expectation"><strong>F1 – Financial Decision Making</strong><br>Demonstrate an understanding of financial concepts and apply mathematical reasoning to make informed financial decisions.
+  </div>
+
+  <div class="expectation-grid">
+    <div class="expectation">
+      <span class="code">F1.1</span> – Identify various sources of income and explain
+      factors that affect earnings.
+    </div>
+
+    <div class="expectation">
+      <span class="code">F1.2</span> – Create and analyze simple budgets to plan for
+      short-term and long-term financial goals.
+    </div>
+
+    <div class="expectation">
+      <span class="code">F1.3</span> – Compare different methods of payment and explain
+      their advantages and disadvantages.
+    </div>
+
+    <div class="expectation">
+      <span class="code">F1.4</span> – Calculate costs involving taxes, discounts,
+      tips, and simple interest.
+    </div>
+
+    <div class="expectation">
+      <span class="code">F1.5</span> – Describe how financial decisions can impact
+      personal well-being and future opportunities.
+    </div>
+  </div>
+</section>
+
+</div>
+</div>
+
+<div class="view-container unit-view">
+
+  <section class="unit-card">
+    <h2>Unit 1: Mathematical Thinking & Modelling</h2>
+    <div class="expectation-grid">
+      <div class="expectation">A1.1</div>
+      <div class="expectation">A1.2</div>
+      <div class="expectation">A1.3</div>
+      <div class="expectation">A1.4</div>
+      <div class="expectation">A2.1</div>
+      <div class="expectation">A2.2</div>
+      <div class="expectation">A2.3</div>
+    </div>
+  </section>
+
+  <section class="unit-card">
+    <h2>Unit 2: Number Sense & Proportional Reasoning</h2>
+    <div class="expectation-grid">
+      <div class="expectation">B1.1</div>
+      <div class="expectation">B1.2</div>
+      <div class="expectation">B1.3</div>
+      <div class="expectation">B2.1</div>
+      <div class="expectation">B2.2</div>
+      <div class="expectation">B2.3</div>
+    </div>
+  </section>
+
+  <section class="unit-card">
+    <h2>Unit 3: Algebra & Linear Relations</h2>
+    <div class="expectation-grid">
+      <div class="expectation">C1.1</div>
+      <div class="expectation">C1.2</div>
+      <div class="expectation">C1.3</div>
+      <div class="expectation">C2.1</div>
+      <div class="expectation">C2.2</div>
+      <div class="expectation">C2.3</div>
+      <div class="expectation">C2.4</div>
+    </div>
+  </section>
+
+  <section class="unit-card">
+    <h2>Unit 4: Coding & Mathematical Structures</h2>
+    <div class="expectation-grid">
+      <div class="expectation">C3.1</div>
+      <div class="expectation">C3.2</div>
+      <div class="expectation">C3.3</div>
+    </div>
+  </section>
+
+  <section class="unit-card">
+    <h2>Unit 5: Data & Probability</h2>
+    <div class="expectation-grid">
+      <div class="expectation">D1.1</div>
+      <div class="expectation">D1.2</div>
+      <div class="expectation">D1.3</div>
+      <div class="expectation">D1.4</div>
+      <div class="expectation">D2.1</div>
+      <div class="expectation">D2.2</div>
+      <div class="expectation">D2.3</div>
+    </div>
+  </section>
+
+  <section class="unit-card">
+    <h2>Unit 6: Geometry & Measurement</h2>
+    <div class="expectation-grid">
+      <div class="expectation">E1.1</div>
+      <div class="expectation">E1.2</div>
+      <div class="expectation">E1.3</div>
+      <div class="expectation">E2.1</div>
+      <div class="expectation">E2.2</div>
+      <div class="expectation">E2.3</div>
+    </div>
+  </section>
+
+  <section class="unit-card">
+    <h2>Unit 7: Financial Literacy</h2>
+    <div class="expectation-grid">
+      <div class="expectation">F1.1</div>
+      <div class="expectation">F1.2</div>
+      <div class="expectation">F1.3</div>
+      <div class="expectation">F2.1</div>
+      <div class="expectation">F2.2</div>
+      <div class="expectation">F2.3</div>
+    </div>
+  </section>
+
+</div>
+
+<div id="resource-data" hidden>
+  {{ range site.Data.resources.resources }}
+    {{ $res := . }}
+    {{ range $res.expectations }}
+      <div class="resource-set" data-exp="{{ . }}">
+
+        <div class="resource-master-card">
+
+          <!-- CARD HEADER -->
+          {{ with $res.source }}
+          <div class="resource-card-header">
+            <div class="resource-card-source">
+              By {{ .name }}
+            </div>
+            <img
+              src="{{ .logo | relURL }}"
+              alt="{{ .name }} logo"
+              class="resource-card-icon"
+            />
+          </div>
+          {{ end }}
+
+          <!-- LESSON PLAN -->
+          {{ with $res.lesson_plan }}
+          <div class="resource-group">
+            <h3>Lesson Plan</h3>
+			<a class="resource-link" draggable="true"
+			   href="{{ .link | relURL }}"
+			   target="_blank"
+			   rel="noopener"
+			   data-context-id="{{ $res.id }}"
+			   data-kind="lesson_plan">
+			  {{ .title }}
+			</a>
+          </div>
+          {{ end }}
+
+          <!-- LESSON NOTES -->
+          {{ with $res.lesson_notes }}
+          <div class="resource-group">
+            <h3>Lesson Notes</h3>
+			<a class="resource-link" draggable="true"
+			   href="{{ .link | relURL }}"
+			   target="_blank"
+			   rel="noopener"
+			   data-context-id="{{ $res.id }}"
+			   data-kind="lesson_notes">
+			  {{ .title }}
+			</a>
+			          </div>
+          {{ end }}
+
+          <!-- PRACTICE -->
+          {{ with $res.practice }}
+          <div class="resource-group">
+            <h3>Student Practice</h3>
+		{{ range $i, $p := . }}
+		  <a class="resource-link" draggable="true"
+		     href="{{ $p.link | relURL }}"
+		     target="_blank"
+		     rel="noopener"
+		     data-context-id="{{ $res.id }}"
+		     data-kind="practice"
+		     data-index="{{ $i }}">
+		    {{ $p.title }}
+		  </a>
+		{{ end }}
+          </div>
+          {{ end }}
+
+          <!-- EXPECTATION TAGS -->
+          <div class="resource-tags">
+            {{ range $res.expectations }}
+              {{ $strand := replaceRE "^([A-Z]+).*" "$1" . }}
+              <span class="exp-tag strand-{{ lower $strand }}">
+                {{ . }}
+              </span>
+            {{ end }}
+          </div>
+
+          <!-- ✅ ADD TO PLAN BUTTON (FIX) -->
+          <button
+            class="add-to-plan-btn"
+            aria-label="Add to plan"
+            data-resource="{{ $res.title }}">
+          </button>
+
+        </div>
+      </div>
+    {{ end }}
+  {{ end }}
+</div>
+<script>
+  const toggleButtons = document.querySelectorAll('.toggle-btn');
+  const views = {
+    strand: document.querySelector('.strand-view'),
+    unit: document.querySelector('.unit-view')
+  };
+
+  toggleButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      toggleButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      Object.values(views).forEach(v => v.classList.remove('active-view'));
+      views[btn.dataset.view].classList.add('active-view');
+    });
+  });
+</script>
+
+<script>
+ document.querySelectorAll('.expectation').forEach(exp => {
+  exp.addEventListener('click', () => {
+    const code = exp.dataset.exp;
+    if (!code) return;
+
+    const strand = exp.closest('.strand-card');
+    if (!strand) return;
+
+    // Determine B1 / B2 / C1 etc.
+    const group = code.match(/^[A-Z]+\d+/)?.[0];
+    if (!group) return;
+
+    const panelWrapper = strand.querySelector(`#resources-${group.toLowerCase()}`);
+    if (!panelWrapper) return;
+
+    const panel = panelWrapper.querySelector('.resource-track');
+    if (!panel) return;
+
+    const isActive = exp.classList.contains('active');
+
+    // clear all expectations + panels in this strand
+    strand.querySelectorAll('.expectation').forEach(e => e.classList.remove('active'));
+    strand.querySelectorAll('.resource-track').forEach(p => p.innerHTML = '');
+    strand.querySelectorAll('.resource-panel').forEach(p => p.style.display = 'none');
+
+    if (isActive) return;
+
+    exp.classList.add('active');
+
+    document
+      .querySelectorAll(`.resource-set[data-exp="${code}"]`)
+      .forEach(res => {
+        panel.appendChild(res.firstElementChild.cloneNode(true));
+      });
+
+    panelWrapper.style.display = 'block';
+  });
+});
+</script>
+
+<script>
+function saveCatalogueState() {
+  console.log("[CATALOGUE] saving state before leave");
+
+  sessionStorage.setItem("catalogueScrollY", window.scrollY);
+}
+
+// Save on navigation away
+document.addEventListener("click", e => {
+  const link = e.target.closest("a");
+  if (!link) return;
+
+  const href = link.getAttribute("href") || "";
+
+  // only if leaving catalogue
+  if (!href.includes("resourcecatalogue")) {
+    saveCatalogueState();
+  }
+});
+
+// Safety net
+window.addEventListener("beforeunload", saveCatalogueState);
+</script>
+
+<script>
+(function () {
+  const y = sessionStorage.getItem("catalogueScrollY");
+
+  if (y !== null) {
+    console.log("[CATALOGUE] pre-paint restore", {y});
+
+    // Prevent flicker
+    document.documentElement.classList.add("catalogue-restore");
+
+    // Restore scroll BEFORE paint
+    window.scrollTo(0, Number(y || 0));
+
+    // Reveal after first frame
+    requestAnimationFrame(() => {
+      document.documentElement.classList.remove("catalogue-restore");
+      console.log("[CATALOGUE] restore complete");
+    });
+  }
+})();
+</script>
+
+
+
+{{ end }}
+
+
+
