@@ -6,15 +6,45 @@ resources:
       - B1.1
     grades:
       - 9
+    tags:
+      - bhn-math
+      - bhn
+      - fractions
     source:
       name: "BHN Math"
       logo: "/math/images/sources/BHNmath.png"
     lesson_plan:
       title: "Representing and Comparing Fractions"
-      link: "/math/files/BHN_B1.1_LP.pdf"
+      link: "/math/files/grade9math/BHN_B1.1_LP.pdf"
     lesson_notes:
       title: "Fractions and Mixed Numbers"
-      link: "/math/files/BHN_B1.1_LN.pdf"
+      link: "/math/files/grade9math/BHN_B1.1_LN.pdf"
+      
+  sets_and_subsets:
+    id: sets_and_subsets
+    title: "The Numbers We Use: Sets and Subsets"
+    expectations:
+      - B1.2
+    grades:
+      - 9
+    tags:
+      - bhn-math
+      - bhn
+    source:
+      name: "BHN Math"
+      logo: "/math/images/sources/BHNmath.png"
+    lesson_plan:
+      title: "The Numbers We Use: Sets and Subsets"
+      link: "/math/files/grade9math/BHN_B1.2_LP_setsandsubsets.pdf"
+    lesson_notes:
+      title: "The Numbers We Use: Sets and Subsets"
+      link: "/math/files/grade9math/BHN_B1.2_LN_setsandsubsets.pdf"
+    practice:
+      - title: "Build your Skills"
+        link: "/math/files/grade9math/BHN_B1.2_P_setsandsubsets.pdf"
+    graphic_organizer:
+      title: "Number Sets"
+      link: "/math/files/grade9math/BHN_B1.2_GO_setsandsubsets.pdf"
 
   powers_scientific:
     id: powers_scientific
@@ -24,15 +54,18 @@ resources:
       - B2.3
     grades:
       - 9
+    tags:
+      - bhn-math
+      - bhn
     source:
       name: "BHN Math"
       logo: "/math/images/sources/BHNmath.png"
     lesson_notes:
       title: "Powers & Scientific Notation"
-      link: "/math/files/BHN_B2.1_B2.3_LN.pdf"
+      link: "/math/files/grade9math/BHN_B2.1_B2.3_LN.pdf"
     practice:
       - title: "Build Your Skills"
-        link: "/math/files/BHN_B2.1_B2.3_P.pdf"
+        link: "/math/files/grade9math/BHN_B2.1_B2.3_P.pdf"
 
   penny_a_day:
     id: penny_a_day

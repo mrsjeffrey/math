@@ -11,6 +11,8 @@
 <script src="/math/js/planner.js" defer></script>
 <section class="planner-container">
 
+<input type="file" id="planner-backup-file" hidden />
+
   <!-- COURSE TOGGLE BAR -->
 <div class="planner-course-toggle">
   <button class="course-pill active" data-course="MDH1W">MDH1W</button>
@@ -24,6 +26,15 @@
   <button class="course-pill" data-course="MAP4C">MAP4C</button>
   <button class="course-pill" data-course="MDM4U">MDM4U</button>
   <button class="course-pill" data-course="MCV4U">MCV4U</button>
+  
+  <!-- Utility Dropdown Pill -->
+  <div class="course-pill course-pill-menu">
+    ▾
+    <div class="pill-dropdown">
+      <button class="export-backup-btn">Export Planner</button>
+      <button class="import-backup-btn">Import Planner</button>
+    </div>
+  </div>
 </div>
 
 <!-- CLUSTERS STACK -->

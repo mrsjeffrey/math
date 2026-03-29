@@ -33,6 +33,8 @@ const RESOURCES = window.RESOURCES || {};
 
 let state = loadState();
 let selectedCourse = state.ui?.selectedCourse || "MDH1W";
+let modalSelectedExpectations = [];
+
 
 // Only override if we are restoring from planner navigation
 if (window.__PLANNER_RESTORE__?.course) {
@@ -58,36 +60,36 @@ const clustersWrap = document.querySelector(".planner-clusters");
 document.addEventListener("DOMContentLoaded", () => {
   if (!clustersWrap) return;
 
-  ensureCourse(selectedCourse);
-  bindEvents();
-  renderAll();
+  try {
+    ensureCourse(selectedCourse);
+    bindEvents();
+    renderAll();
 
-  // Sync course pill UI on load
-  document.querySelectorAll(".course-pill").forEach(p => {
-    p.classList.toggle(
-      "active",
-      p.dataset.course === selectedCourse
-    );
-  });
+    const exp = document.getElementById("ar-exp");
+    if (exp) exp.dataset.empty = "true";
 
-  // ✅ restore scroll AFTER render
-  const restore = window.__PLANNER_RESTORE__;
-  if (restore && typeof restore.scrollY === "number") {
-    // double rAF = wait for layout/paint
-    requestAnimationFrame(() => {
-      requestAnimationFrame(() => {
-        window.scrollTo(0, restore.scrollY);
-        console.log("[PLANNER] scroll restored to", restore.scrollY);
-
-        // unhide page
-        document.documentElement.classList.remove("planner-restore");
-
-        sessionStorage.removeItem("plannerState");
-
-      });
+    // Sync course pill UI on load
+    document.querySelectorAll(".course-pill").forEach(p => {
+      p.classList.toggle("active", p.dataset.course === selectedCourse);
     });
-  } else {
-    // no restore needed; ensure visible
+
+    // ✅ restore scroll AFTER render
+    const restore = window.__PLANNER_RESTORE__;
+    if (restore && typeof restore.scrollY === "number") {
+      // double rAF = wait for layout/paint
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          window.scrollTo(0, restore.scrollY);
+          console.log("[PLANNER] scroll restored to", restore.scrollY);
+
+          sessionStorage.removeItem("plannerState");
+        });
+      });
+    }
+  } catch (err) {
+    console.error("[PLANNER] init failed:", err);
+  } finally {
+    // ✅ ALWAYS unhide page, even if something crashed
     document.documentElement.classList.remove("planner-restore");
   }
 });
@@ -161,6 +163,7 @@ function bindEvents() {
     // Persist UI choice
     state.ui ||= {};
     state.ui.selectedCourse = courseId;
+    state.ui.linkLibrary ||= []; 
 
     // Ensure course exists
     ensureCourse(courseId);
@@ -178,8 +181,121 @@ function bindEvents() {
     renderAll();
   });
 
+      // Export / Import (single handler — no duplicates)
+    document.addEventListener("click", (e) => {
+      const exportBtn = e.target.closest(".export-backup-btn");
+      if (exportBtn) {
+        const blob = new Blob([JSON.stringify(state, null, 2)], { type: "application/json" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = `planner-backup-${Date.now()}.json`;
+        a.click();
+        URL.revokeObjectURL(url);
+        return;
+      }
+
+      const importBtn = e.target.closest(".import-backup-btn");
+      if (importBtn) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        const fileInput = document.getElementById("planner-backup-file");
+        if (!fileInput) return;
+
+        fileInput.value = ""; // allow picking same file again
+
+        // Delay one tick to avoid “double open” / weird focus issues
+        setTimeout(() => fileInput.click(), 0);
+        return;
+      }
+    });
+
+
+    document.addEventListener("click", e => {
+      const menu = document.querySelector(".course-pill-menu");
+      if (!menu) return;
+
+      const clickedExportImport = e.target.closest(".pill-dropdown button");
+      if (clickedExportImport) return; // don’t toggle menu when pressing Export/Import
+
+      if (menu.contains(e.target)) {
+        menu.classList.toggle("open");
+      } else {
+        menu.classList.remove("open");
+      }
+    });
+
   /* ---------- CLICK ---------- */
   document.addEventListener("click", e => {
+
+ const addRes = e.target.closest(".add-resource-btn");
+  if (addRes) {
+    const clusterId = addRes.dataset.clusterId;
+    const dayId = addRes.dataset.dayId;
+    if (!clusterId || !dayId) return;
+
+    openAddResourceModal({ clusterId, dayId });
+    return;
+  }
+
+  // Modal close (X or Cancel)
+  const modalAction = e.target.closest("[data-modal-action]");
+  if (modalAction) {
+    const action = modalAction.dataset.modalAction;
+
+    if (action === "close" || action === "cancel") {
+      closeAddResourceModal();
+      return;
+    }
+
+    if (action === "save") {
+      const target = document.getElementById("add-resource-target");
+      const clusterId = target?.dataset.clusterId;
+      const dayId = target?.dataset.dayId;
+      if (!clusterId || !dayId) return;
+
+      const day = getDay(selectedCourse, clusterId, dayId);
+      if (!day) return;
+
+      const type = document.getElementById("ar-type")?.value || "Other";
+      const title = (document.getElementById("ar-title")?.value || "").trim();
+      const urlRaw = document.getElementById("ar-url")?.value || "";
+      const url = normalizeUrl(urlRaw);
+
+      if (!url) {
+        alert("Please enter a valid URL (starting with https://).");
+        return;
+      }
+
+      const expectations = Array.isArray(modalSelectedExpectations)
+        ? modalSelectedExpectations.slice(0, 10)
+        : [];
+
+      day.resources ||= [];
+      day.resources.push({
+        _rid: makeId("r"),
+        kind: "custom",
+        type,
+        title: title || url,
+        link: url,
+        expectations
+      });
+
+      saveState();
+      closeAddResourceModal();
+      renderAll();
+      return;
+    }
+  }
+
+  // Clicking the backdrop closes modal
+  if (e.target && e.target.id === "add-resource-backdrop") {
+    closeAddResourceModal();
+    return;
+  }
+
+
       // Export one cluster to PDF
     // Export ONE cluster (print existing planner UI)
     const expOne = e.target.closest(".export-cluster-pdf-btn");
@@ -287,6 +403,26 @@ function bindEvents() {
       day.resources = (day.resources || []).filter(r => r._rid !== rid);
       saveState();
       renderAll();
+      return;
+    }
+
+    // Remove expectation chip
+    const x = e.target.closest(".chip-x");
+    if (x) {
+      const chip = x.closest(".ar-exp-chip");
+      const code = (chip?.dataset?.expChip || "").trim();
+
+      const idx = modalSelectedExpectations.findIndex(v => String(v).trim() === code);
+      if (idx !== -1) modalSelectedExpectations.splice(idx, 1);
+
+      renderSelectedExpectationsChips(modalSelectedExpectations);
+
+      // reset dropdown option (if you disabled it)
+      const sel = document.getElementById("ar-exp");
+      if (sel) {
+        const opt = Array.from(sel.options).find(o => o.value === code);
+        if (opt) opt.disabled = false;
+      }
       return;
     }
   });
@@ -417,14 +553,6 @@ function bindEvents() {
     }
   });
 
-
-  /* =======================================================
-     DROP — finalize day reorder using placeholder position
-     ======================================================= */
-  /* =======================================================
-   DROP — finalize day reorder using placeholder DOM position
-   (FIXED: no off-by-one at top/bottom)
-   ======================================================= */
 /* =======================================================
    DROP — finalize day reorder using placeholder DOM position
    (FIXED: up + down both work)
@@ -516,64 +644,113 @@ document.addEventListener("drop", e => {
   });
 
   // Resource drop
-  document.addEventListener("drop", e => {
-    // If this is a day reorder drop, ignore resource logic
-    if (e.dataTransfer?.types?.includes(DAY_DND_TYPE)) return;
+// Resource drop
+document.addEventListener("drop", (e) => {
+  // If this is a day reorder drop, ignore resource logic
+  if (e.dataTransfer?.types?.includes(DAY_DND_TYPE)) return;
 
-    const dayRow = e.target.closest(".day-row[data-day-id]");
-    if (!dayRow) return;
+  const dayRow = e.target.closest(".day-row[data-day-id]");
+  if (!dayRow) return;
 
-    e.preventDefault();
-    dayRow.classList.remove("drag-hover");
+  e.preventDefault();
+  dayRow.classList.remove("drag-hover");
 
-    const raw = e.dataTransfer.getData("application/json");
-    if (!raw) return;
+  const raw = e.dataTransfer.getData("application/json");
+  if (!raw) return;
 
-    const payload = safeJsonParse(raw);
-    if (!payload) return;
+  const payload = safeJsonParse(raw);
+  if (!payload) return;
 
-    const contextId = payload.contextId || payload.resourceId;
-    const kind = payload.kind;
-    const index = payload.index ?? undefined;
+  const kind = payload.kind;
 
-    if (!contextId || !kind) return;
+  const clusterEl = dayRow.closest(".planner-cluster");
+  if (!clusterEl) return;
 
-    const clusterEl = dayRow.closest(".planner-cluster");
-    if (!clusterEl) return;
+  const clusterId = clusterEl.dataset.clusterId;
+  const dayId = dayRow.dataset.dayId;
 
-    const clusterId = clusterEl.dataset.clusterId;
-    const dayId = dayRow.dataset.dayId;
+  const day = getDay(selectedCourse, clusterId, dayId);
+  if (!day) return;
 
-    const day = getDay(selectedCourse, clusterId, dayId);
-    if (!day) return;
+  day.resources ||= [];
 
-    day.resources ||= [];
+  /* ─────────────────────────────
+     CASE 1: CUSTOM LINK DROP
+     (no contextId required)
+  ───────────────────────────── */
+  if (kind === "custom") {
+    const c = payload.custom || {};
+    const link = (c.link || "").trim();
+    if (!link) return;
 
+    const title = (c.title || link).trim();
+    const type = (c.type || "Link").trim();
+
+    // Prevent duplicates (same link + title)
     const exists = day.resources.some(r =>
-      r.contextId === contextId &&
-      r.kind === kind &&
-      (r.index ?? undefined) === (index ?? undefined)
+      r.kind === "custom" &&
+      (r.link || "") === link &&
+      (r.title || "") === title
     );
     if (exists) return;
 
     day.resources.push({
-      contextId,
-      kind,
-      index,
-      _rid: crypto.randomUUID()
+      _rid: crypto.randomUUID(),
+      kind: "custom",
+      type,
+      title,
+      link,
+      expectations: Array.isArray(c.expectations) ? c.expectations : []
     });
 
     // MOVE: planner -> planner (remove from old)
-    if (payload.source === "planner" && payload.from) {
+    if (payload.source === "planner" && payload.from && payload.rid) {
       const fromDay = getDay(selectedCourse, payload.from.clusterId, payload.from.dayId);
       if (fromDay) {
-        fromDay.resources = fromDay.resources.filter(r => r._rid !== payload.rid);
+        fromDay.resources = (fromDay.resources || []).filter(r => r._rid !== payload.rid);
       }
     }
 
     saveState();
     renderAll();
+    return;
+  }
+
+  /* ─────────────────────────────
+     CASE 2: YAML / BANKED RESOURCES
+     (needs contextId + kind)
+  ───────────────────────────── */
+  const contextId = payload.contextId || payload.resourceId;
+  const index = payload.index ?? undefined;
+
+  if (!contextId || !kind) return;
+
+  const exists = day.resources.some(r =>
+    r.contextId === contextId &&
+    r.kind === kind &&
+    (r.index ?? undefined) === (index ?? undefined)
+  );
+  if (exists) return;
+
+  day.resources.push({
+    contextId,
+    kind,
+    index,
+    _rid: crypto.randomUUID()
   });
+
+  // MOVE: planner -> planner (remove from old)
+  if (payload.source === "planner" && payload.from && payload.rid) {
+    const fromDay = getDay(selectedCourse, payload.from.clusterId, payload.from.dayId);
+    if (fromDay) {
+      fromDay.resources = (fromDay.resources || []).filter(r => r._rid !== payload.rid);
+    }
+  }
+
+  saveState();
+  renderAll();
+});
+
 
   // Resource drag hover (only when dragging JSON resources)
 document.addEventListener("dragover", e => {
@@ -590,6 +767,73 @@ document.addEventListener("dragover", e => {
   row.classList.add("drag-hover");
 });
 
+document.addEventListener("change", e => {
+  if (e.target.id !== "ar-exp") return;
+
+  const sel = e.target;
+  const code = sel.value;
+
+  if (!code) {
+    sel.dataset.empty = "true";
+    return;
+  }
+
+  sel.dataset.empty = "false";
+
+  // max 10
+  if (modalSelectedExpectations.length >= 10) {
+    alert("Max 10 expectations.");
+    sel.value = "";
+    sel.dataset.empty = "true";
+    return;
+  }
+
+  if (!modalSelectedExpectations.includes(code)) {
+    modalSelectedExpectations.push(code);
+    renderSelectedExpectationsChips(modalSelectedExpectations);
+
+    const opt = Array.from(sel.options).find(o => o.value === code);
+    if (opt) opt.disabled = true;
+  }
+
+  sel.value = "";
+  sel.dataset.empty = "true";
+});
+
+document.getElementById("planner-backup-file")
+  .addEventListener("change", function(e) {
+
+    const file = e.target.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+
+    reader.onload = function(event) {
+      try {
+        const imported = JSON.parse(event.target.result);
+
+        if (!imported.courses) {
+          alert("Invalid planner file.");
+          return;
+        }
+
+        if (!confirm("Import will replace your planner. Continue?")) {
+          return;
+        }
+
+        state = imported;
+        saveState();
+        renderAll();
+
+      } catch {
+        alert("Invalid file format.");
+      }
+    };
+
+    reader.readAsText(file);
+    e.target.value = "";
+  });
+
 
 }
 
@@ -602,14 +846,23 @@ function renderAll() {
   const course = state.courses[selectedCourse];
 
   clustersWrap.innerHTML = `
-    <div class="planner-toolbar">
-      <button class="export-cluster-pdf-btn">Export as PDF</button>
+    <div class="planner-toolbar no-print">
+      <div class="toolbar-left">
+        <!-- leave empty for now -->
+      </div>
     </div>
 
     ${course.clusters.map(renderCluster).join("")}
-    <button class="add-cluster-btn">+ Add Cluster</button>
+
+    <div class="planner-course-actions no-print">
+      <button class="add-cluster-btn">+ Add Cluster</button>
+      <button class="add-cluster-btn">Export Course as PDF</button>
+    </div>
+
+    ${renderAddResourceModal()}
   `;
 }
+
 
 
 function renderCluster(cluster) {
@@ -634,20 +887,22 @@ function renderCluster(cluster) {
 
       ${cluster.days.map(d => renderDay(cluster.id, d)).join("")}
 
-    <div class="cluster-footer">
-      <button class="add-day-btn">+ Add Day</button>
+      <div class="cluster-footer">
+        <div class="cluster-footer-left">
+          <button class="add-day-btn">+ Add Day</button>
 
-      <button 
-        class="export-cluster-pdf-btn"
-        data-cluster-id="${cluster.id}"
-      >
-        Export PDF
-      </button>
+          <button 
+            class="export-cluster-pdf-btn"
+            data-cluster-id="${cluster.id}"
+          >
+            Export PDF
+          </button>
+        </div>
 
-      <button class="delete-cluster-btn">
-        Delete Cluster
-      </button>
-    </div>
+        <button class="delete-cluster-btn">
+          Delete Cluster
+        </button>
+      </div>
 
 
     </div>
@@ -677,7 +932,8 @@ function renderDay(clusterId, day) {
 
       <div class="resource-cell">
         ${(day.resources || []).map(r => renderMini(r, clusterId, day)).join("")}
-        <button class="add-resource-btn">+ Add Resource</button>
+        <button class="add-resource-btn" data-cluster-id="${escapeAttr(clusterId)}" data-day-id="${escapeAttr(day.id)}">+ Add Resource</button>
+
       </div>
 
       <input class="day-notes"
@@ -694,6 +950,97 @@ function ensureDayPlaceholder() {
   dayPlaceholder = document.createElement("div");
   dayPlaceholder.className = "day-drop-placeholder";
 }
+
+function renderAddResourceModal() {
+  return `
+    <div class="modal-backdrop" id="add-resource-backdrop" aria-hidden="true">
+      <div class="modal" role="dialog" aria-modal="true" aria-labelledby="add-resource-title">
+        <div class="modal-header">
+          <div class="modal-title" id="add-resource-title">Add Resource</div>
+          <button class="modal-x" data-modal-action="close" aria-label="Close">✕</button>
+        </div>
+
+        <div class="modal-body">
+          <div class="modal-grid">
+            <label class="modal-field">
+              <span>Type</span>
+              <select id="ar-type" required>
+                <option value="" disabled selected hidden>Select type…</option>
+                ${getCustomResourceTypeOptions().map(t =>
+                  `<option value="${escapeAttr(t)}">${escapeHtml(t)}</option>`
+                ).join("")}
+              </select>
+
+            </label>
+
+            <label class="modal-field">
+              <span>Title</span>
+              <input id="ar-title" type="text" placeholder="e.g., Unit 2 Practice Worksheet" />
+            </label>
+
+            <label class="modal-field modal-span-2">
+              <span>URL</span>
+              <input id="ar-url" type="text" placeholder="https://..." />
+            </label>
+
+            <label class="modal-field modal-span-2">
+              <span>Expectations</span>
+
+              <div class="ar-exp-wrap">
+                <div id="ar-exp-selected" class="ar-exp-selected"></div>
+
+                <select id="ar-exp">
+                  <option value="" disabled selected hidden>Add an expectation…<option>
+                  ${getExpectationsForSelectedCourse().map(code =>
+                    `<option value="${escapeAttr(code)}">${escapeHtml(code)}</option>`
+                  ).join("")}
+                </select>
+
+                <div class="modal-help">Click an expectation to add it. Click a tag to remove.</div>
+              </div>
+            </label>
+
+          </div>
+        </div>
+
+        <div class="modal-actions">
+          <button class="modal-btn" data-modal-action="cancel">Cancel</button>
+          <button class="modal-btn modal-primary" data-modal-action="save">Save</button>
+        </div>
+
+        <div id="add-resource-target" data-cluster-id="" data-day-id="" style="display:none;"></div>
+      </div>
+    </div>
+  `;
+}
+function renderSelectedExpectationsChips(list) {
+  const wrap = document.getElementById("ar-exp-selected");
+  if (!wrap) return;
+
+  wrap.innerHTML = (list || []).map(code => `
+    <button type="button" class="ar-exp-chip" data-exp-chip="${escapeAttr(code)}">
+      ${escapeHtml(code)} <span class="chip-x">×</span>
+    </button>
+  `).join("");
+}
+
+function getCustomResourceTypeOptions() {
+  return ["Worksheet", "Slides", "Video", "Activity", "Assessment", "Other"];
+}
+
+function getExpectationsForSelectedCourse() {
+  // Pull expectations codes from your existing RESOURCES map
+  // This keeps it simple + avoids building a new expectations list.
+  const set = new Set();
+
+  Object.values(RESOURCES || {}).forEach(ctx => {
+    (ctx.expectations || []).forEach(e => set.add(e));
+  });
+
+  // sorted for dropdown
+  return [...set].sort((a, b) => a.localeCompare(b));
+}
+
 
 /* =========================================================
    DATE HELPERS
@@ -740,6 +1087,58 @@ function resolveResource(ref) {
 }
 
 function renderMini(ref, clusterId, day) {
+  // ✅ CUSTOM LINK CARD
+  if (ref?.kind === "custom") {
+    const dragJson = escapeAttr(JSON.stringify({
+      source: "planner",
+      kind: "custom",
+      rid: ref._rid,
+      from: { clusterId, dayId: day.id },
+      custom: {
+        title: ref.title || "",
+        link: ref.link || "",
+        type: ref.type || "Link",
+        expectations: Array.isArray(ref.expectations) ? ref.expectations : []
+      }
+    }));
+
+    const exps = Array.isArray(ref.expectations) ? ref.expectations : [];
+
+    return `
+      <div class="planner-resource-card"
+           draggable="true"
+           data-drag-resource="${dragJson}">
+
+        <div class="planner-resource-header">
+          <span class="planner-resource-kind">${escapeHtml(ref.type || "Link")}</span>
+
+          <button
+            class="mini-remove"
+            data-cluster-id="${escapeAttr(clusterId)}"
+            data-day-id="${escapeAttr(day.id)}"
+            data-rid="${escapeAttr(ref._rid)}"
+            aria-label="Remove resource">×</button>
+        </div>
+
+        <div class="planner-resource-title">
+          <a href="${escapeAttr(ref.link)}" target="_blank" rel="noopener">
+            ${escapeHtml(ref.title || ref.link)}
+          </a>
+        </div>
+
+        <div class="planner-resource-tags">
+          ${exps.map(e => {
+            const strand = String(e).charAt(0).toLowerCase();
+            return `<span class="exp-tag strand-${strand}">${escapeHtml(e)}</span>`;
+          }).join("")}
+        </div>
+
+      </div>
+    `;
+  }
+
+
+  // 2) Existing YAML-backed resources
   const ctx = RESOURCES[ref.contextId];
   const res = resolveResource(ref);
   if (!ctx || !res) return "";
@@ -795,7 +1194,11 @@ function renderExpectations(day) {
   const set = new Set();
 
   (day.resources || []).forEach(r => {
+    // YAML resources
     RESOURCES?.[r.contextId]?.expectations?.forEach(e => set.add(e));
+
+    // Custom resources
+    (r.expectations || []).forEach(e => set.add(e));
   });
 
   if (!set.size) return "—";
@@ -805,6 +1208,7 @@ function renderExpectations(day) {
     return `<span class="exp-tag strand-${strand}">${escapeHtml(e)}</span>`;
   }).join("");
 }
+
 
 /* =========================================================
    SAVE PAGE AND SCROLL
@@ -878,108 +1282,6 @@ function toAbsoluteLink(href) {
   }
 }
 
-function buildStudentHandoutHtml({ courseId, clusters }) {
-  const esc = escapeHtml;
-  const today = new Date().toLocaleString();
-
-  const clustersHtml = (clusters || []).map((c, i) => {
-    const title = esc(c.title || `Cluster ${i + 1}`);
-
-    const rows = (c.days || []).map(d => {
-      const resources = (d.resources || []).map(ref => {
-        const res = resolveResource(ref);
-        if (!res) return "";
-
-        const link = toAbsoluteLink(res.link);
-        const text = esc(res.title || "Resource");
-
-        // Real anchor tags = clickable in PDF
-        return `<li><a href="${esc(link)}" target="_blank" rel="noopener">${text}</a></li>`;
-      }).filter(Boolean).join("");
-
-      return `
-        <tr>
-          <td>${esc(d.date || "")}</td>
-          <td>${esc(d.topic || "")}</td>
-          <td>${esc(d.notes || "")}</td>
-          <td><ul>${resources || ""}</ul></td>
-        </tr>
-      `;
-    }).join("");
-
-    return `
-      <section class="cluster">
-        <h2>${title}</h2>
-        <table>
-          <thead>
-            <tr>
-              <th style="width:110px;">Date</th>
-              <th style="width:220px;">Topic</th>
-              <th>Notes</th>
-              <th style="width:280px;">Resources</th>
-            </tr>
-          </thead>
-          <tbody>${rows}</tbody>
-        </table>
-      </section>
-    `;
-  }).join("");
-
-  return `
-<!doctype html>
-<html>
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>${esc(courseId)} Student Handout</title>
-  <style>
-    body { font-family: system-ui, Arial, sans-serif; padding: 24px; line-height: 1.35; }
-    h1 { font-size: 20px; margin: 0 0 8px; }
-    .meta { opacity: 0.8; margin: 0 0 18px; font-size: 12px; }
-    .cluster { margin: 22px 0 28px; page-break-inside: avoid; }
-    h2 { font-size: 16px; margin: 0 0 10px; }
-    table { width: 100%; border-collapse: collapse; }
-    th, td { border: 1px solid #ddd; padding: 8px; vertical-align: top; }
-    th { text-align: left; }
-    ul { margin: 0; padding-left: 18px; }
-    a { word-break: break-word; }
-
-    @media print {
-      body { padding: 0; }
-      a { text-decoration: none; }
-      .no-print { display: none !important; }
-    }
-  </style>
-</head>
-<body>
-  <div class="no-print" style="margin-bottom:12px;">
-    <button onclick="window.print()">Print / Save as PDF</button>
-  </div>
-
-  <h1>${esc(courseId)} — Student Plan</h1>
-  <div class="meta">Exported: ${esc(today)}</div>
-
-  ${clustersHtml || "<p>No clusters found.</p>"}
-</body>
-</html>
-  `.trim();
-}
-
-function openHandoutAndPrint(html) {
-  const w = window.open("", "_blank");
-  if (!w) {
-    alert("Popup blocked. Please allow popups for this site to export PDFs.");
-    return;
-  }
-  w.document.open();
-  w.document.write(html);
-  w.document.close();
-  w.focus();
-
-  // Give the browser a tick to lay out before printing
-  setTimeout(() => w.print(), 250);
-}
-
 function getAllClusterIdsOnPage() {
   return [...document.querySelectorAll(".planner-cluster[data-cluster-id]")]
     .map(el => el.dataset.clusterId)
@@ -1025,4 +1327,113 @@ function printClusters(targetClusterIds) {
       if (document.body.classList.contains("printing")) restore();
     }, 1500);
   }, 50);
+}
+
+function ensureLinkLibrary() {
+  state.ui ||= {};
+  state.ui.linkLibrary ||= [];
+  return state.ui.linkLibrary;
+}
+
+function makeId(prefix="lk") {
+  return `${prefix}_${Math.random().toString(36).slice(2, 10)}`;
+}
+
+function normalizeUrl(raw) {
+  if (!raw) return "";
+  const s = String(raw).trim();
+
+  // reject obvious local paths
+  if (/^[a-zA-Z]:\\/.test(s) || s.startsWith("file://")) return "";
+
+  // add https:// if user pastes "www...." or "drive.google.com/..."
+  if (!/^[a-zA-Z][a-zA-Z0-9+.-]*:/.test(s)) {
+    return "https://" + s.replace(/^\/+/, "");
+  }
+  return s;
+}
+
+function addLinkToLibrary({ title, url }) {
+  const lib = ensureLinkLibrary();
+  const cleanUrl = normalizeUrl(url);
+  if (!cleanUrl) return null;
+
+  // de-dupe by url
+  const existing = lib.find(x => x.url === cleanUrl);
+  if (existing) {
+    existing.title = title?.trim() || existing.title;
+    existing.lastUsedAt = Date.now();
+    return existing;
+  }
+
+  const item = {
+    id: makeId("lk"),
+    title: (title || "").trim() || cleanUrl,
+    url: cleanUrl,
+    tags: [],
+    createdAt: Date.now(),
+    lastUsedAt: Date.now(),
+  };
+
+  lib.unshift(item);
+  saveState();
+  return item;
+}
+
+function touchLibraryItem(id) {
+  const lib = ensureLinkLibrary();
+  const item = lib.find(x => x.id === id);
+  if (!item) return null;
+  item.lastUsedAt = Date.now();
+  saveState();
+  return item;
+}
+
+function searchLibrary(q) {
+  const lib = ensureLinkLibrary();
+  const s = (q || "").trim().toLowerCase();
+  if (!s) return lib.slice(0, 25);
+
+  return lib
+    .filter(x =>
+      (x.title || "").toLowerCase().includes(s) ||
+      (x.url || "").toLowerCase().includes(s)
+    )
+    .slice(0, 50);
+}
+
+function openAddResourceModal({ clusterId, dayId }) {
+  const backdrop = document.getElementById("add-resource-backdrop");
+  const target = document.getElementById("add-resource-target");
+  if (!backdrop || !target) return;
+
+  target.dataset.clusterId = clusterId || "";
+  target.dataset.dayId = dayId || "";
+
+  // reset fields
+  document.getElementById("ar-type").value = "";
+  document.getElementById("ar-title").value = "";
+  document.getElementById("ar-url").value = "";
+  modalSelectedExpectations = [];
+  renderSelectedExpectationsChips(modalSelectedExpectations);
+
+  const expSel = document.getElementById("ar-exp");
+  if (expSel) {
+    expSel.value = "";
+    // re-enable all options
+    Array.from(expSel.options).forEach(o => o.disabled = false);
+  }
+
+
+  backdrop.classList.add("open");
+  backdrop.setAttribute("aria-hidden", "false");
+
+  setTimeout(() => document.getElementById("ar-title")?.focus(), 0);
+}
+
+function closeAddResourceModal() {
+  const backdrop = document.getElementById("add-resource-backdrop");
+  if (!backdrop) return;
+  backdrop.classList.remove("open");
+  backdrop.setAttribute("aria-hidden", "true");
 }

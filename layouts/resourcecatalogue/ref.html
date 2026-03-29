@@ -1,0 +1,282 @@
+{{ define "main" }}
+
+<script>
+  (function () {
+    // Get the slug from the URL
+    const parts = location.pathname.split("/").filter(Boolean);
+    const slug = parts[parts.length - 1];
+
+    if (slug && slug !== "resourcecatalogue") {
+      sessionStorage.setItem("lastCatalogueView", slug);
+    }
+  })();
+</script>
+
+
+{{ $css := resources.Get "css/custom/resourcecatalogue.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}">
+
+<div class="grade-course">
+<a href="/math/resourcecatalogue" class="catalogue-back-btn">
+  ← All Courses
+</a>
+
+
+<h1>Grade 10 Mathematics (MPM2D) – Academic</h1>
+
+<div class="view-toggle">
+  <button class="toggle-btn active" data-view="strand">By Strand</button>
+  <button class="toggle-btn" data-view="unit">By Unit</button>
+</div>
+
+
+<div class="view-container strand-view active-view">
+  <!-- ================= STRAND A ================= -->
+  <section class="strand-card" id="strand-a">
+    <div class="strand-nav">
+      <a href="#strand-b" class="nav-arrow">↓</a>
+    </div>
+
+    <h2 class="strand-title">Strand A: Quadratic Relations (MPM2D)</h2>
+
+    <div class="overall-expectation"><strong>solve problems involving proportional reasoning</strong>
+      A1.1: collect data that can be represented as a quadratic relation (from experiments or secondary sources), graph the data, and draw a curve of best fit (with or without technology);
+      A1.2: determine, through investigation, that a quadratic relation y = ax<sup>2</sup> + bx + c (a ≠ 0) can be represented as a parabola and that a table of values yields a constant second difference;
+      A1.3: identify key features of a parabola (axis of symmetry, vertex, y-intercept, zeros, maximum/minimum) and use appropriate terminology;
+      A1.4: compare, through investigation, features of y = x<sup>2</sup> and y = 2<sup>x</sup>, including the meaning of a negative exponent and of zero as an exponent.
+    </div>
+
+    <div class="overall-expectation">
+      overall expectation: <strong>Relating the Graph of y = x<sup>2</sup> and Its Transformations</strong> relate transformations of the graph of y = x<sup>2</sup> to the algebraic representation y = a(x − h)<sup>2</sup> + k; and specific expectations:
+      A2.1: identify, through investigation, the effect of transformations (translations, reflections in the x-axis, vertical stretches/compressions) on y = x<sup>2</sup> by considering parameters a, h, and k;
+      A2.2: explain the roles of a, h, and k in y = a(x − h)<sup>2</sup> + k, and identify the vertex and the equation of the axis of symmetry;
+      A2.3: sketch, by hand, the graph of y = a(x − h)<sup>2</sup> + k by applying transformations to y = x<sup>2</sup> (and verify using technology, where appropriate);
+      A2.4: determine the equation y = a(x − h)<sup>2</sup> + k for a given parabola.
+    </div>
+
+    <div class="overall-expectation">
+      overall expectation: <strong>Solving Quadratic Equations</strong> solve quadratic equations and interpret solutions with respect to the corresponding relations; and specific expectations:
+      A3.1: expand and simplify second-degree polynomial expressions involving one variable, using a variety of tools and strategies;
+      A3.2: factor polynomial expressions (common factors, trinomials, differences of squares), using a variety of tools and strategies;
+      A3.3: determine, through investigation, the connection between factors of a quadratic expression and the x-intercepts (zeros) of the corresponding graph (y = a(x − r)(x − s));
+      A3.4: interpret real and non-real roots of quadratic equations (using graphing technology), and relate roots to x-intercepts;
+      A3.5: complete the square to write y = ax<sup>2</sup> + bx + c in the form y = a(x − h)<sup>2</sup> + k in situations involving no fractions;
+      A3.6: sketch or graph a quadratic relation given in the form y = ax<sup>2</sup> + bx + c, using a variety of methods (e.g., intercepts and symmetry; completing the square; transformations);
+      A3.7: explore the algebraic development of the quadratic formula (student reproduction of the general derivation not required);
+      A3.8: solve quadratic equations with real roots using a variety of methods (factoring, quadratic formula, graphing).
+    </div>
+
+    <div class="overall-expectation">
+      overall expectation: <strong>Solving Problems Involving Quadratic Relations</strong> solve problems involving quadratic relations; and specific expectations:
+      A4.1: determine the zeros and the maximum or minimum value of a quadratic relation from its graph or its defining equation;
+      A4.2: solve problems arising from realistic situations represented by a quadratic relation (graph or equation), with and without technology.
+    </div>
+  </section>
+
+  <!-- ================= STRAND B ================= -->
+  <section class="strand-card" id="strand-b">
+    <div class="strand-nav">
+      <a href="#strand-a" class="nav-arrow">↑</a>
+      <a href="#strand-c" class="nav-arrow">↓</a>
+    </div>
+
+    <h2 class="strand-title">Strand B: Analytic Geometry (MPM2D)</h2>
+
+    <div class="overall-expectation">
+      overall expectation: <strong>Using Linear Systems to Solve Problems</strong> model and solve problems involving the intersection of two straight lines; and specific expectations:
+      B1.1: solve systems of two linear equations involving two variables using substitution or elimination (and verify algebraically and graphically);
+      B1.2: solve problems from realistic situations represented by a system of two linear equations, choosing an appropriate algebraic or graphical method.
+    </div>
+
+    <div class="overall-expectation">
+      overall expectation: <strong>Solving Problems Involving Properties of Line Segments</strong> solve problems using analytic geometry involving properties of lines and line segments; and specific expectations:
+      B2.1: develop and use the midpoint formula to solve problems;
+      B2.2: develop and use the length (distance) formula to solve problems;
+      B2.3: develop the equation of a circle with centre (0, 0) and radius r using the distance formula;
+      B2.4: determine the radius given x<sup>2</sup> + y<sup>2</sup> = r<sup>2</sup>, or write the equation given r, and sketch the circle;
+      B2.5: solve problems involving slope, length, and midpoint of a line segment (e.g., right bisector; distance from a point to a line), and verify using dynamic geometry software, where appropriate.
+    </div>
+
+    <div class="overall-expectation">
+      overall expectation: <strong>Using Analytic Geometry to Verify Geometric Properties</strong> verify geometric properties of triangles and quadrilaterals using analytic geometry; and specific expectations:
+      B3.1: investigate (e.g., using dynamic geometry software or paper folding) characteristics and properties of geometric figures (e.g., medians in a triangle; similar figures on the sides of a right triangle);
+      B3.2: verify, using algebraic techniques and analytic geometry, characteristics of geometric figures (e.g., perpendicular lines; equilateral triangle given coordinates);
+      B3.3: plan and implement a multi-step strategy using analytic geometry and algebra to verify a geometric property (e.g., midsegment theorem; rectangle diagonals bisect).
+    </div>
+  </section>
+
+  <!-- ================= STRAND C ================= -->
+  <section class="strand-card" id="strand-c">
+    <div class="strand-nav">
+      <a href="#strand-b" class="nav-arrow">↑</a>
+    </div>
+
+    <h2 class="strand-title">Strand C: Trigonometry (MPM2D)</h2>
+
+    <div class="overall-expectation">
+      overall expectation: <strong>Investigating Similarity and Solving Problems Involving Similar Triangles</strong> use ratio and proportion to investigate similar triangles and solve problems related to similarity; and specific expectations:
+      C1.1: verify, through investigation, properties of similar triangles (corresponding angles equal; corresponding sides proportional);
+      C1.2: describe and compare similarity and congruence;
+      C1.3: solve problems involving similar triangles in realistic situations (e.g., shadows, reflections, scale models, surveying).
+    </div>
+
+    <div class="overall-expectation">
+      overall expectation: <strong>Solving Problems Involving the Trigonometry of Right Triangles</strong> solve problems involving right triangles using primary trigonometric ratios and the Pythagorean theorem; and specific expectations:
+      C2.1: determine, through investigation, the relationship between ratios of sides in similar right triangles, and define sine, cosine, and tangent ratios;
+      C2.2: determine measures of sides and angles in right triangles using primary trig ratios and the Pythagorean theorem;
+      C2.3: solve real-life right-triangle problems (e.g., surveying, navigation, height of an inaccessible object), using primary trig ratios and the Pythagorean theorem.
+    </div>
+
+    <div class="overall-expectation">
+      overall expectation: <strong>Solving Problems Involving the Trigonometry of Acute Triangles</strong> solve problems involving acute triangles using the sine law and the cosine law; and specific expectations:
+      C3.1: explore the development of the sine law within acute triangles (student reproduction of the derivation not required);
+      C3.2: explore the development of the cosine law within acute triangles and identify its relationship to the Pythagorean theorem and the cosine of an angle in a right triangle;
+      C3.3: solve problems involving acute triangles using the sine law and the cosine law.
+    </div>
+  </section>
+</div>
+
+<div class="view-container unit-view">
+
+  <section class="unit-card">
+    <h2>Unit 1: Quadratic Relations</h2>
+    <div class="expectation-grid">
+      <div class="expectation">A1.1</div><div class="expectation">A1.2</div><div class="expectation">A1.3</div><div class="expectation">A1.4</div>
+      <div class="expectation">A2.1</div><div class="expectation">A2.2</div><div class="expectation">A2.3</div><div class="expectation">A2.4</div>
+      <div class="expectation">A3.1</div><div class="expectation">A3.2</div><div class="expectation">A3.3</div><div class="expectation">A3.4</div>
+      <div class="expectation">A3.5</div><div class="expectation">A3.6</div><div class="expectation">A3.7</div><div class="expectation">A3.8</div>
+      <div class="expectation">A4.1</div><div class="expectation">A4.2</div>
+    </div>
+  </section>
+
+  <section class="unit-card">
+    <h2>Unit 2: Analytic Geometry</h2>
+    <div class="expectation-grid">
+      <div class="expectation">B1.1</div><div class="expectation">B1.2</div>
+      <div class="expectation">B2.1</div><div class="expectation">B2.2</div><div class="expectation">B2.3</div><div class="expectation">B2.4</div><div class="expectation">B2.5</div>
+      <div class="expectation">B3.1</div><div class="expectation">B3.2</div><div class="expectation">B3.3</div>
+    </div>
+  </section>
+
+  <section class="unit-card">
+    <h2>Unit 3: Trigonometry</h2>
+    <div class="expectation-grid">
+      <div class="expectation">C1.1</div><div class="expectation">C1.2</div><div class="expectation">C1.3</div>
+      <div class="expectation">C2.1</div><div class="expectation">C2.2</div><div class="expectation">C2.3</div>
+      <div class="expectation">C3.1</div><div class="expectation">C3.2</div><div class="expectation">C3.3</div>
+    </div>
+  </section>
+
+</div>
+</div>
+<script>
+  const toggleButtons = document.querySelectorAll('.toggle-btn');
+  const views = {
+    strand: document.querySelector('.strand-view'),
+    unit: document.querySelector('.unit-view')
+  };
+
+  toggleButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      toggleButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      Object.values(views).forEach(v => v.classList.remove('active-view'));
+      views[btn.dataset.view].classList.add('active-view');
+    });
+  });
+</script>
+
+<script>
+ document.querySelectorAll('.expectation').forEach(exp => {
+  exp.addEventListener('click', () => {
+    const code = exp.dataset.exp;
+    if (!code) return;
+
+    const strand = exp.closest('.strand-card');
+    if (!strand) return;
+
+    // Determine B1 / B2 / C1 etc.
+    const group = code.match(/^[A-Z]+\d+/)?.[0];
+    if (!group) return;
+
+    const panelWrapper = strand.querySelector(`#resources-${group.toLowerCase()}`);
+    if (!panelWrapper) return;
+
+    const panel = panelWrapper.querySelector('.resource-track');
+    if (!panel) return;
+
+    const isActive = exp.classList.contains('active');
+
+    // clear all expectations + panels in this strand
+    strand.querySelectorAll('.expectation').forEach(e => e.classList.remove('active'));
+    strand.querySelectorAll('.resource-track').forEach(p => p.innerHTML = '');
+    strand.querySelectorAll('.resource-panel').forEach(p => p.style.display = 'none');
+
+    if (isActive) return;
+
+    exp.classList.add('active');
+
+    document
+      .querySelectorAll(`.resource-set[data-exp="${code}"]`)
+      .forEach(res => {
+        panel.appendChild(res.firstElementChild.cloneNode(true));
+      });
+
+    panelWrapper.style.display = 'block';
+  });
+});
+</script>
+
+<script>
+function saveCatalogueState() {
+  console.log("[CATALOGUE] saving state before leave");
+
+  sessionStorage.setItem("catalogueScrollY", window.scrollY);
+}
+
+// Save on navigation away
+document.addEventListener("click", e => {
+  const link = e.target.closest("a");
+  if (!link) return;
+
+  const href = link.getAttribute("href") || "";
+
+  // only if leaving catalogue
+  if (!href.includes("resourcecatalogue")) {
+    saveCatalogueState();
+  }
+});
+
+// Safety net
+window.addEventListener("beforeunload", saveCatalogueState);
+</script>
+
+<script>
+(function () {
+  const y = sessionStorage.getItem("catalogueScrollY");
+
+  if (y !== null) {
+    console.log("[CATALOGUE] pre-paint restore", {y});
+
+    // Prevent flicker
+    document.documentElement.classList.add("catalogue-restore");
+
+    // Restore scroll BEFORE paint
+    window.scrollTo(0, Number(y || 0));
+
+    // Reveal after first frame
+    requestAnimationFrame(() => {
+      document.documentElement.classList.remove("catalogue-restore");
+      console.log("[CATALOGUE] restore complete");
+    });
+  }
+})();
+</script>
+
+
+
+{{ end }}
+
+
+

@@ -1,0 +1,808 @@
+{{ define "main" }}
+
+<script>
+  (function () {
+    // Get the slug from the URL
+    const parts = location.pathname.split("/").filter(Boolean);
+    const slug = parts[parts.length - 1];
+
+    if (slug && slug !== "resourcecatalogue") {
+      sessionStorage.setItem("lastCatalogueView", slug);
+    }
+  })();
+</script>
+
+{{ $css := resources.Get "css/custom/resourcecatalogue.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}">
+
+<div class="grade-course">
+<a href="/math/resourcecatalogue" class="catalogue-back-btn">
+  ← All Courses
+</a>
+
+<h1>Grade 10 Mathematics, Applied (MFM2P)</h1>
+
+<div class="view-toggle">
+  <button class="toggle-btn active" data-view="strand">By Strand</button>
+  <button class="toggle-btn" data-view="unit">By Unit</button>
+  <button class="toggle-btn" data-view="tag">By Tag</button>
+</div>
+
+<div class="view-container strand-view active-view">
+
+<!-- ================= STRAND A ================= -->
+<section class="strand-card" id="strand-a">
+  <div class="strand-nav">
+    <a href="#strand-b" class="nav-arrow">↓</a>
+  </div>
+
+  <h2 class="strand-title">Strand A: Measurement and Trigonometry</h2>
+
+  <!-- ================= A1 ================= -->
+
+  <div class="overall-expectation">
+    <strong>A1 - Solving Problems Involving Similar Triangles</strong><br>
+    Use their knowledge of ratio and proportion to investigate similar triangles and solve problems related to similarity.
+  </div>
+
+  <div class="expectation-grid">
+
+    <div class="expectation" data-exp="A1.1">
+      <span class="code">A1.1</span> – Verify, through investigation (e.g., using
+      dynamic geometry software, concrete
+      materials), properties of similar triangles
+      (e.g., given similar triangles, verify the
+      equality of corresponding angles and the
+      proportionality of corresponding sides);
+    </div>
+
+    <div class="expectation" data-exp="A1.2">
+      <span class="code">A1.2</span> – Determine the lengths of sides of similar
+      triangles, using proportional reasoning;
+    </div>
+
+    <div class="expectation" data-exp="A1.3">
+      <span class="code">A1.3</span> – Solve problems involving similar triangles
+      in realistic situations (e.g., shadows, reflections, scale models, surveying) (Sample
+      problem: Use a metre stick to determine
+      the height of a tree, by means of the similar triangles formed by the tree, the metre
+      stick, and their shadows.).
+    </div>
+
+  </div>
+
+
+  <!-- ================= A2 ================= -->
+
+  <div class="overall-expectation">
+    <strong>A2 - Solving Problems Involving the Trigonometry of Right Triangles</strong><br>Solve problems involving right triangles, using the primary trigonometric ratios and the
+Pythagorean theorem;
+  </div>
+
+  <div class="expectation-grid">
+
+    <div class="expectation" data-exp="A2.1">
+      <span class="code">A2.1</span> – Determine, through investigation (e.g.,
+      using dynamic geometry software, concrete materials), the relationship between
+      the ratio of two sides in a right triangle
+      and the ratio of the two corresponding
+      sides in a similar right triangle, and define
+      the sine, cosine, and tangent ratios (e.g.,
+      sin A = opposite/hypotenuse);
+    </div>
+
+    <div class="expectation" data-exp="A2.2">
+      <span class="code">A2.2</span> – Determine the measures of the sides and
+      angles in right triangles, using the primary
+      trigonometric ratios and the Pythagorean
+      theorem;
+    </div>
+
+    <div class="expectation" data-exp="A2.3">
+      <span class="code">A2.3</span> – Solve problems involving the measures of
+      sides and angles in right triangles in real-life applications (e.g., in surveying, in
+      navigation, in determining the height of
+      an inaccessible object around the school),
+      using the primary trigonometric ratios
+      and the Pythagorean theorem (Sample
+      problem: Build a kite, using imperial
+      measurements, create a clinometer to
+      determine the angle of elevation when the
+      kite is flown, and use the tangent ratio to
+      calculate the height attained.);
+    </div>
+
+    <div class="expectation" data-exp="A2.4">
+      <span class="code">A2.4</span> – Describe, through participation in an
+      activity, the application of trigonometry
+      in an occupation (e.g., research and
+      report on how trigonometry is applied in
+      astronomy; attend a career fair that
+      includes a surveyor, and describe how a
+      surveyor applies trigonometry to calculate
+      distances; job shadow a carpenter for a
+      few hours, and describe how a carpenter
+      uses trigonometry).
+    </div>
+
+  </div>
+
+
+  <!-- ================= A3 ================= -->
+
+  <div class="overall-expectation">
+    <strong>A3 - Solving Problems Involving Surface Area and Volume, Using the Imperial and Metric Measurements</strong><br>Solve problems involving the surface areas and volumes of three-dimensional figures, and
+use the imperial and metric systems of measurement.
+  </div>
+
+  <div class="expectation-grid">
+
+    <div class="expectation" data-exp="A3.1">
+      <span class="code">A3.1</span> – Use the imperial system when solving
+      measurement problems (e.g., problems
+      involving dimensions of lumber, areas of
+      carpets, and volumes of soil or concrete);
+    </div>
+
+    <div class="expectation" data-exp="A3.2">
+      <span class="code">A3.2</span> – Perform everyday conversions between
+      the imperial system and the metric system
+      (e.g., millilitres to cups, centimetres to
+      inches) and within these systems (e.g.,
+      cubic metres to cubic centimetres, square
+      feet to square yards), as necessary to solve
+      problems involving measurement (Sample
+      problem: A vertical post is to be supported
+      by a wooden pole, secured on the ground
+      at an angle of elevation of 60°, and reaching 3 m up the post from its base. If wood
+      is sold by the foot, how many feet of
+      wood are needed to make the pole?);
+    </div>
+
+    <div class="expectation" data-exp="A3.3">
+      <span class="code">A3.3</span> – Determine, through investigation, the relationship for calculating the surface area of
+      a pyramid (e.g., use the net of a square-based pyramid to determine that the surface area is the area of the square base plus
+      the areas of the four congruent triangles);
+    </div>
+
+    <div class="expectation" data-exp="A3.4">
+      <span class="code">A3.4</span> – Solve problems involving the surface areas
+      of prisms, pyramids, and cylinders, and the
+      volumes of prisms, pyramids, cylinders,
+      cones, and spheres, including problems
+      involving combinations of these figures,
+      using the metric system or the imperial
+      system, as appropriate (Sample problem:
+      How many cubic yards of concrete are
+      required to pour a concrete pad measuring 10 feet by 10 feet by 1 foot? If poured
+      concrete costs $110 per cubic yard, how
+      much does it cost to pour a concrete
+      driveway requiring 6 pads?).
+    </div>
+
+  </div>
+
+  <!-- SHARED RESOURCE PANEL -->
+  <div class="resource-panel" id="resources-a">
+    <div class="resource-track">
+      <!-- populated dynamically -->
+    </div>
+  </div>
+
+</section>
+
+<!-- ================= STRAND B ================= -->
+<section class="strand-card" id="strand-b">
+  <div class="strand-nav">
+    <a href="#strand-a" class="nav-arrow">↑</a>
+    <a href="#strand-c" class="nav-arrow">↓</a>
+  </div>
+
+  <h2 class="strand-title">Strand B: Modelling Linear Relations</h2>
+
+  <!-- ================= B1 ================= -->
+
+  <div class="overall-expectation">
+    <strong>B1 - Manipulating and Solving Algebraic Equations</strong><br>Manipulate and solve algebraic equations, as needed to solve problems;
+  </div>
+
+  <div class="expectation-grid">
+
+    <div class="expectation" data-exp="B1.1">
+      <span class="code">B1.1</span> – Solve first-degree equations involving one
+      variable, including equations with fractional coefficients (e.g. using the balance
+      analogy, computer algebra systems, paper
+      and pencil) (Sample problem: Solve
+      2x + 4 = 3x – 1 and verify.);
+    </div>
+
+    <div class="expectation" data-exp="B1.2">
+      <span class="code">B1.2</span> – Determine the value of a variable in the
+      first degree, using a formula (i.e., by
+      isolating the variable and then substituting
+      known values; by substituting known
+      values and then solving for the variable)
+      (e.g., in analytic geometry, in measurement)
+      (Sample problem: A cone has a volume of
+      100 cm<sup>3</sup>. The radius of the base is 3 cm.
+      What is the height of the cone?);
+    </div>
+
+    <div class="expectation" data-exp="B1.3">
+      <span class="code">B1.3</span> – Express the equation of a line in the form
+      y = mx + b, given the form
+      Ax + By + C = 0.
+    </div>
+
+  </div>
+
+
+  <!-- ================= B2 ================= -->
+
+  <div class="overall-expectation">
+    <strong>B2 - Graphing and Writing Equations of Lines</strong><br>Graph a line and write the equation of a line from given information.
+  </div>
+
+  <div class="expectation-grid">
+
+    <div class="expectation" data-exp="B2.1">
+      <span class="code">B2.1</span> – Connect the rate of change of a linear relation to the slope of the line, and define
+      the slope as the ratio m = rise/run;
+    </div>
+
+    <div class="expectation" data-exp="B2.2">
+      <span class="code">B2.2</span> – Identify, through investigation, y = mx + b
+      as a common form for the equation of a
+      straight line, and identify the special cases
+      x = a, y = b;
+    </div>
+
+    <div class="expectation" data-exp="B2.3">
+      <span class="code">B2.3</span> – Identify, through investigation with technology, the geometric significance of m
+      and b in the equation y = mx + b;
+    </div>
+
+    <div class="expectation" data-exp="B2.4">
+      <span class="code">B2.4</span> – Identify, through investigation, properties
+      of the slopes of lines and line segments
+      (e.g., direction, positive or negative rate of
+      change, steepness, parallelism), using
+      graphing technology to facilitate investigations, where appropriate;
+    </div>
+
+    <div class="expectation" data-exp="B2.5">
+      <span class="code">B2.5</span> – Graph lines by hand, using a variety of
+      techniques (e.g., graph y = –2x + 3
+      using the y-intercept and slope; graph
+      2x + 3y = 6 using the x- and
+      y-intercepts);
+    </div>
+
+    <div class="expectation" data-exp="B2.6">
+      <span class="code">B2.6</span> – Determine the equation of a line, given its
+      graph, the slope and y-intercept, the slope
+      and a point on the line, or two points on
+      the line.
+    </div>
+
+  </div>
+
+
+  <!-- ================= B3 ================= -->
+
+  <div class="overall-expectation">
+    <strong>B3 - Solving and Interpreting Systems of Linear Equations</strong><br>Solve systems of two linear equations, and solve related problems that arise from realistic situations.
+  </div>
+
+  <div class="expectation-grid">
+
+    <div class="expectation" data-exp="B3.1">
+      <span class="code">B3.1</span> – Determine graphically the point of intersection of two linear relations (e.g., using
+      graph paper, using technology) (Sample
+      problem: Determine the point of intersection of y + 2x = –5 and
+      2/3 y = x – 4 using an appropriate graphing technique,
+      and verify.);
+    </div>
+
+    <div class="expectation" data-exp="B3.2">
+      <span class="code">B3.2</span> – Solve systems of two linear equations
+      involving two variables with integral
+      coefficients, using the algebraic method
+      of substitution or elimination (Sample
+      problem: Solve y = 2x + 1,
+      3x + 2y = 16 for x and y algebraically,
+      and verify algebraically and graphically.);
+    </div>
+
+    <div class="expectation" data-exp="B3.3">
+      <span class="code">B3.3</span> – Solve problems that arise from realistic situations described in words or represented
+      by given linear systems of two equations
+      involving two variables, by choosing an
+      appropriate algebraic or graphical method
+      (Sample problem: Maria has been hired by
+      Company A with an annual salary, S dollars,
+      given by S = 32 500 + 500a,
+      where a represents the number of years
+      she has been employed by this company.
+      Ruth has been hired by Company B with
+      an annual salary, S dollars, given by
+      S = 28 000 + 1000a, where a represents
+      the number of years she has been
+      employed by that company. Describe what
+      the solution of this system would represent
+      in terms of Maria’s salary and Ruth’s salary.
+      After how many years will their salaries
+      be the same? What will their salaries be
+      at that time?).
+    </div>
+
+  </div>
+
+  <!-- SHARED RESOURCE PANEL -->
+  <div class="resource-panel" id="resources-b">
+    <div class="resource-track">
+      <!-- populated dynamically -->
+    </div>
+  </div>
+
+</section>
+
+<!-- ================= STRAND C ================= -->
+<section class="strand-card" id="strand-c">
+  <div class="strand-nav">
+    <a href="#strand-b" class="nav-arrow">↑</a>
+  </div>
+
+  <h2 class="strand-title">Strand C: Quadratic Relations of the form y = ax<sup>2</sup> + bx + c</h2>
+
+  <!-- ================= C1 ================= -->
+
+  <div class="overall-expectation">
+    <strong>C1 - Manipulating Quadratic Expressions</strong><br>Manipulate algebraic expressions, as needed to understand quadratic relations.
+  </div>
+
+  <div class="expectation-grid">
+
+    <div class="expectation" data-exp="C1.1">
+      <span class="code">C1.1</span> – Expand and simplify second-degree polynomial expressions involving one variable that
+      consist of the product of two binomials
+      [e.g., (2x + 3)(x + 4)] or the square of a
+      binomial [e.g., (x + 3)<sup>2</sup>], using a variety of
+      tools (e.g., algebra tiles, diagrams, computer
+      algebra systems, paper and pencil) and
+      strategies (e.g. patterning);
+    </div>
+
+    <div class="expectation" data-exp="C1.2">
+      <span class="code">C1.2</span> – Factor binomials (e.g., 4x<sup>2</sup> + 8x) and trinomials (e.g., 3x<sup>2</sup> + 9x – 15) involving one
+      variable up to degree two, by determining a
+      common factor using a variety of tools
+      (e.g., algebra tiles, computer algebra systems,
+      paper and pencil) and strategies (e.g.,
+      patterning);
+    </div>
+
+    <div class="expectation" data-exp="C1.3">
+      <span class="code">C1.3</span> – Factor simple trinomials of the form
+      x<sup>2</sup> + bx + c (e.g., x<sup>2</sup> + 7x + 10,
+      x<sup>2</sup> + 2x – 8), using a variety of tools (e.g.,
+      algebra tiles, computer algebra systems,
+      paper and pencil) and strategies (e.g.,
+      patterning);
+    </div>
+
+    <div class="expectation" data-exp="C1.4">
+      <span class="code">C1.4</span> – Factor the difference of squares of the form
+      x<sup>2</sup> – a<sup>2</sup> (e.g., x<sup>2</sup> – 16).
+    </div>
+
+  </div>
+
+
+  <!-- ================= C2 ================= -->
+
+  <div class="overall-expectation">
+    <strong>C2 - Identifying Characteristics of Quadratic Relations</strong>
+  </div>
+
+  <div class="expectation-grid">
+
+    <div class="expectation" data-exp="C2.1">
+      <span class="code">C2.1</span> – Collect data that can be represented as a
+      quadratic relation, from experiments using
+      appropriate equipment and technology
+      (e.g., concrete materials, scientific probes,
+      graphing calculators), or from secondary
+      sources (e.g., the Internet, Statistics Canada);
+      graph the data and draw a curve of best fit,
+      if appropriate, with or without the use of
+      technology (Sample problem: Make a 1 m
+      ramp that makes a 15° angle with the floor.
+      Place a can 30 cm up the ramp. Record the
+      time it takes for the can to roll to the bottom.
+      Repeat by placing the can 40 cm,
+      50 cm, and 60 cm up the ramp, and so on.
+      Graph the data and draw the curve of best
+      fit.);
+    </div>
+
+    <div class="expectation" data-exp="C2.2">
+      <span class="code">C2.2</span> – Determine, through investigation using
+      technology, that a quadratic relation of the
+      form y = ax<sup>2</sup> + bx + c (a ≠ 0) can be graphically represented as a parabola, and determine that the table of values yields a constant second difference (Sample problem:
+      Graph the quadratic relation y = x<sup>2</sup> – 4,
+      using technology. Observe the shape of the
+      graph. Consider the corresponding table of
+      values, and calculate the first and second
+      differences. Repeat for a different quadratic
+      relation. Describe your observations and
+      make conclusions.);
+    </div>
+
+    <div class="expectation" data-exp="C2.3">
+      <span class="code">C2.3</span> – Identify the key features of a graph of a
+      parabola (i.e., the equation of the axis of
+      symmetry, the coordinates of the vertex, the
+      y-intercept, the zeros, and the maximum or
+      minimum value), using a given graph or a
+      graph generated with technology from its
+      equation, and use the appropriate terminology to describe the features;
+    </div>
+
+    <div class="expectation" data-exp="C2.4">
+      <span class="code">C2.4</span> – Compare, through investigation using technology, the graphical representations of a
+      quadratic relation in the form
+      y = x<sup>2</sup> + bx + c and the same relation in
+      the factored form y = (x – r)(x – s) (i.e., the
+      graphs are the same), and describe the
+      connections between each algebraic
+      representation and the graph [e.g., the
+      y-intercept is c in the form y = x<sup>2</sup> + bx + c;
+      the x-intercepts are r and s in the form
+      y = (x – r)(x – s)] (Sample problem: Use a
+      graphing calculator to compare the graphs
+      of y = x<sup>2</sup> + 2x – 8 and y = (x + 4)(x – 2).
+      In what way(s) are the equations related?
+      What information about the graph can you
+      identify by looking at each equation? Make
+      some conclusions from your observations,
+      and check your conclusions with a different
+      quadratic equation.).
+    </div>
+
+  </div>
+
+
+  <!-- ================= C3 ================= -->
+
+  <div class="overall-expectation">
+    <strong>C3 - Solving Problems by Interpreting Graphs of Quadratic Relations</strong>
+  </div>
+
+  <div class="expectation-grid">
+
+    <div class="expectation" data-exp="C3.1">
+      <span class="code">C3.1</span> – Solve problems involving a quadratic relation by interpreting a given graph or a
+      graph generated with technology from its
+      equation (e.g., given an equation representing the height of a ball over elapsed time,
+      use a graphing calculator or graphing software to graph the relation, and answer
+      questions such as the following: What is the
+      maximum height of the ball? After what
+      length of time will the ball hit the ground?
+      Over what time interval is the height of
+      the ball greater than 3 m?);
+    </div>
+
+    <div class="expectation" data-exp="C3.2">
+      <span class="code">C3.2</span> – Solve problems by interpreting the significance of the key features of graphs
+      obtained by collecting experimental data
+      involving quadratic relations (Sample
+      problem: Roll a can up a ramp. Using a
+      motion detector and a graphing calculator,
+      record the motion of the can until it
+      returns to its starting position, graph the
+      distance from the starting position versus
+      time, and draw the curve of best fit.
+      Interpret the meanings of the vertex and
+      the intercepts in terms of the experiment.
+      Predict how the graph would change if
+      you gave the can a harder push. Test your
+      prediction.).
+    </div>
+
+  </div>
+
+  <!-- SHARED RESOURCE PANEL -->
+  <div class="resource-panel" id="resources-c">
+    <div class="resource-track">
+      <!-- populated dynamically -->
+    </div>
+  </div>
+
+</section>
+
+
+</div>
+</div>
+
+<div class="view-container unit-view">
+
+  <section class="unit-card">
+    <h2>Unit 1: Measurement & Trigonometry</h2>
+    <div class="expectation-grid">
+      <div class="expectation">A1.1</div>
+      <div class="expectation">A1.2</div>
+      <div class="expectation">A1.3</div>
+      <div class="expectation">A2.1</div>
+      <div class="expectation">A2.2</div>
+      <div class="expectation">A2.3</div>
+      <div class="expectation">A2.4</div>
+      <div class="expectation">A3.1</div>
+      <div class="expectation">A3.2</div>
+      <div class="expectation">A3.3</div>
+      <div class="expectation">A3.4</div>
+    </div>
+  </section>
+
+  <section class="unit-card">
+    <h2>Unit 2: Modelling Linear Relations</h2>
+    <div class="expectation-grid">
+      <div class="expectation">B1.1</div>
+      <div class="expectation">B1.2</div>
+      <div class="expectation">B1.3</div>
+      <div class="expectation">B2.1</div>
+      <div class="expectation">B2.2</div>
+      <div class="expectation">B2.3</div>
+      <div class="expectation">B2.4</div>
+      <div class="expectation">B2.5</div>
+      <div class="expectation">B2.6</div>
+      <div class="expectation">B3.1</div>
+      <div class="expectation">B3.2</div>
+      <div class="expectation">B3.3</div>
+    </div>
+  </section>
+
+  <section class="unit-card">
+    <h2>Unit 3: Quadratic Relations</h2>
+    <div class="expectation-grid">
+      <div class="expectation">C1.1</div>
+      <div class="expectation">C1.2</div>
+      <div class="expectation">C1.3</div>
+      <div class="expectation">C1.4</div>
+      <div class="expectation">C2.1</div>
+      <div class="expectation">C2.2</div>
+      <div class="expectation">C2.3</div>
+      <div class="expectation">C2.4</div>
+      <div class="expectation">C3.1</div>
+      <div class="expectation">C3.2</div>
+    </div>
+  </section>
+
+</div>
+
+<div class="view-container tag-view">
+  <section class="unit-card">
+    <h2>Search by Tag</h2>
+
+    <div class="tag-search-wrap">
+      <input
+        id="tag-search"
+        class="tag-search-input"
+        type="text"
+        placeholder="Type tags… (e.g., B1.1, fractions, proportional, BHN)"
+        autocomplete="off"
+      />
+      <div id="tag-search-help" class="tag-search-help">
+        Tip: separate multiple tags with spaces or commas (e.g., <strong>B1.1</strong> <strong>fractions</strong>)
+      </div>
+    </div>
+
+    <div id="tag-results" class="tag-results-grid"></div>
+    <div id="tag-empty" class="tag-empty" hidden>No matches found.</div>
+  </section>
+</div>
+
+<div id="resource-data" hidden>
+  {{ range site.Data.resources.resources }}
+    {{ $res := . }}
+    {{ range $res.expectations }}
+      <div class="resource-set" data-exp="{{ . }}">
+
+        <div class="resource-master-card">
+
+          <!-- CARD HEADER -->
+          {{ with $res.source }}
+          <div class="resource-card-header">
+            <div class="resource-card-source">
+              By {{ .name }}
+            </div>
+            <img
+              src="{{ .logo | relURL }}"
+              alt="{{ .name }} logo"
+              class="resource-card-icon"
+            />
+          </div>
+          {{ end }}
+
+          <!-- LESSON PLAN -->
+          {{ with $res.lesson_plan }}
+          <div class="resource-group">
+            <h3>Lesson Plan</h3>
+			<a class="resource-link" draggable="true"
+			   href="{{ .link | relURL }}"
+			   target="_blank"
+			   rel="noopener"
+			   data-context-id="{{ $res.id }}"
+			   data-kind="lesson_plan">
+			  {{ .title }}
+			</a>
+          </div>
+          {{ end }}
+
+          <!-- LESSON NOTES -->
+          {{ with $res.lesson_notes }}
+          <div class="resource-group">
+            <h3>Lesson Notes</h3>S
+			<a class="resource-link" draggable="true"
+			   href="{{ .link | relURL }}"
+			   target="_blank"
+			   rel="noopener"
+			   data-context-id="{{ $res.id }}"
+			   data-kind="lesson_notes">
+			  {{ .title }}
+			</a>
+			          </div>
+          {{ end }}
+
+          <!-- PRACTICE -->
+          {{ with $res.practice }}
+          <div class="resource-group">
+            <h3>Student Practice</h3>
+		{{ range $i, $p := . }}
+		  <a class="resource-link" draggable="true"
+		     href="{{ $p.link | relURL }}"
+		     target="_blank"
+		     rel="noopener"
+		     data-context-id="{{ $res.id }}"
+		     data-kind="practice"
+		     data-index="{{ $i }}">
+		    {{ $p.title }}
+		  </a>
+		{{ end }}
+          </div>
+          {{ end }}
+
+          <!-- EXPECTATION TAGS -->
+          <div class="resource-tags">
+            {{ range $res.expectations }}
+              {{ $strand := replaceRE "^([A-Z]+).*" "$1" . }}
+              <span class="exp-tag strand-{{ lower $strand }}">
+                {{ . }}
+              </span>
+            {{ end }}
+          </div>
+
+          <!-- ✅ ADD TO PLAN BUTTON (FIX) -->
+          <button
+            class="add-to-plan-btn"
+            aria-label="Add to plan"
+            data-resource="{{ $res.title }}">
+          </button>
+
+        </div>
+      </div>
+    {{ end }}
+  {{ end }}
+</div>
+<script>
+  const toggleButtons = document.querySelectorAll('.toggle-btn');
+  const views = {
+    strand: document.querySelector('.strand-view'),
+    unit: document.querySelector('.unit-view'),
+    tag: document.querySelector('.tag-view')
+  };
+
+  toggleButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      toggleButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      Object.values(views).forEach(v => v.classList.remove('active-view'));
+      views[btn.dataset.view].classList.add('active-view');
+    });
+  });
+</script>
+
+<script>
+ document.querySelectorAll('.expectation').forEach(exp => {
+  exp.addEventListener('click', () => {
+    const code = exp.dataset.exp;
+    if (!code) return;
+
+    const strand = exp.closest('.strand-card');
+    if (!strand) return;
+
+    // Determine B1 / B2 / C1 etc.
+    const group = code.match(/^[A-Z]+\d+/)?.[0];
+    if (!group) return;
+
+    const panelWrapper = strand.querySelector(`#resources-${group.toLowerCase()}`);
+    if (!panelWrapper) return;
+
+    const panel = panelWrapper.querySelector('.resource-track');
+    if (!panel) return;
+
+    const isActive = exp.classList.contains('active');
+
+    // clear all expectations + panels in this strand
+    strand.querySelectorAll('.expectation').forEach(e => e.classList.remove('active'));
+    strand.querySelectorAll('.resource-track').forEach(p => p.innerHTML = '');
+    strand.querySelectorAll('.resource-panel').forEach(p => p.style.display = 'none');
+
+    if (isActive) return;
+
+    exp.classList.add('active');
+
+    document
+      .querySelectorAll(`.resource-set[data-exp="${code}"]`)
+      .forEach(res => {
+        panel.appendChild(res.firstElementChild.cloneNode(true));
+      });
+
+    panelWrapper.style.display = 'block';
+  });
+});
+</script>
+
+<script>
+function saveCatalogueState() {
+  console.log("[CATALOGUE] saving state before leave");
+
+  sessionStorage.setItem("catalogueScrollY", window.scrollY);
+}
+
+// Save on navigation away
+document.addEventListener("click", e => {
+  const link = e.target.closest("a");
+  if (!link) return;
+
+  const href = link.getAttribute("href") || "";
+
+  // only if leaving catalogue
+  if (!href.includes("resourcecatalogue")) {
+    saveCatalogueState();
+  }
+});
+
+// Safety net
+window.addEventListener("beforeunload", saveCatalogueState);
+</script>
+
+<script>
+(function () {
+  const y = sessionStorage.getItem("catalogueScrollY");
+
+  if (y !== null) {
+    console.log("[CATALOGUE] pre-paint restore", {y});
+
+    // Prevent flicker
+    document.documentElement.classList.add("catalogue-restore");
+
+    // Restore scroll BEFORE paint
+    window.scrollTo(0, Number(y || 0));
+
+    // Reveal after first frame
+    requestAnimationFrame(() => {
+      document.documentElement.classList.remove("catalogue-restore");
+      console.log("[CATALOGUE] restore complete");
+    });
+  }
+})();
+</script>
+
+
+
+{{ end }}
+
+
+

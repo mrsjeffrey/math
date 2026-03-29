@@ -19,7 +19,7 @@ body {
 */
 
 .catalogue-wrapper {
-  max-width: 1400px;
+  max-width: 1500px;
   margin: 2rem auto;
   padding: 0 2rem;
 }
@@ -159,9 +159,9 @@ body {
 
 /* Page wrapper */
 .grade-course {
-  max-width: 1000px;
+  max-width: 1500px;
   margin: 0 auto;
-  padding: 2rem 1.25rem 4rem;
+  padding: 2rem 0.75rem 4rem;  /* was 1.25rem */
 }
 
 /* Page title */
@@ -367,7 +367,7 @@ body {
 }
 
 .resource-group {
-  min-width: 260px;
+  min-width: 200px;
 }
 
 .resource-group h3 {
@@ -386,7 +386,7 @@ body {
   margin-bottom: 0.75rem;
   text-decoration: none;
   color: #222;
-  min-width: 280px;
+  min-width: 220px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
@@ -411,7 +411,6 @@ body {
   border-radius: 14px;
   padding: 1.25rem 1.5rem;
   min-width: 240px;
-  max-width: 240px;
   box-shadow: 0 8px 12px rgba(0,0,0,0.1);
   position: relative !important;
   overflow: hidden;
@@ -613,3 +612,91 @@ html.catalogue-restore {
 html.catalogue-restore body {
   visibility: hidden;
 }
+
+/* ============================
+   Tag search
+   ============================ */
+.unit-card h2 {
+  font-size: 24px;
+}
+.tag-search-wrap { margin: 10px 0 14px; }
+.tag-search-input {
+  width: 100%;
+  padding: 12px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.14);
+  background: #e5e5e6;
+  color: inherit;
+  font-size: 15px;
+}
+.tag-search-help { margin-top: 8px; opacity: 0.75; font-size: 0.92rem; }
+
+.tag-empty { margin-top: 12px; opacity: 0.8; }
+
+.resource-card-title {
+  font-weight: 700;
+  margin: 6px 0 10px;
+}
+
+/* Masonry only for the By Tag results pane */ 
+.tag-results-grid{ 
+    column-width: 230px;
+    column-gap: 18px; 
+    margin-top: 18px; 
+}
+.tag-results-grid .resource-master-card{ 
+    margin: 0 0 18px; 
+
+}
+.tag-chip-wrap{
+  margin-top:12px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:4px;
+}
+.tag-chip{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:6px 12px;
+  border-radius:999px;
+  background:#d7efcd;
+  color:#1f2937;
+  font-size:0.9rem;
+  font-weight:600;
+
+  line-height:1;   /* important */
+}
+
+.tag-chip button{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-left: 10px;
+  width:18px;
+  height:18px;
+
+  border-radius:999px;
+  border:0;
+  padding:0;
+
+  background:#d7efcd;
+  color:#1f2937;
+
+  font-size:11px;   /* slightly smaller than tag text */
+  font-weight:500;
+  line-height:1;    /* critical */
+
+  cursor:pointer;
+}
+
+
+.tag-chip button{
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.tag-chip button:hover{
+  background:#f1c8c5;
+  color:#1f2937;
+}
+
