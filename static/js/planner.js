@@ -1034,7 +1034,7 @@ function getExpectationsForSelectedCourse() {
   const set = new Set();
 
   Object.values(RESOURCES || {}).forEach(ctx => {
-    (ctx.expectations || []).forEach(e => set.add(e));
+    (ctx.expectations?.[selectedCourse] || []).forEach(e => set.add(e));
   });
 
   // sorted for dropdown
@@ -1143,7 +1143,7 @@ function renderMini(ref, clusterId, day) {
   const res = resolveResource(ref);
   if (!ctx || !res) return "";
 
-  const expectations = ctx.expectations || [];
+  const expectations = ctx.expectations?.[selectedCourse] || [];
 
   const dragJson = escapeAttr(JSON.stringify({
     source: "planner",
@@ -1195,7 +1195,7 @@ function renderExpectations(day) {
 
   (day.resources || []).forEach(r => {
     // YAML resources
-    RESOURCES?.[r.contextId]?.expectations?.forEach(e => set.add(e));
+    (RESOURCES?.[r.contextId]?.expectations?.[selectedCourse] || []).forEach(e => set.add(e));
 
     // Custom resources
     (r.expectations || []).forEach(e => set.add(e));

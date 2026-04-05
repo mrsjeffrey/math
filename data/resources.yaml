@@ -3,7 +3,7 @@ resources:
     id: fractions_compare
     title: "Representing & Comparing Fractions"
     expectations:
-      - B1.1
+      MDH1W: ["B1.1"]
     grades:
       - 9
     tags:
@@ -24,7 +24,7 @@ resources:
     id: sets_and_subsets
     title: "The Numbers We Use: Sets and Subsets"
     expectations:
-      - B1.2
+      MDH1W: ["B1.2"]
     grades:
       - 9
     tags:
@@ -50,8 +50,7 @@ resources:
     id: powers_scientific
     title: "Powers & Scientific Notation"
     expectations:
-      - B2.1
-      - B2.3
+      MDH1W: ["B2.1", "B2.3"]
     grades:
       - 9
     tags:
@@ -71,9 +70,13 @@ resources:
     id: penny_a_day
     title: "Penny a Day"
     expectations:
-      - B2.1
+      MDH1W: ["B2.1"]
     grades:
       - 9
+    tags:
+      - kyle_pearce
+      - 3-act
+      - exponents
     source:
       name: "Kyle Pearce"
       logo: "/math/images/sources/TITM.png"
@@ -85,9 +88,12 @@ resources:
     id: double_sunglasses
     title: "Double Sunglasses"
     expectations:
-      - B2.1
+      MDH1W: ["B2.1"]
     grades:
       - 9
+    tags:
+      - dan_meyer
+      - 3-act
     source:
       name: "Dan Meyer"
       logo: "/math/images/sources/danmeyer.png"
@@ -99,13 +105,33 @@ resources:
     id: balloon_dog
     title: "Balloon Dog"
     expectations:
-      - B3.5
+      MDH1W: ["B3.5"]
     grades:
       - 9
+    tags:
+      - dan_meyer
+      - 3-act
     source:
       name: "Dan Meyer"
       logo: "/math/images/sources/danmeyer.png"
     lesson_plan:
       title: "Balloon Dog - 3 Act Task"
       link: "https://drive.google.com/drive/folders/1NZo4RHPQ3uAVUSAdq41bx4JUfkWLlWtR"
+      
+  bet_your_coffee:
+    id: bet_your_coffee
+    title: "Bet Your Coffee?"
+    expectations:
+      MDH1W: ["D2.3"]
+    grades:
+      - 11
+    tags:
+      - dan_meyer
+      - 3-act
+    source:
+      name: "Dan Meyer"
+      logo: "/math/images/sources/danmeyer.png"
+    lesson_plan:
+      title: "Bet Your Coffee? - 3 Act Task"
+      link: "https://drive.google.com/drive/folders/1Yonur51t8F3-bvs1ldsIy8rDTOF9KWwi"
 

@@ -189,7 +189,7 @@ function addResourceToBank(resource) {
 
     title = resolved.title;
     link = resolved.link;
-    curriculum = ctx.expectations || [];
+    curriculum = ctx.expectations?.[selectedCourse] || [];
 
     // 🔔 Tell planner to remove original
     document.dispatchEvent(

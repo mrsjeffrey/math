@@ -605,7 +605,8 @@ use the imperial and metric systems of measurement.
 <div id="resource-data" hidden>
   {{ range site.Data.resources.resources }}
     {{ $res := . }}
-    {{ range $res.expectations }}
+      {{ $exps := index $res.expectations "MPM2P" }}
+      {{ range $exps }}
       <div class="resource-set" data-exp="{{ . }}">
 
         <div class="resource-master-card">
@@ -674,7 +675,8 @@ use the imperial and metric systems of measurement.
 
           <!-- EXPECTATION TAGS -->
           <div class="resource-tags">
-            {{ range $res.expectations }}
+            {{ $exps := index $res.expectations "MPM2P" }}
+            {{ range $exps }}
               {{ $strand := replaceRE "^([A-Z]+).*" "$1" . }}
               <span class="exp-tag strand-{{ lower $strand }}">
                 {{ . }}
