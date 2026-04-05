@@ -94,3 +94,18 @@ resources:
     lesson_plan:
       title: "Double Sunglasses – 3 Act Task"
       link: "https://threeacts.mrmeyer.com/doublesunglasses/"
+
+  balloon_dog:
+    id: balloon_dog
+    title: "Balloon Dog"
+    expectations:
+      - B3.5
+    grades:
+      - 9
+    source:
+      name: "Dan Meyer"
+      logo: "/math/images/sources/danmeyer.png"
+    lesson_plan:
+      title: "Balloon Dog - 3 Act Task"
+      link: "https://drive.google.com/drive/folders/1NZo4RHPQ3uAVUSAdq41bx4JUfkWLlWtR"
+
