@@ -123,8 +123,9 @@ resources:
     title: "Bet Your Coffee?"
     expectations:
       MDH1W: ["D2.3"]
+      MDM4U: ["B1.1", "B1.2", "B1.7"]
     grades:
-      - 11
+      - 11, 12
     tags:
       - dan_meyer
       - 3-act

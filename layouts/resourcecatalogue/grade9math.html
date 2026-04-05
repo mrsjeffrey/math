@@ -597,7 +597,7 @@
 <div id="resource-data" hidden>
   {{ range site.Data.resources.resources }}
     {{ $res := . }}
-    {{ $exps := index $res.expectations "MFM1W" }}
+    {{ $exps := index $res.expectations "MDH1W" }}
     {{ range $exps }}
       <div class="resource-set" data-exp="{{ . }}">
 
@@ -682,7 +682,7 @@
 
           <!-- EXPECTATION TAGS -->
           <div class="resource-tags">
-              {{ $exps := index $res.expectations "MFM1W" }}
+              {{ $exps := index $res.expectations "MDH1W" }}
               {{ range $exps }}
               {{ $strand := replaceRE "^([A-Z]+).*" "$1" . }}
               <span class="exp-tag strand-{{ lower $strand }}">
