@@ -1030,6 +1030,7 @@ resources:
         - volume
         - capacity
         - measurement
+      source:
         name: "Dan Meyer"
         logo: "/math/images/sources/danmeyer.png"
       lesson_plan:
