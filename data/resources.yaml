@@ -183,7 +183,6 @@ resources:
       MDH1W: ["B3.2"]
       MEL4E: ["C3.4","C3.5","C3.6"]
       MEL3E: ["C1.6"]
-
     grades:
       - 9
       - 11
@@ -198,27 +197,27 @@ resources:
       title: "Gas Station Ripoff - 3 Act Task"
       link: "https://drive.google.com/drive/folders/1q01VfWORzsZ2wgKrbDxlQK1yE62hxVHA"
 
- marine_ramp:
-    id: marine_ramp
-    title: "Marine Ramp"
-    expectations:
-      MPM2D: ["C2.1","C2.3"]
-      MPM2P: ["A2.1","A2.3"]
-    grades:
-      - 10
-    tags:
-      - dan_meyer
-      - 3_act
-      - trig
-      - trigonometry
-      - triangles
-    source:
-      name: "Dan Meyer"
-      logo: "/math/images/sources/danmeyer.png"
-    lesson_plan:
-      title: "Marine Ramp - 3 Act Task"
-      link: "https://drive.google.com/drive/folders/14DnhCC8o22UJTsBW-ieV0ypq315cLTMy"
-
+marine_ramp:
+  id: marine_ramp
+  title: "Marine Ramp"
+  expectations:
+    MPM2D: ["C2.1","C2.3"]
+    MPM2P: ["A2.1","A2.3"]
+  grades:
+    - 10
+  tags:
+    - dan_meyer
+    - 3_act
+    - trig
+    - trigonometry
+    - triangles
+  source:
+    name: "Dan Meyer"
+    logo: "/math/images/sources/danmeyer.png"
+  lesson_plan:
+    title: "Marine Ramp - 3 Act Task"
+    link: "https://drive.google.com/drive/folders/14DnhCC8o22UJTsBW-ieV0ypq315cLTMy"
+    
   graduation:
     id: graduation
     title: "Graduation"
@@ -626,7 +625,7 @@ meatballs:
       title: "Taco Cart - 3 Act Task"
       link: "https://drive.google.com/drive/folders/1_kf5sBNTjCuOakyxqkbbVTCR75N_jcna"
 
- penny_circle
+ penny_circle:
     id:  penny_circle
     title: "Penny Circle"
     expectations:
@@ -970,7 +969,7 @@ you_pour_i_choose:
       title: "You Pour, I Choose - 3 Act Task"
       link: "https://drive.google.com/drive/folders/1VYJSCTbJUEwEGo2hNomdhz1ayML13ncN"
 
- car_caravan:
+car_caravan:
     id:  car_caravan
     title: "Car Caravam"
     expectations:
@@ -1201,7 +1200,7 @@ ticket_to_ride:
       title: "Ticket To Ride - 3 Act Task"
       link: "https://drive.google.com/drive/folders/1HU0W2is59wiJKWb5ZPry70hnDsFto6-6"
 
- print_job:
+print_job:
     id: print_job
     title: "Print Job"
     expectations:
@@ -1223,7 +1222,7 @@ ticket_to_ride:
       title: "Print Job - 3 Act Task"
       link: "https://drive.google.com/drive/folders/1Bgpg8NvEqd9S0fqscc-eW3oefPZfa-0d"
 
- world_record_airbag:
+world_record_airbag:
     id: world_record_airbag
     title: "World Record Airbag"
     expectations:
@@ -1245,7 +1244,7 @@ ticket_to_ride:
       title: "World Record Airbag - 3 Act Task"
       link: "https://drive.google.com/drive/folders/1zWn3VClWOw12bA5raCdfJe88U0UIMYip"
 
- percent_discount:
+percent_discount:
     id: percent_discount
     title: "Amazon Percent Discount"
     expectations:
@@ -1269,7 +1268,7 @@ ticket_to_ride:
       title: "Amazon Percent Discount - 3 Act Task"
       link: "https://drive.google.com/drive/folders/1zF9qJ69CTtkcGslgx-BrR_8OSjeqEDzK"
 
- apple_mothership:
+apple_mothership:
     id: apple_mothership
     title: "Apple Mothership"
     expectations:
@@ -1288,7 +1287,7 @@ ticket_to_ride:
       title: "Apple Mothership - 3 Act Task"
       link: "https://drive.google.com/drive/folders/1gQSrwY6vMV5YXpUFtmi-xx_QVHrfScEd"
 
- falling_glowsticks
+falling_glowsticks:
     id: falling_glowsticks
     title: "Falling Glowsticks"
     expectations:
@@ -1309,13 +1308,13 @@ ticket_to_ride:
       title: "Falling Glowsticks - 3 Act Task"
       link: "https://drive.google.com/drive/folders/1FeQS_RUPXrxqGqoaNXeqwXgbu4UlPuXK"
 
- falling_rocks
+falling_rocks:
     id: falling_rocks
     title: "Falling Rocks"
     expectations:
       MCF3M: ["A1.1", "B2.2"]
       MCR3U: ["B3.2"]
-      MBF3C: ["A1.1, "A3.2"]
+      MBF3C: ["A1.1", "A3.2"]
     grades:
       - 11
     tags:
@@ -1331,7 +1330,7 @@ ticket_to_ride:
       title: "Falling Rocks - 3 Act Task"
       link: "https://drive.google.com/drive/folders/1OqlCZupmld4nuQIvF8V9E2ibqE7loSEx"
 
- Water Tank
+water_tank:
     id: water_tank
     title: "Water Tank"
     expectations:
