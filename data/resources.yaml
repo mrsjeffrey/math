@@ -1,1391 +1,1391 @@
 resources:
-  fractions_compare:
-    id: fractions_compare
-    title: "Representing & Comparing Fractions"
-    expectations:
-      MDH1W: ["B1.1"]
-    grades:
-      - 9
-    tags:
-      - bhn-math
-      - bhn
-      - fractions
-    source:
-      name: "BHN Math"
-      logo: "/math/images/sources/BHNmath.png"
-    lesson_plan:
-      title: "Representing and Comparing Fractions"
-      link: "/math/files/grade9math/BHN_B1.1_LP.pdf"
-    lesson_notes:
-      title: "Fractions and Mixed Numbers"
-      link: "/math/files/grade9math/BHN_B1.1_LN.pdf"
-      
-sets_and_subsets:
-    id: sets_and_subsets
-    title: "The Numbers We Use: Sets and Subsets"
-    expectations:
-      MDH1W: ["B1.2"]
-    grades:
-      - 9
-    tags:
-      - bhn-math
-      - bhn
-    source:
-      name: "BHN Math"
-      logo: "/math/images/sources/BHNmath.png"
-    lesson_plan:
-      title: "The Numbers We Use: Sets and Subsets"
-      link: "/math/files/grade9math/BHN_B1.2_LP_setsandsubsets.pdf"
-    lesson_notes:
-      title: "The Numbers We Use: Sets and Subsets"
-      link: "/math/files/grade9math/BHN_B1.2_LN_setsandsubsets.pdf"
-    practice:
-      - title: "Build your Skills"
-        link: "/math/files/grade9math/BHN_B1.2_P_setsandsubsets.pdf"
-    graphic_organizer:
-      title: "Number Sets"
-      link: "/math/files/grade9math/BHN_B1.2_GO_setsandsubsets.pdf"
-
-powers_scientific:
-    id: powers_scientific
-    title: "Powers & Scientific Notation"
-    expectations:
-      MDH1W: ["B2.1", "B2.3"]
-    grades:
-      - 9
-    tags:
-      - bhn-math
-      - bhn
-    source:
-      name: "BHN Math"
-      logo: "/math/images/sources/BHNmath.png"
-    lesson_notes:
-      title: "Powers & Scientific Notation"
-      link: "/math/files/grade9math/BHN_B2.1_B2.3_LN.pdf"
-    practice:
-      - title: "Build Your Skills"
-        link: "/math/files/grade9math/BHN_B2.1_B2.3_P.pdf"
-
-penny_a_day:
-    id: penny_a_day
-    title: "Penny a Day"
-    expectations:
-      MDH1W: ["B2.1"]
-    grades:
-      - 9
-    tags:
-      - kyle_pearce
-      - 3-act
-      - exponents
-    source:
-      name: "Kyle Pearce"
-      logo: "/math/images/sources/TITM.png"
-    lesson_plan:
-      title: "Penny A Day – 3 Act Task"
-      link: "https://drive.google.com/drive/folders/1Vly0Yd1Qg9RIDMKYrzQFfzWy0moUVzOy"
-
-double_sunglasses:
-    id: double_sunglasses
-    title: "Double Sunglasses"
-    expectations:
-      MDH1W: ["B2.1"]
-    grades:
-      - 9
-    tags:
-      - dan_meyer
-      - 3-act
-    source:
-      name: "Dan Meyer"
-      logo: "/math/images/sources/danmeyer.png"
-    lesson_plan:
-      title: "Double Sunglasses – 3 Act Task"
-      link: "https://drive.google.com/drive/folders/1ZvKuIiBUXbE0rDDnef4adPRAUq6KllEw"
-
-balloon_dog:
-    id: balloon_dog
-    title: "Balloon Dog"
-    expectations:
-      MDH1W: ["B3.5"]
-    grades:
-      - 9
-    tags:
-      - dan_meyer
-      - 3_act
-      - proportional_reasoning
-    source:
-      name: "Dan Meyer"
-      logo: "/math/images/sources/danmeyer.png"
-    lesson_plan:
-      title: "Balloon Dog - 3 Act Task"
-      link: "https://drive.google.com/drive/folders/1NZo4RHPQ3uAVUSAdq41bx4JUfkWLlWtR"
-      
-bet_your_coffee:
-    id: bet_your_coffee
-    title: "Bet Your Coffee?"
-    expectations:
-      MBF3C: ["D2.3"]
-      MDM4U: ["B1.1", "B1.2", "B1.7"]
-    grades:
-      - 11
-      - 12
-    tags:
-      - dan_meyer
-      - 3_act
-    source:
-      name: "Dan Meyer"
-      logo: "/math/images/sources/danmeyer.png"
-    lesson_plan:
-      title: "Bet Your Coffee? - 3 Act Task"
-      link: "https://drive.google.com/drive/folders/1Yonur51t8F3-bvs1ldsIy8rDTOF9KWwi"
-      
-coca_cola_pool:
-    id: coca_cola_pool
-    title: "Coca Cola Pool"
-    expectations:
-      MFM2P: ["A3.4"]
-    grades:
-      - 10
-    tags:
-      - dan_meyer
-      - 3_act
-      - volume
-      - cylinder
-    source:
-      name: "Dan Meyer"
-      logo: "/math/images/sources/danmeyer.png"
-    lesson_plan:
-      title: "Coca Cola Pool - 3 Act Task"
-      link: "https://drive.google.com/drive/folders/1A1123d149v0qHGBwYn7EHvRLK5K2nw8c"
-
-girl_scout_cookies:
-    id: girl_scout_cookies
-    title: "Girl Scout Cookies"
-    expectations:
-      MFM2P: ["A3.2","A3.4"]
-    grades:
-      - 10
-    tags:
-      - dan_meyer
-      - 3-act
-      - volume
-      - prism
-    source:
-      name: "Dan Meyer"
-      logo: "/math/images/sources/danmeyer.png"
-    lesson_plan:
-      title: "Girl Scout Cookies - 3 Act Task"
-      link: "https://drive.google.com/drive/folders/19a-sZL91v4Su4qwQJs-mghYRXUFPlilH"
-
-gas_station_ripoff:
-    id: gas_station_ripoff
-    title: "Gas Station Ripoff"
-    expectations:
-      MDH1W: ["B3.2"]
-      MEL4E: ["C3.4","C3.5","C3.6"]
-      MEL3E: ["C1.6"]
-    grades:
-      - 9
-      - 11
-      - 12
-    tags:
-      - dan_meyer
-      - 3_act
-    source:
-      name: "Dan Meyer"
-      logo: "/math/images/sources/danmeyer.png"
-    lesson_plan:
-      title: "Gas Station Ripoff - 3 Act Task"
-      link: "https://drive.google.com/drive/folders/1q01VfWORzsZ2wgKrbDxlQK1yE62hxVHA"
-
-marine_ramp:
-  id: marine_ramp
-  title: "Marine Ramp"
-  expectations:
-    MPM2D: ["C2.1","C2.3"]
-    MPM2P: ["A2.1","A2.3"]
-  grades:
-    - 10
-  tags:
-    - dan_meyer
-    - 3_act
-    - trig
-    - trigonometry
-    - triangles
-  source:
-    name: "Dan Meyer"
-    logo: "/math/images/sources/danmeyer.png"
-  lesson_plan:
-    title: "Marine Ramp - 3 Act Task"
-    link: "https://drive.google.com/drive/folders/14DnhCC8o22UJTsBW-ieV0ypq315cLTMy"
-    
-graduation:
-    id: graduation
-    title: "Graduation"
-    expectations:
-      MDH1W: ["B3.5"]
-      MEL4E: ["C3.5"]
-    grades:
-      - 9
-      - 12
-    tags:
-      - dan_meyer
-      - 3_act
-      - proportional_reasoning
-    source:
-      name: "Dan Meyer"
-      logo: "/math/images/sources/danmeyer.png"
-    lesson_plan:
-      title: "Graduation - 3 Act Task"
-      link: "https://drive.google.com/drive/folders/1WZi31cmq8hfEk0pu4JvtNhJfxKmquMzP"
-      
-coin_counting:
-    id: coin_counting
-    title: "Coin Counting"
-    expectations:
-      MPM2D: ["Addendum"]
-      MFM2P: ["B3.2","B3.3"]
-    grades:
-      - 9
-    tags:
-      - dan_meyer
-      - 3_act
-      - linear system
-      - substitution
-      - elimination
-      - point of intersection
-    source:
-      name: "Dan Meyer"
-      logo: "/math/images/sources/danmeyer.png"
-    lesson_plan:
-      title: "Coin Counting - 3 Act Task"
-      link: "https://drive.google.com/drive/folders/1h4qcvX5Z-bQDB3PriyCA1YIzmdO09YMg"
-      
-  nanas_lemon_water:
-    id: nanas_lemon_water
-    title: "Nana's Lemon Water"
-    expectations:
-      MDH1W: ["B3.4"]
-    grades:
-      - 9
-    tags:
-      - dan_meyer
-      - 3_act
-      - fractions
-    source:
-      name: "Dan Meyer"
-      logo: "/math/images/sources/danmeyer.png"
-    lesson_plan:
-      title: "Nana's Lemon Water - 3 Act Task"
-      link: "https://drive.google.com/drive/folders/1ItHQ5NVh92IVMNvJD1CIaVkvGZIjPjy7"
-      
-dandy_candies:
-    id: dandy_candies
-    title: "Dandy Candies"
-    expectations:
-      MFM2P: ["A3.4"]
-    grades:
-      - 10
-    tags:
-      - dan_meyer
-      - 3_act
-      - fractions
-    source:
-      name: "Dan Meyer"
-      logo: "/math/images/sources/danmeyer.png"
-    lesson_plan:
-      title: "Dandy Candies - 3 Act Task"
-      link: "https://drive.google.com/drive/folders/1FEA_MymDjeYYUUEskj8J9bl7vbMG0jus"
-      
-money_duck:
-    id: money_duck
-    title: "Money Duck"
-    expectations:
-      MBF3C: ["D2.3"]
-      MDM4U: ["A1.1","A1.2","B1.1", "B1.2", "B1.7"]
-    grades:
-      - 11
-      - 12
-    tags:
-      - dan_meyer
-      - 3_act
-    source:
-      name: "Dan Meyer"
-      logo: "/math/images/sources/danmeyer.png"
-    lesson_plan:
-      title: "Money Duck - 3 Act Task"
-      link: "https://drive.google.com/drive/folders/1Yonur51t8F3-bvs1ldsIy8rDTOF9KWwi"
-
-nanas_paint_mixup:
-    id: nanas_paint_mixup
-    title: "Nana's Paint Mixup"
-    expectations:
-       MDH1W: ["B3.5"]
-       MEL4E: ["B2.3"]
-    grades:
-      - 9
-      - 12
-    tags:
-      - dan_meyer
-      - 3_act
-      - proportions
-      - rates
-      - ratios
-    source:
-      name: "Dan Meyer"
-      logo: "/math/images/sources/danmeyer.png"
-    lesson_plan:
-      title: "Nana's Paint Mixup - 3 Act Task"
-      link: "https://drive.google.com/drive/folders/1mSe6UjvPhSN1ZV4fcGgBcQCjVpAAfGLO"
-
-super_stairs:
-    id: super_stairs
-    title: "Super Stairs"
-    expectations:
-       MCR3U: ["C2.2","C2.3"]
-    grades:
-      - 11
-    tags:
-      - dan_meyer
-      - 3_act
-      - geometric
-      - series
-      - sequence
-      - arithmetic
-    source:
-      name: "Dan Meyer"
-      logo: "/math/images/sources/danmeyer.png"
-    lesson_plan:
-      title: "Super Stairs - 3 Act Task"
-      link: "https://drive.google.com/drive/folders/1PcDL38zRS4Hg67w7ClLeSDcgbq48ccPV"
-
-circle_square:
-    id: circle_square
-    title: "Circle Square"
-    expectations:
-      MPM2D: ["A3.8","A4.2"]
-      MFM2P: ["C3.1","C3.2"]
-      MBF3C: ["A1.1"]
-    grades:
-      - 10
-      - 11
-    tags:
-      - dan_meyer
-      - 3_act
-      - area
-      - quadratics
-      - quadratic equations
-    source:
-      name: "Dan Meyer"
-      logo: "/math/images/sources/danmeyer.png"
-    lesson_plan:
-      title: "Circle Square - 3 Act Task"
-      link: "https://drive.google.com/drive/folders/16IospoAj4H3PZ45aUSE8snXFXLbMi3Bm"
-
-shipping_routes:
-    id: shipping_routes
-    title: "Shipping Routes"
-    expectations:
-      MPM2D: ["A3.2"]
-      MFM2P: ["C1.2"]
-    grades:
-      - 10
-    tags:
-      - dan_meyer
-      - 3_act
-      - GCF
-      - Greatest Common Factor
-    source:
-      name: "Dan Meyer"
-      logo: "/math/images/sources/danmeyer.png"
-    lesson_plan:
-      title: "Shipping Routes - 3 Act Task"
-      link: "https://drive.google.com/drive/folders/1VhJXsqAP0259kVpkktkh0mS3irO81wcl"
-
-ferris_wheel:
-    id: ferris_wheel
-    title: "Ferris Wheel"
-    expectations:
-       MCF3M: ["C3.2","C3.3"]
-       MCR3U: ["D3.3","D3.5"]
-       MHF4U: ["B2.7"]
-    grades:
-      - 11
-      - 12
-    tags:
-      - dan_meyer
-      - 3_act
-      - trig
-      - trigonometry
-      - sinusoidal functions
-      - trig function
-    source:
-      name: "Dan Meyer"
-      logo: "/math/images/sources/danmeyer.png"
-    lesson_plan:
-      title: "Ferris Wheel - 3 Act Task"
-      link: "https://drive.google.com/drive/folders/1PcDL38zRS4Hg67w7ClLeSDcgbq48ccPV"
-
-meatballs:
-    id: meatballs
-    title: "Meatballs"
-    expectations:
-       MFM2P: ["A3.4"]
-       MCT4C: ["D2.4"]
-    grades:
-      - 10
-      - 12
-    tags:
-      - dan_meyer
-      - 3_act
-      - volume
-      - cylinder
-      - sphere
-    source:
-      name: "Dan Meyer"
-      logo: "/math/images/sources/danmeyer.png"
-    lesson_plan:
-      title: "Meatballs"
-      link: "https://drive.google.com/drive/folders/1AZZWRL-ndB8X5Jy5O_wRy7d46L76qp1G"
-
-dueling_discounts:
-    id: dueling_discounts
-    title: "Dueling Discounts"
-    expectations:
-      MDH1W: ["B3.5"]
-      MEL3E: ["A3.1","A3.2","A3.4"]
-    grades:
-      - 9
-      - 11
-    tags:
-      - dan_meyer
-      - 3_act
-      - proportions
-      - percent
-      - finance
-      - tax
-      - proportional_reasoning
-    source:
-      name: "Dan Meyer"
-      logo: "/math/images/sources/danmeyer.png"
-    lesson_plan:
-      title: "Dueling Discounts - 3 Act Task"
-      link: "https://drive.google.com/drive/folders/1FBejijHbnixwiBZHN-kK8WPblt1DIDlG"
-      
-ditch_diggers:
-    id: ditch_diggers
-    title: "Ditch Diggers"
-    expectations:
-      MDH1W: ["C1.5"]
-    grades:
-      - 9
-    tags:
-      - dan_meyer
-      - 3_act
-      - equation
-      - linear
-    source:
-      name: "Dan Meyer"
-      logo: "/math/images/sources/danmeyer.png"
-    lesson_plan:
-      title: "Ditch Diggers - 3 Act Task"
-      link: "https://drive.google.com/drive/folders/1KRpw-_jDcGsaOvFxMxkGDTQBGAl0NA5k"
-      
-scrambler:
-    id: scrambler
-    title: "Scrambler"
-    expectations:
-      MCF3M: ["C3.2","C3.3"]
-      MCR3U: ["D3.3","D3.5"]
-      MHF4U: ["B2.7"]
-    grades:
-      - 11
-      - 12
-    tags:
-      - dan_meyer
-      - 3_act
-      - trigonometric function
-      - trig
-      - trig function
-      - periodic
-      - sinusoidal function
-    
-    source:
-      name: "Dan Meyer"
-      logo: "/math/images/sources/danmeyer.png"
-    lesson_plan:
-      title: "Scrambler - 3 Act Task"
-      link: "https://drive.google.com/drive/folders/1UcCuvUseVX0aqhtmld6swhXZR5NFbiCj"
-      
-toothpicks:
-    id: toothpicks
-    title: "Toothpicks"
-    expectations:
-      MBF3C: ["A2.5","A3.1"]
-      MCF3M: ["B2.1"]
-      MCR3U: ["B3.1"]
-      MPM2D: ["A3.8","A4.2"]
-      MFM2P: ["C3.1","C3.2"]
-
-    grades:
-      - 11
-    tags:
-      - dan_meyer
-      - 3_act
-      - equation
-      - quadratic
-    source:
-      name: "Dan Meyer"
-      logo: "/math/images/sources/danmeyer.png"
-    lesson_plan:
-      title: "Toothpicks - 3 Act Task"
-      link: "https://drive.google.com/drive/folders/1ilbEYfgJzi3xe_jOuYX_7IZdmDzPe6Rp"
-      
-pixel_pattern:
-    id: pixel_pattern
-    title: "Pixel Pattern"
-    expectations:
-       MCR3U: ["C2.2","C2.3"]
-    grades:
-      - 11
-    tags:
-      - dan_meyer
-      - 3_act
-      - geometric
-      - series
-      - sequence
-      - arithmetic
-    source:
-      name: "Dan Meyer"
-      logo: "/math/images/sources/danmeyer.png"
-    lesson_plan:
-      title: "Pixel Pattern - 3 Act Task"
-      link: "https://drive.google.com/drive/folders/1-E-_IdMEWWXcZkeB88ElgoRfSbOH0fUp"
-      
-neptune:
-    id: neptune
-    title: "Neptune"
-    expectations:
-       MDH1W: ["B3.5"]
-       MEL4E: ["B2.3"]
-    grades:
-      - 9
-      - 12
-    tags:
-      - dan_meyer
-      - 3_act
-      - proportions
-      - rates
-      - ratios
-    source:
-      name: "Dan Meyer"
-      logo: "/math/images/sources/danmeyer.png"
-    lesson_plan:
-      title: "Neptune - 3 Act Task"
-      link: "https://drive.google.com/drive/folders/1Cl6ObclC-5xRucQx2YIxUFY0uXjUeuFk"
-
-split_time:
-    id: split_time
-    title: "Split Time"
-    expectations:
-       MDH1W: ["B3.5"]
-       MEL4E: ["B2.3"]
-    grades:
-      - 9
-      - 12
-    tags:
-      - dan_meyer
-      - 3_act
-      - proportions
-      - rates
-      - ratios
-    source:
-      name: "Dan Meyer"
-      logo: "/math/images/sources/danmeyer.png"
-    lesson_plan:
-      title: "Split Time - 3 Act Task"
-      link: "https://drive.google.com/drive/folders/1csapIOU88t9P7sJV2a6kulgj3JpKSCU1"
-
-taco_cart:
-    id: taco_cart
-    title: "Taco Cart"
-    expectations:
-       MDH1W: ["E1.5"]
-    grades:
-      - 9
-    tags:
-      - dan_meyer
-      - 3_act
-      - pythagorean
-      - triangle
-      - pythagorean theorem
-    source:
-      name: "Dan Meyer"
-      logo: "/math/images/sources/danmeyer.png"
-    lesson_plan:
-      title: "Taco Cart - 3 Act Task"
-      link: "https://drive.google.com/drive/folders/1_kf5sBNTjCuOakyxqkbbVTCR75N_jcna"
-
-penny_circle:
-    id:  penny_circle
-    title: "Penny Circle"
-    expectations:
-       MDM4U: ["D2.3"]
-       MAP4C: ["D1.4", "D1.5"]
-    grades:
-      - 12
-    tags:
-      - dan_meyer
-      - 3_act
-      - pythagorean
-      - triangle
-      - pythagorean theorem
-    source:
-      name: "Dan Meyer"
-      logo: "/math/images/sources/danmeyer.png"
-    lesson_plan:
-      title: "Penny Circle - 3 Act Task"
-      link: "https://drive.google.com/drive/folders/1aX4g924zcrJ-LIk7klhIcwmlI8lFOpJd"
-
-playing_catch_up:
-    id: playing_catch_up
-    title: "Playing Catch Up"
-    expectations:
-      MPM2D: ["Addendum"]
-      MFM2P: ["B3.2","B3.3"]
-    grades:
-      - 9
-    tags:
-      - dan_meyer
-      - 3_act
-      - linear system
-      - substitution
-      - elimination
-      - point of intersection
-    source:
-      name: "Dan Meyer"
-      logo: "/math/images/sources/danmeyer.png"
-    lesson_plan:
-      title: "Playing Catch Up - 3 Act Task"
-      link: "https://drive.google.com/drive/folders/1izdjCtagwLViK2qrrpvKjCxOSaF9g0iH"
-
-coffee_traveller:
-    id: coffee_traveller
-    title: "Coffee Traveller"
-    expectations:
-       MDH1W: ["E1.6"]
-       MCT4C: ["D2.4"]
-       MEL4E: ["C1.1","C1.2","D2.5"]
-       MAP4C: ["C1.3"]
-    grades:
-      - 9
-      - 12
-    tags:
-      - dan_meyer
-      - 3_act
-      - volume
-      - prism
-    source:
-      name: "Dan Meyer"
-      logo: "/math/images/sources/danmeyer.png"
-    lesson_plan:
-      title: "Coffee Traveller - 3 Act Task"
-      link: "https://drive.google.com/drive/folders/1q6NRvfqNkmXIxLIgU4C-3MBGlvfrpvME"
-
-popcorn_picker:
-    id: popcorn_picker
-    title: "Popcorn Picker"
-    expectations:
-       MDH1W: ["E1.6"]
-       MCT4C: ["D2.4"]
-       MEL4E: ["C1.1","C1.2","D2.5"]
-       MAP4C: ["C1.3"]
-    grades:
-      - 9
-      - 12
-    tags:
-      - dan_meyer
-      - 3_act
-      - volume
-      - capacity
-      - cylinder
-      - estimation
-    source:
-      name: "Dan Meyer"
-      logo: "/math/images/sources/danmeyer.png"
-    lesson_plan:
-      title: "Popcorn Picker - 3 Act Task"
-      link: "https://drive.google.com/drive/folders/1S24Agun6gierYtnzc2vQUQn1e29NqRsf"
-
-coin_carpet:
-    id: coin_carpet
-    title: "Coin Carpet"
-    expectations:
-      MDH1W: ["B3.5"]
-      MEL4E: ["C3.5"]
-    grades:
-      - 9
-      - 12
-    tags:
-      - dan_meyer
-      - 3_act
-      - proportional_reasoning
-      - ratios
-      - proportions
-      - estimation
-    source:
-      name: "Dan Meyer"
-      logo: "/math/images/sources/danmeyer.png"
-    lesson_plan:
-      title: "Coin Carpet - 3 Act Task"
-      link: "https://drive.google.com/drive/folders/1QmQzUiUh2SMR8nYAHxDh5xk7N1z-aA21"     
-
-pizza_doubler:
-    id: pizza_doubler
-    title: "Pizza Doubler"
-    expectations:
-      MDH1W: ["B3.5"]
-      MEL3E: ["A3.1","A3.2","A3.4"]
-    grades:
-      - 9
-      - 11
-    tags:
-      - dan_meyer
-      - 3_act
-      - proportions
-      - percent
-      - coupon
-      - discount
-      - proportional_reasoning
-    source:
-      name: "Dan Meyer"
-      logo: "/math/images/sources/danmeyer.png"
-    lesson_plan:
-      title: "Pizza Doubler - 3 Act Task"
-      link: "https://drive.google.com/drive/folders/1drPEqkBCKaNri38Mmh7fAJUerZwv2OTf"      
-
-frys_bank:
-    id: frys_bank
-    title: "Fry's Bank"
-    expectations:
-      MCR3U: ["C3.1"]
-      MCF3M: ["B1.6"]
-      MBF3C: ["B1.1"] 
-    grades:
-      - 11
-    tags:
-      - dan_meyer
-      - 3_act
-      - interest
-      - exponential
-      - growth
-    source:
-      name: "Dan Meyer"
-      logo: "/math/images/sources/danmeyer.png"
-    lesson_plan:
-      title: "Fry's Bank - 3 Act Task"
-      link: "https://drive.google.com/drive/folders/1KME-N79-egCSDVGyI7ZrXAVji9tDoB8g"      
-
-leaky_faucet:
-    id: leaky_faucet
-    title: "Leaky Faucet"
-    expectations:
-      MDH1W: ["B3.5"]
-      MHF4U: ["D1.1"]
-      MEL4E: ["C3.2"]
-    grades:
-      - 9
-      - 12
-    tags:
-      - dan_meyer
-      - 3_act
-      - rates
-      - unit_rate
-      - estimation
-    source:
-      name: "Dan Meyer"
-      logo: "/math/images/sources/danmeyer.png"
-    lesson_plan:
-      title: "Leaky Faucet - 3 Act Task"
-      link: "https://docs.google.com/document/d/1Htl4oVo7rG_sn4UYe31KesR-iQo1CJdm2Wy3qs55kdc"      
-
-25_billion_apps:
-    id:  25_billion_apps
-    title: "25 Billion Apps"
-    expectations:
-      MDH1W: ["C4.4"]
-      MFM2P: ["B1.3","B2.1"]
-    grades:
-      - 9
-      - 10
-    tags:
-      - dan_meyer
-      - 3_act
-      - linear
-      - linear_relation
-      - slope
-      - rate_of_change
-    source:
-      name: "Dan Meyer"
-      logo: "/math/images/sources/danmeyer.png"
-    lesson_plan:
-      title: "25 Billion Apps - 3 Act Task"
-      link: "https://drive.google.com/drive/folders/1yVp6zNTYeOhw-ogzC3ku73z2X0B2anlT"
-
-bolt:
-    id: bolt
-    title: "Bolt"
-    expectations:
-      MDH1W: ["C1.5"]
-    grades:
-      - 9
-    tags:
-      - dan_meyer
-      - 3_act
-      - equation
-    source:
-      name: "Dan Meyer"
-      logo: "/math/images/sources/danmeyer.png"
-    lesson_plan:
-      title: "Bolt - 3 Act Task"
-      link: "https://drive.google.com/drive/folders/1SekESLIK6T74y7uKFhijY11knif9HHd7"
-
-nanas_chocolate_milk:
-    id: nanas_chocolate_milk
-    title: "Nana's Chocolate Milk"
-    expectations:
-      MDH1W: ["E1.3"]
-      MFM2P: ["A3.1"]
-    grades:
-      - 9
-      - 10
-    tags:
-      - dan_meyer
-      - 3_act
-      - imperial
-      - measurement
-      - cooking
-    source:
-      name: "Dan Meyer"
-      logo: "/math/images/sources/danmeyer.png"
-    lesson_plan:
-      title: "Nana's Chocolate Milk - 3 Act Task"
-      link: "https://drive.google.com/drive/folders/1VG4HJ64Hquk5qRlqf9iXO4gUUBXH2wC6"
-
-yellow_starbursts:
-    id: yellow_starbursts
-    title: "Yellow Starbursts"
-    expectations:
-      MBF3C: ["D2.3"]
-      MDM4U: ["B1.1", "B1.3", "B1.7","E1.4"]
-    grades:
-      - 11
-      - 12
-    tags:
-      - dan_meyer
-      - 3_act
-      - probability
-      - distribution
-      - frequency
-      - histogram
-      - probability_distribution
-      - discrete_random_variable
-    source:
-      name: "Dan Meyer"
-      logo: "/math/images/sources/danmeyer.png"
-    lesson_plan:
-      title: "Yellow Starbursts - 3 Act Task"
-      link: "https://drive.google.com/drive/folders/1MdZAvE_KXmEiQeNTylmR4wxpi4Ua9_MR"
-
-coke_vs_sprite:
-    id:  coke_vs_sprite
-    title: "Coke vs. Sprite"
-    expectations:
-      MDH1W: ["C4.4"]
-      MFM2P: ["B1.3","B2.1"]
-    grades:
-      - 9
-      - 10
-    tags:
-      - dan_meyer
-      - 3_act
-      - linear
-      - linear_relation
-      - slope
-      - rate_of_change
-    source:
-      name: "Dan Meyer"
-      logo: "/math/images/sources/danmeyer.png"
-    lesson_plan:
-      title: "Coke vs. Sprite - 3 Act Task"
-      link: "https://drive.google.com/drive/folders/1DXrWgFYorYWCmjVxyU-y3GIabyPM0hNn"
-
-joulies:
-    id:  joulies
-    title: "Joulies"
-    expectations:
-      MBF3C: ["A1.1"]
-      MCF3M: ["A1.2"]
-      MCR3U: ["A1.5"]
-      MPM2D: ["A4.2"]
-      MFM2P: ["C3.1"]
-    grades:
-      - 10
-      - 11
-    tags:
-      - dan_meyer
-      - 3_act
-      - quadratic
-      - quadratic functions
-      - functions
-    source:
-      name: "Dan Meyer"
-      logo: "/math/images/sources/danmeyer.png"
-    lesson_plan:
-      title: "Joulies - 3 Act Task"
-      link: "https://drive.google.com/drive/folders/1sqT2xyGmKliUquK46bVsRVCZtb3tB0SC"
-
-you_pour_i_choose:
-    id:  you_pour_i_choose
-    title: "You Pour, I Choose"
-    expectations:
-      MDH1W: ["E1.3"]
-      MFM2P: ["A3.1", "A3.4"]
-      MCT4C: ["D2.4"]
-    grades:
-      - 9
-      - 10
-      - 12
-    tags:
-      - dan_meyer
-      - 3_act
-      - imperial
-      - measurement
-      - volume
-      - cylinder
-    source:
-      name: "Dan Meyer"
-      logo: "/math/images/sources/danmeyer.png"
-    lesson_plan:
-      title: "You Pour, I Choose - 3 Act Task"
-      link: "https://drive.google.com/drive/folders/1VYJSCTbJUEwEGo2hNomdhz1ayML13ncN"
-
-car_caravan:
-    id:  car_caravan
-    title: "Car Caravam"
-    expectations:
-    grades:
-      - 10
-    tags:
-      - dan_meyer
-      - 3_act
-      - estimation
-    source:
-      name: "Dan Meyer"
-      logo: "/math/images/sources/danmeyer.png"
-    lesson_plan:
-      title: "Car Caravan - 3 Act Task"
-      link: "https://drive.google.com/drive/folders/1effx-ODCn_jh69uIpB-01ydFMoHMzL-4"
-
-domino_skyscraper:
-    id: domino_skyscraper
-    title: "Domino Skyscraper"
-    expectations:
-      MCR3U: ["C3.1"]
-      MCF3M: ["B1.6"]
-      MBF3C: ["B1.1"] 
-    grades:
-      - 11
-    tags:
-      - dan_meyer
-      - 3_act
-      - interest
-      - exponential
-      - growth
-    source:
-      name: "Dan Meyer"
-      logo: "/math/images/sources/danmeyer.png"
-    lesson_plan:
-      title: "Domino Skyscraper - 3 Act Task"
-      link: "https://drive.google.com/drive/folders/1l_3zFNALeaQg_zyE5lkfphg_apVf3wZP"      
-
-hot_coffee:
-    id: hot_coffee
-    title: "Hot Coffee"
-    expectations:
-      MDH1W: ["B3.5", "E1.3"]
-      MFM2P: ["A3.3"]
-      MCT4C: ["D2.4"]
-      MAP4C: ["C1.3"]
-      MEL4E: ["C1.1"]
-    grades:
-      - 9
-      - 10
-      - 12
-    tags:
-      - dan_meyer
-      - 3_act
-      - proportional_reasoning
-      - proportions
-      - imperial
-      - volume
-      - capacity
-      - measurement
-      name: "Dan Meyer"
-      logo: "/math/images/sources/danmeyer.png"
-    lesson_plan:
-      title: "Domino Skyscraper - 3 Act Task"
-      link: "https://drive.google.com/drive/folders/1Y74xI9BA99IvCcp7QjPTvmWHromuH1Xy"
-
-shrinking_dollar:
-    id: shrinking_dollar
-    title: "Incredible Shrinking Dollar"
-    expectations:
-      MCR3U: ["C3.1"]
-      MCF3M: ["B1.6"]
-      MBF3C: ["B1.1"] 
-    grades:
-      - 11
-    tags:
-      - dan_meyer
-      - 3_act
-      - interest
-      - exponential
-      - decay
-    source:
-      name: "Dan Meyer"
-      logo: "/math/images/sources/danmeyer.png"
-    lesson_plan:
-      title: "Incredible Shrinking Dollar - 3 Act Task"
-      link: "https://drive.google.com/drive/folders/1mLJiIZZI-aigVIOQsp5KQWYLfr6sbvy3"
-
-super_bear:
-    id:super_bear
-    title: "Super Bear"
-    expectations:
-       MDH1W: ["B3.5"]
-       MEL4E: ["B2.3"]
-    grades:
-      - 9
-      - 12
-    tags:
-      - dan_meyer
-      - 3_act
-      - proportions
-      - proportional_reasoning
-    source:
-      name: "Dan Meyer"
-      logo: "/math/images/sources/danmeyer.png"
-    lesson_plan:
-      title: "Super Bear - 3 Act Task"
-      link: "https://drive.google.com/drive/folders/1xUWZGUr1H74szYNB93VgkcTdQpPIGgnw"
-
-shower_vs_bath:
-    id:shower_vs_bath
-    title: "Shower vs. Bath"
-    expectations:
-       MDH1W: ["B3.5"]
-    grades:
-      - 9
-    tags:
-      - dan_meyer
-      - 3_act
-      - rate
-      - ratio
-    source:
-      name: "Dan Meyer"
-      logo: "/math/images/sources/danmeyer.png"
-    lesson_plan:
-      title: "Shower vs. Bath - 3 Act Task"
-      link: "https://drive.google.com/drive/folders/1qm0OmgTYCvydqA2k1OmFgaDpnx2SMfWN"
-
-will_it_hit_the_hoop:
-    id:will_it_hit_the_hoop
-    title: "Will It Hit The Hoop?"
-    expectations:
-       MFM2P: ["C2.2"]
-       MPM2D: ["A1.2"]
-    grades:
-      - 10
-    tags:
-      - dan_meyer
-      - 3_act
-      - quadratic_functions
-      - quadratics
-    source:
-      name: "Dan Meyer"
-      logo: "/math/images/sources/danmeyer.png"
-    lesson_plan:
-      title: "Will It Hit The Hoop? - 3 Act Task"
-      link: "https://drive.google.com/drive/folders/1U0dU4eXOLBDM5EaqE6HMPpxJocEeLkqP"
-
-obscure_geometry:
-    id: obscure_geometry
-    title: "Obscure Geometry"
-    expectations:
-       MPM2D: ["B2.5","B3.3"]
-    grades:
-      - 10
-    tags:
-      - dan_meyer
-      - 3_act
-      - coordinate_geometry
-      - composite_shapes
-      - percent
-      - analytic_geometry
-    source:
-      name: "Dan Meyer"
-      logo: "/math/images/sources/danmeyer.png"
-    lesson_plan:
-      title: "Obscure Geometry - 3 Act Task"
-      link: "https://drive.google.com/drive/folders/1kpdS78TiWskCD6d9rjnx5woJWdkrurB-"
-
-speed_of_light:
-    id:speed_of_light
-    title: "Speed of Light"
-    expectations:
-       MDH1W: ["B3.5"]
-       MEL4E: ["B2.3"]
-    grades:
-      - 9
-      - 12
-    tags:
-      - dan_meyer
-      - 3_act
-      - proportions
-      - proportional_reasoning
-    source:
-      name: "Dan Meyer"
-      logo: "/math/images/sources/danmeyer.png"
-    lesson_plan:
-      title: "Speed of Light - 3 Act Task"
-      link: "https://drive.google.com/drive/folders/1O1nLzBDQT3ZAAKaoHKddHzwdHhhm-Y0d"
-      
-pyramid_of_pennies:
-    id:pyramid_of_pennies
-    title: "Pyramid of Pennies"
-    expectations:
-       MFM2P: ["A3.4"]
-    grades:
-      - 10
-    tags:
-      - dan_meyer
-      - 3_act
-      - pyramid
-      - geometry
-      - volume
-    source:
-      name: "Dan Meyer"
-      logo: "/math/images/sources/danmeyer.png"
-    lesson_plan:
-      title: "Pyramid of Pennies - 3 Act Task"
-      link: "https://drive.google.com/drive/folders/1mSZW941i12CBLiwx6E0VebfnpjFSjM9m"
-      
-      
-ticket_to_ride:
-    id:ticket_to_ride
-    title: "Ticket To Ride"
-    expectations:
-       MFM2P: ["A3.4"]
-    grades:
-      - 10
-    tags:
-      - dan_meyer
-      - 3_act
-      - circle
-      - surface_area
-    source:
-      name: "Dan Meyer"
-      logo: "/math/images/sources/danmeyer.png"
-    lesson_plan:
-      title: "Ticket To Ride - 3 Act Task"
-      link: "https://drive.google.com/drive/folders/1HU0W2is59wiJKWb5ZPry70hnDsFto6-6"
-
-print_job:
-    id: print_job
-    title: "Print Job"
-    expectations:
-       MDH1W: ["B3.5"]
-       MEL4E: ["B2.3"]
-    grades:
-      - 9
-      - 12
-    tags:
-      - dan_meyer
-      - 3_act
-      - proportions
-      - rates
-      - ratios
-    source:
-      name: "Dan Meyer"
-      logo: "/math/images/sources/danmeyer.png"
-    lesson_plan:
-      title: "Print Job - 3 Act Task"
-      link: "https://drive.google.com/drive/folders/1Bgpg8NvEqd9S0fqscc-eW3oefPZfa-0d"
-
-world_record_airbag:
-    id: world_record_airbag
-    title: "World Record Airbag"
-    expectations:
-      MCR3U: ["A2.3"]
-      MCF3M: ["B1.1"]
-      MBF3C: ["B1.1"] 
-    grades:
-      - 11
-    tags:
-      - dan_meyer
-      - 3_act
-      - interest
-      - exponential
-      - decay
-    source:
-      name: "Dan Meyer"
-      logo: "/math/images/sources/danmeyer.png"
-    lesson_plan:
-      title: "World Record Airbag - 3 Act Task"
-      link: "https://drive.google.com/drive/folders/1zWn3VClWOw12bA5raCdfJe88U0UIMYip"
-
-percent_discount:
-    id: percent_discount
-    title: "Amazon Percent Discount"
-    expectations:
-      MDH1W: ["B3.5"]
-      MEL3E: ["A3.1","A3.2","A3.4"]
-    grades:
-      - 9
-      - 11
-    tags:
-      - dan_meyer
-      - 3_act
-      - proportions
-      - percent
-      - finance
-      - discount
-      - proportional_reasoning
-    source:
-      name: "Dan Meyer"
-      logo: "/math/images/sources/danmeyer.png"
-    lesson_plan:
-      title: "Amazon Percent Discount - 3 Act Task"
-      link: "https://drive.google.com/drive/folders/1zF9qJ69CTtkcGslgx-BrR_8OSjeqEDzK"
-
-apple_mothership:
-    id: apple_mothership
-    title: "Apple Mothership"
-    expectations:
-      MDH1W: ["B3.2"]
-    grades:
-      - 9
-    tags:
-      - dan_meyer
-      - 3_act
-      - unit fractions
-      - proportions
-    source:
-      name: "Dan Meyer"
-      logo: "/math/images/sources/danmeyer.png"
-    lesson_plan:
-      title: "Apple Mothership - 3 Act Task"
-      link: "https://drive.google.com/drive/folders/1gQSrwY6vMV5YXpUFtmi-xx_QVHrfScEd"
-
-falling_glowsticks:
-    id: falling_glowsticks
-    title: "Falling Glowsticks"
-    expectations:
-      MCF3M: ["A1.1", "B2.2"]
-      MCR3U: ["3.2"]
-    grades:
-      - 11
-    tags:
-      - dan_meyer
-      - 3_act
-      - exponential
-      - quadratic
-      - introductory
-    source:
-      name: "Dan Meyer"
-      logo: "/math/images/sources/danmeyer.png"
-    lesson_plan:
-      title: "Falling Glowsticks - 3 Act Task"
-      link: "https://drive.google.com/drive/folders/1FeQS_RUPXrxqGqoaNXeqwXgbu4UlPuXK"
-
-falling_rocks:
-    id: falling_rocks
-    title: "Falling Rocks"
-    expectations:
-      MCF3M: ["A1.1", "B2.2"]
-      MCR3U: ["B3.2"]
-      MBF3C: ["A1.1", "A3.2"]
-    grades:
-      - 11
-    tags:
-      - dan_meyer
-      - 3_act
-      - exponential
-      - growth
-      - introductory
-    source:
-      name: "Dan Meyer"
-      logo: "/math/images/sources/danmeyer.png"
-    lesson_plan:
-      title: "Falling Rocks - 3 Act Task"
-      link: "https://drive.google.com/drive/folders/1OqlCZupmld4nuQIvF8V9E2ibqE7loSEx"
-
-water_tank:
-    id: water_tank
-    title: "Water Tank"
-    expectations:
-      MDH1W: ["B3.2"]
-      MFM2P: ["A3.4"]
-    grades:
-      - 9
-      - 10
-    tags:
-      - dan_meyer
-      - 3_act
-      - volume
-      - cylinder
-      - rate
-      - unit_rate
-    source:
-      name: "Dan Meyer"
-      logo: "/math/images/sources/danmeyer.png"
-    lesson_plan:
-      title: "Water Tank - 3 Act Task"
-      link: "https://drive.google.com/drive/folders/1sZsQfzAOcTyb4RpCZXjgXx_JTLAmUX6v"
-
-jugs_of_milk:
-    id:jugs_of_milk
-    title: "Jugs of Milk"
-    expectations:
-       MDH1W: ["B3.5"]
-    grades:
-      - 9
-    tags:
-      - kyle_pearce
-      - 3_act
-      - proportions
-      - proportional_reasoning
-    source:
-      name: "Dan Meyer"
-      logo: "/math/images/sources/kylepearce.png"
-    lesson_plan:
-      title: "Jugs of Milk - 3 Act Task"
-      link: "https://drive.google.com/drive/folders/1I-IqRaa8B-qO7vswmLi_Gzk-atfqZDpQ"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	fractions_compare:
+	    id: fractions_compare
+	    title: "Representing & Comparing Fractions"
+	    expectations:
+	      MDH1W: ["B1.1"]
+	    grades:
+	      - 9
+	    tags:
+	      - bhn-math
+	      - bhn
+	      - fractions
+	    source:
+	      name: "BHN Math"
+	      logo: "/math/images/sources/BHNmath.png"
+	    lesson_plan:
+	      title: "Representing and Comparing Fractions"
+	      link: "/math/files/grade9math/BHN_B1.1_LP.pdf"
+	    lesson_notes:
+	      title: "Fractions and Mixed Numbers"
+	      link: "/math/files/grade9math/BHN_B1.1_LN.pdf"
+	      
+	sets_and_subsets:
+	    id: sets_and_subsets
+	    title: "The Numbers We Use: Sets and Subsets"
+	    expectations:
+	      MDH1W: ["B1.2"]
+	    grades:
+	      - 9
+	    tags:
+	      - bhn-math
+	      - bhn
+	    source:
+	      name: "BHN Math"
+	      logo: "/math/images/sources/BHNmath.png"
+	    lesson_plan:
+	      title: "The Numbers We Use: Sets and Subsets"
+	      link: "/math/files/grade9math/BHN_B1.2_LP_setsandsubsets.pdf"
+	    lesson_notes:
+	      title: "The Numbers We Use: Sets and Subsets"
+	      link: "/math/files/grade9math/BHN_B1.2_LN_setsandsubsets.pdf"
+	    practice:
+	      - title: "Build your Skills"
+	        link: "/math/files/grade9math/BHN_B1.2_P_setsandsubsets.pdf"
+	    graphic_organizer:
+	      title: "Number Sets"
+	      link: "/math/files/grade9math/BHN_B1.2_GO_setsandsubsets.pdf"
+	
+	powers_scientific:
+	    id: powers_scientific
+	    title: "Powers & Scientific Notation"
+	    expectations:
+	      MDH1W: ["B2.1", "B2.3"]
+	    grades:
+	      - 9
+	    tags:
+	      - bhn-math
+	      - bhn
+	    source:
+	      name: "BHN Math"
+	      logo: "/math/images/sources/BHNmath.png"
+	    lesson_notes:
+	      title: "Powers & Scientific Notation"
+	      link: "/math/files/grade9math/BHN_B2.1_B2.3_LN.pdf"
+	    practice:
+	      - title: "Build Your Skills"
+	        link: "/math/files/grade9math/BHN_B2.1_B2.3_P.pdf"
+	
+	penny_a_day:
+	    id: penny_a_day
+	    title: "Penny a Day"
+	    expectations:
+	      MDH1W: ["B2.1"]
+	    grades:
+	      - 9
+	    tags:
+	      - kyle_pearce
+	      - 3-act
+	      - exponents
+	    source:
+	      name: "Kyle Pearce"
+	      logo: "/math/images/sources/TITM.png"
+	    lesson_plan:
+	      title: "Penny A Day – 3 Act Task"
+	      link: "https://drive.google.com/drive/folders/1Vly0Yd1Qg9RIDMKYrzQFfzWy0moUVzOy"
+	
+	double_sunglasses:
+	    id: double_sunglasses
+	    title: "Double Sunglasses"
+	    expectations:
+	      MDH1W: ["B2.1"]
+	    grades:
+	      - 9
+	    tags:
+	      - dan_meyer
+	      - 3-act
+	    source:
+	      name: "Dan Meyer"
+	      logo: "/math/images/sources/danmeyer.png"
+	    lesson_plan:
+	      title: "Double Sunglasses – 3 Act Task"
+	      link: "https://drive.google.com/drive/folders/1ZvKuIiBUXbE0rDDnef4adPRAUq6KllEw"
+	
+	balloon_dog:
+	    id: balloon_dog
+	    title: "Balloon Dog"
+	    expectations:
+	      MDH1W: ["B3.5"]
+	    grades:
+	      - 9
+	    tags:
+	      - dan_meyer
+	      - 3_act
+	      - proportional_reasoning
+	    source:
+	      name: "Dan Meyer"
+	      logo: "/math/images/sources/danmeyer.png"
+	    lesson_plan:
+	      title: "Balloon Dog - 3 Act Task"
+	      link: "https://drive.google.com/drive/folders/1NZo4RHPQ3uAVUSAdq41bx4JUfkWLlWtR"
+	      
+	bet_your_coffee:
+	    id: bet_your_coffee
+	    title: "Bet Your Coffee?"
+	    expectations:
+	      MBF3C: ["D2.3"]
+	      MDM4U: ["B1.1", "B1.2", "B1.7"]
+	    grades:
+	      - 11
+	      - 12
+	    tags:
+	      - dan_meyer
+	      - 3_act
+	    source:
+	      name: "Dan Meyer"
+	      logo: "/math/images/sources/danmeyer.png"
+	    lesson_plan:
+	      title: "Bet Your Coffee? - 3 Act Task"
+	      link: "https://drive.google.com/drive/folders/1Yonur51t8F3-bvs1ldsIy8rDTOF9KWwi"
+	      
+	coca_cola_pool:
+	    id: coca_cola_pool
+	    title: "Coca Cola Pool"
+	    expectations:
+	      MFM2P: ["A3.4"]
+	    grades:
+	      - 10
+	    tags:
+	      - dan_meyer
+	      - 3_act
+	      - volume
+	      - cylinder
+	    source:
+	      name: "Dan Meyer"
+	      logo: "/math/images/sources/danmeyer.png"
+	    lesson_plan:
+	      title: "Coca Cola Pool - 3 Act Task"
+	      link: "https://drive.google.com/drive/folders/1A1123d149v0qHGBwYn7EHvRLK5K2nw8c"
+	
+	girl_scout_cookies:
+	    id: girl_scout_cookies
+	    title: "Girl Scout Cookies"
+	    expectations:
+	      MFM2P: ["A3.2","A3.4"]
+	    grades:
+	      - 10
+	    tags:
+	      - dan_meyer
+	      - 3-act
+	      - volume
+	      - prism
+	    source:
+	      name: "Dan Meyer"
+	      logo: "/math/images/sources/danmeyer.png"
+	    lesson_plan:
+	      title: "Girl Scout Cookies - 3 Act Task"
+	      link: "https://drive.google.com/drive/folders/19a-sZL91v4Su4qwQJs-mghYRXUFPlilH"
+	
+	gas_station_ripoff:
+	    id: gas_station_ripoff
+	    title: "Gas Station Ripoff"
+	    expectations:
+	      MDH1W: ["B3.2"]
+	      MEL4E: ["C3.4","C3.5","C3.6"]
+	      MEL3E: ["C1.6"]
+	    grades:
+	      - 9
+	      - 11
+	      - 12
+	    tags:
+	      - dan_meyer
+	      - 3_act
+	    source:
+	      name: "Dan Meyer"
+	      logo: "/math/images/sources/danmeyer.png"
+	    lesson_plan:
+	      title: "Gas Station Ripoff - 3 Act Task"
+	      link: "https://drive.google.com/drive/folders/1q01VfWORzsZ2wgKrbDxlQK1yE62hxVHA"
+	
+	marine_ramp:
+	  id: marine_ramp
+	  title: "Marine Ramp"
+	  expectations:
+	    MPM2D: ["C2.1","C2.3"]
+	    MPM2P: ["A2.1","A2.3"]
+	  grades:
+	    - 10
+	  tags:
+	    - dan_meyer
+	    - 3_act
+	    - trig
+	    - trigonometry
+	    - triangles
+	  source:
+	    name: "Dan Meyer"
+	    logo: "/math/images/sources/danmeyer.png"
+	  lesson_plan:
+	    title: "Marine Ramp - 3 Act Task"
+	    link: "https://drive.google.com/drive/folders/14DnhCC8o22UJTsBW-ieV0ypq315cLTMy"
+	    
+	graduation:
+	    id: graduation
+	    title: "Graduation"
+	    expectations:
+	      MDH1W: ["B3.5"]
+	      MEL4E: ["C3.5"]
+	    grades:
+	      - 9
+	      - 12
+	    tags:
+	      - dan_meyer
+	      - 3_act
+	      - proportional_reasoning
+	    source:
+	      name: "Dan Meyer"
+	      logo: "/math/images/sources/danmeyer.png"
+	    lesson_plan:
+	      title: "Graduation - 3 Act Task"
+	      link: "https://drive.google.com/drive/folders/1WZi31cmq8hfEk0pu4JvtNhJfxKmquMzP"
+	      
+	coin_counting:
+	    id: coin_counting
+	    title: "Coin Counting"
+	    expectations:
+	      MPM2D: ["Addendum"]
+	      MFM2P: ["B3.2","B3.3"]
+	    grades:
+	      - 9
+	    tags:
+	      - dan_meyer
+	      - 3_act
+	      - linear system
+	      - substitution
+	      - elimination
+	      - point of intersection
+	    source:
+	      name: "Dan Meyer"
+	      logo: "/math/images/sources/danmeyer.png"
+	    lesson_plan:
+	      title: "Coin Counting - 3 Act Task"
+	      link: "https://drive.google.com/drive/folders/1h4qcvX5Z-bQDB3PriyCA1YIzmdO09YMg"
+	      
+	  nanas_lemon_water:
+	    id: nanas_lemon_water
+	    title: "Nana's Lemon Water"
+	    expectations:
+	      MDH1W: ["B3.4"]
+	    grades:
+	      - 9
+	    tags:
+	      - dan_meyer
+	      - 3_act
+	      - fractions
+	    source:
+	      name: "Dan Meyer"
+	      logo: "/math/images/sources/danmeyer.png"
+	    lesson_plan:
+	      title: "Nana's Lemon Water - 3 Act Task"
+	      link: "https://drive.google.com/drive/folders/1ItHQ5NVh92IVMNvJD1CIaVkvGZIjPjy7"
+	      
+	dandy_candies:
+	    id: dandy_candies
+	    title: "Dandy Candies"
+	    expectations:
+	      MFM2P: ["A3.4"]
+	    grades:
+	      - 10
+	    tags:
+	      - dan_meyer
+	      - 3_act
+	      - fractions
+	    source:
+	      name: "Dan Meyer"
+	      logo: "/math/images/sources/danmeyer.png"
+	    lesson_plan:
+	      title: "Dandy Candies - 3 Act Task"
+	      link: "https://drive.google.com/drive/folders/1FEA_MymDjeYYUUEskj8J9bl7vbMG0jus"
+	      
+	money_duck:
+	    id: money_duck
+	    title: "Money Duck"
+	    expectations:
+	      MBF3C: ["D2.3"]
+	      MDM4U: ["A1.1","A1.2","B1.1", "B1.2", "B1.7"]
+	    grades:
+	      - 11
+	      - 12
+	    tags:
+	      - dan_meyer
+	      - 3_act
+	    source:
+	      name: "Dan Meyer"
+	      logo: "/math/images/sources/danmeyer.png"
+	    lesson_plan:
+	      title: "Money Duck - 3 Act Task"
+	      link: "https://drive.google.com/drive/folders/1Yonur51t8F3-bvs1ldsIy8rDTOF9KWwi"
+	
+	nanas_paint_mixup:
+	    id: nanas_paint_mixup
+	    title: "Nana's Paint Mixup"
+	    expectations:
+	       MDH1W: ["B3.5"]
+	       MEL4E: ["B2.3"]
+	    grades:
+	      - 9
+	      - 12
+	    tags:
+	      - dan_meyer
+	      - 3_act
+	      - proportions
+	      - rates
+	      - ratios
+	    source:
+	      name: "Dan Meyer"
+	      logo: "/math/images/sources/danmeyer.png"
+	    lesson_plan:
+	      title: "Nana's Paint Mixup - 3 Act Task"
+	      link: "https://drive.google.com/drive/folders/1mSe6UjvPhSN1ZV4fcGgBcQCjVpAAfGLO"
+	
+	super_stairs:
+	    id: super_stairs
+	    title: "Super Stairs"
+	    expectations:
+	       MCR3U: ["C2.2","C2.3"]
+	    grades:
+	      - 11
+	    tags:
+	      - dan_meyer
+	      - 3_act
+	      - geometric
+	      - series
+	      - sequence
+	      - arithmetic
+	    source:
+	      name: "Dan Meyer"
+	      logo: "/math/images/sources/danmeyer.png"
+	    lesson_plan:
+	      title: "Super Stairs - 3 Act Task"
+	      link: "https://drive.google.com/drive/folders/1PcDL38zRS4Hg67w7ClLeSDcgbq48ccPV"
+	
+	circle_square:
+	    id: circle_square
+	    title: "Circle Square"
+	    expectations:
+	      MPM2D: ["A3.8","A4.2"]
+	      MFM2P: ["C3.1","C3.2"]
+	      MBF3C: ["A1.1"]
+	    grades:
+	      - 10
+	      - 11
+	    tags:
+	      - dan_meyer
+	      - 3_act
+	      - area
+	      - quadratics
+	      - quadratic equations
+	    source:
+	      name: "Dan Meyer"
+	      logo: "/math/images/sources/danmeyer.png"
+	    lesson_plan:
+	      title: "Circle Square - 3 Act Task"
+	      link: "https://drive.google.com/drive/folders/16IospoAj4H3PZ45aUSE8snXFXLbMi3Bm"
+	
+	shipping_routes:
+	    id: shipping_routes
+	    title: "Shipping Routes"
+	    expectations:
+	      MPM2D: ["A3.2"]
+	      MFM2P: ["C1.2"]
+	    grades:
+	      - 10
+	    tags:
+	      - dan_meyer
+	      - 3_act
+	      - GCF
+	      - Greatest Common Factor
+	    source:
+	      name: "Dan Meyer"
+	      logo: "/math/images/sources/danmeyer.png"
+	    lesson_plan:
+	      title: "Shipping Routes - 3 Act Task"
+	      link: "https://drive.google.com/drive/folders/1VhJXsqAP0259kVpkktkh0mS3irO81wcl"
+	
+	ferris_wheel:
+	    id: ferris_wheel
+	    title: "Ferris Wheel"
+	    expectations:
+	       MCF3M: ["C3.2","C3.3"]
+	       MCR3U: ["D3.3","D3.5"]
+	       MHF4U: ["B2.7"]
+	    grades:
+	      - 11
+	      - 12
+	    tags:
+	      - dan_meyer
+	      - 3_act
+	      - trig
+	      - trigonometry
+	      - sinusoidal functions
+	      - trig function
+	    source:
+	      name: "Dan Meyer"
+	      logo: "/math/images/sources/danmeyer.png"
+	    lesson_plan:
+	      title: "Ferris Wheel - 3 Act Task"
+	      link: "https://drive.google.com/drive/folders/1PcDL38zRS4Hg67w7ClLeSDcgbq48ccPV"
+	
+	meatballs:
+	    id: meatballs
+	    title: "Meatballs"
+	    expectations:
+	       MFM2P: ["A3.4"]
+	       MCT4C: ["D2.4"]
+	    grades:
+	      - 10
+	      - 12
+	    tags:
+	      - dan_meyer
+	      - 3_act
+	      - volume
+	      - cylinder
+	      - sphere
+	    source:
+	      name: "Dan Meyer"
+	      logo: "/math/images/sources/danmeyer.png"
+	    lesson_plan:
+	      title: "Meatballs"
+	      link: "https://drive.google.com/drive/folders/1AZZWRL-ndB8X5Jy5O_wRy7d46L76qp1G"
+	
+	dueling_discounts:
+	    id: dueling_discounts
+	    title: "Dueling Discounts"
+	    expectations:
+	      MDH1W: ["B3.5"]
+	      MEL3E: ["A3.1","A3.2","A3.4"]
+	    grades:
+	      - 9
+	      - 11
+	    tags:
+	      - dan_meyer
+	      - 3_act
+	      - proportions
+	      - percent
+	      - finance
+	      - tax
+	      - proportional_reasoning
+	    source:
+	      name: "Dan Meyer"
+	      logo: "/math/images/sources/danmeyer.png"
+	    lesson_plan:
+	      title: "Dueling Discounts - 3 Act Task"
+	      link: "https://drive.google.com/drive/folders/1FBejijHbnixwiBZHN-kK8WPblt1DIDlG"
+	      
+	ditch_diggers:
+	    id: ditch_diggers
+	    title: "Ditch Diggers"
+	    expectations:
+	      MDH1W: ["C1.5"]
+	    grades:
+	      - 9
+	    tags:
+	      - dan_meyer
+	      - 3_act
+	      - equation
+	      - linear
+	    source:
+	      name: "Dan Meyer"
+	      logo: "/math/images/sources/danmeyer.png"
+	    lesson_plan:
+	      title: "Ditch Diggers - 3 Act Task"
+	      link: "https://drive.google.com/drive/folders/1KRpw-_jDcGsaOvFxMxkGDTQBGAl0NA5k"
+	      
+	scrambler:
+	    id: scrambler
+	    title: "Scrambler"
+	    expectations:
+	      MCF3M: ["C3.2","C3.3"]
+	      MCR3U: ["D3.3","D3.5"]
+	      MHF4U: ["B2.7"]
+	    grades:
+	      - 11
+	      - 12
+	    tags:
+	      - dan_meyer
+	      - 3_act
+	      - trigonometric function
+	      - trig
+	      - trig function
+	      - periodic
+	      - sinusoidal function
+	    
+	    source:
+	      name: "Dan Meyer"
+	      logo: "/math/images/sources/danmeyer.png"
+	    lesson_plan:
+	      title: "Scrambler - 3 Act Task"
+	      link: "https://drive.google.com/drive/folders/1UcCuvUseVX0aqhtmld6swhXZR5NFbiCj"
+	      
+	toothpicks:
+	    id: toothpicks
+	    title: "Toothpicks"
+	    expectations:
+	      MBF3C: ["A2.5","A3.1"]
+	      MCF3M: ["B2.1"]
+	      MCR3U: ["B3.1"]
+	      MPM2D: ["A3.8","A4.2"]
+	      MFM2P: ["C3.1","C3.2"]
+	
+	    grades:
+	      - 11
+	    tags:
+	      - dan_meyer
+	      - 3_act
+	      - equation
+	      - quadratic
+	    source:
+	      name: "Dan Meyer"
+	      logo: "/math/images/sources/danmeyer.png"
+	    lesson_plan:
+	      title: "Toothpicks - 3 Act Task"
+	      link: "https://drive.google.com/drive/folders/1ilbEYfgJzi3xe_jOuYX_7IZdmDzPe6Rp"
+	      
+	pixel_pattern:
+	    id: pixel_pattern
+	    title: "Pixel Pattern"
+	    expectations:
+	       MCR3U: ["C2.2","C2.3"]
+	    grades:
+	      - 11
+	    tags:
+	      - dan_meyer
+	      - 3_act
+	      - geometric
+	      - series
+	      - sequence
+	      - arithmetic
+	    source:
+	      name: "Dan Meyer"
+	      logo: "/math/images/sources/danmeyer.png"
+	    lesson_plan:
+	      title: "Pixel Pattern - 3 Act Task"
+	      link: "https://drive.google.com/drive/folders/1-E-_IdMEWWXcZkeB88ElgoRfSbOH0fUp"
+	      
+	neptune:
+	    id: neptune
+	    title: "Neptune"
+	    expectations:
+	       MDH1W: ["B3.5"]
+	       MEL4E: ["B2.3"]
+	    grades:
+	      - 9
+	      - 12
+	    tags:
+	      - dan_meyer
+	      - 3_act
+	      - proportions
+	      - rates
+	      - ratios
+	    source:
+	      name: "Dan Meyer"
+	      logo: "/math/images/sources/danmeyer.png"
+	    lesson_plan:
+	      title: "Neptune - 3 Act Task"
+	      link: "https://drive.google.com/drive/folders/1Cl6ObclC-5xRucQx2YIxUFY0uXjUeuFk"
+	
+	split_time:
+	    id: split_time
+	    title: "Split Time"
+	    expectations:
+	       MDH1W: ["B3.5"]
+	       MEL4E: ["B2.3"]
+	    grades:
+	      - 9
+	      - 12
+	    tags:
+	      - dan_meyer
+	      - 3_act
+	      - proportions
+	      - rates
+	      - ratios
+	    source:
+	      name: "Dan Meyer"
+	      logo: "/math/images/sources/danmeyer.png"
+	    lesson_plan:
+	      title: "Split Time - 3 Act Task"
+	      link: "https://drive.google.com/drive/folders/1csapIOU88t9P7sJV2a6kulgj3JpKSCU1"
+	
+	taco_cart:
+	    id: taco_cart
+	    title: "Taco Cart"
+	    expectations:
+	       MDH1W: ["E1.5"]
+	    grades:
+	      - 9
+	    tags:
+	      - dan_meyer
+	      - 3_act
+	      - pythagorean
+	      - triangle
+	      - pythagorean theorem
+	    source:
+	      name: "Dan Meyer"
+	      logo: "/math/images/sources/danmeyer.png"
+	    lesson_plan:
+	      title: "Taco Cart - 3 Act Task"
+	      link: "https://drive.google.com/drive/folders/1_kf5sBNTjCuOakyxqkbbVTCR75N_jcna"
+	
+	penny_circle:
+	    id:  penny_circle
+	    title: "Penny Circle"
+	    expectations:
+	       MDM4U: ["D2.3"]
+	       MAP4C: ["D1.4", "D1.5"]
+	    grades:
+	      - 12
+	    tags:
+	      - dan_meyer
+	      - 3_act
+	      - pythagorean
+	      - triangle
+	      - pythagorean theorem
+	    source:
+	      name: "Dan Meyer"
+	      logo: "/math/images/sources/danmeyer.png"
+	    lesson_plan:
+	      title: "Penny Circle - 3 Act Task"
+	      link: "https://drive.google.com/drive/folders/1aX4g924zcrJ-LIk7klhIcwmlI8lFOpJd"
+	
+	playing_catch_up:
+	    id: playing_catch_up
+	    title: "Playing Catch Up"
+	    expectations:
+	      MPM2D: ["Addendum"]
+	      MFM2P: ["B3.2","B3.3"]
+	    grades:
+	      - 9
+	    tags:
+	      - dan_meyer
+	      - 3_act
+	      - linear system
+	      - substitution
+	      - elimination
+	      - point of intersection
+	    source:
+	      name: "Dan Meyer"
+	      logo: "/math/images/sources/danmeyer.png"
+	    lesson_plan:
+	      title: "Playing Catch Up - 3 Act Task"
+	      link: "https://drive.google.com/drive/folders/1izdjCtagwLViK2qrrpvKjCxOSaF9g0iH"
+	
+	coffee_traveller:
+	    id: coffee_traveller
+	    title: "Coffee Traveller"
+	    expectations:
+	       MDH1W: ["E1.6"]
+	       MCT4C: ["D2.4"]
+	       MEL4E: ["C1.1","C1.2","D2.5"]
+	       MAP4C: ["C1.3"]
+	    grades:
+	      - 9
+	      - 12
+	    tags:
+	      - dan_meyer
+	      - 3_act
+	      - volume
+	      - prism
+	    source:
+	      name: "Dan Meyer"
+	      logo: "/math/images/sources/danmeyer.png"
+	    lesson_plan:
+	      title: "Coffee Traveller - 3 Act Task"
+	      link: "https://drive.google.com/drive/folders/1q6NRvfqNkmXIxLIgU4C-3MBGlvfrpvME"
+	
+	popcorn_picker:
+	    id: popcorn_picker
+	    title: "Popcorn Picker"
+	    expectations:
+	       MDH1W: ["E1.6"]
+	       MCT4C: ["D2.4"]
+	       MEL4E: ["C1.1","C1.2","D2.5"]
+	       MAP4C: ["C1.3"]
+	    grades:
+	      - 9
+	      - 12
+	    tags:
+	      - dan_meyer
+	      - 3_act
+	      - volume
+	      - capacity
+	      - cylinder
+	      - estimation
+	    source:
+	      name: "Dan Meyer"
+	      logo: "/math/images/sources/danmeyer.png"
+	    lesson_plan:
+	      title: "Popcorn Picker - 3 Act Task"
+	      link: "https://drive.google.com/drive/folders/1S24Agun6gierYtnzc2vQUQn1e29NqRsf"
+	
+	coin_carpet:
+	    id: coin_carpet
+	    title: "Coin Carpet"
+	    expectations:
+	      MDH1W: ["B3.5"]
+	      MEL4E: ["C3.5"]
+	    grades:
+	      - 9
+	      - 12
+	    tags:
+	      - dan_meyer
+	      - 3_act
+	      - proportional_reasoning
+	      - ratios
+	      - proportions
+	      - estimation
+	    source:
+	      name: "Dan Meyer"
+	      logo: "/math/images/sources/danmeyer.png"
+	    lesson_plan:
+	      title: "Coin Carpet - 3 Act Task"
+	      link: "https://drive.google.com/drive/folders/1QmQzUiUh2SMR8nYAHxDh5xk7N1z-aA21"     
+	
+	pizza_doubler:
+	    id: pizza_doubler
+	    title: "Pizza Doubler"
+	    expectations:
+	      MDH1W: ["B3.5"]
+	      MEL3E: ["A3.1","A3.2","A3.4"]
+	    grades:
+	      - 9
+	      - 11
+	    tags:
+	      - dan_meyer
+	      - 3_act
+	      - proportions
+	      - percent
+	      - coupon
+	      - discount
+	      - proportional_reasoning
+	    source:
+	      name: "Dan Meyer"
+	      logo: "/math/images/sources/danmeyer.png"
+	    lesson_plan:
+	      title: "Pizza Doubler - 3 Act Task"
+	      link: "https://drive.google.com/drive/folders/1drPEqkBCKaNri38Mmh7fAJUerZwv2OTf"      
+	
+	frys_bank:
+	    id: frys_bank
+	    title: "Fry's Bank"
+	    expectations:
+	      MCR3U: ["C3.1"]
+	      MCF3M: ["B1.6"]
+	      MBF3C: ["B1.1"] 
+	    grades:
+	      - 11
+	    tags:
+	      - dan_meyer
+	      - 3_act
+	      - interest
+	      - exponential
+	      - growth
+	    source:
+	      name: "Dan Meyer"
+	      logo: "/math/images/sources/danmeyer.png"
+	    lesson_plan:
+	      title: "Fry's Bank - 3 Act Task"
+	      link: "https://drive.google.com/drive/folders/1KME-N79-egCSDVGyI7ZrXAVji9tDoB8g"      
+	
+	leaky_faucet:
+	    id: leaky_faucet
+	    title: "Leaky Faucet"
+	    expectations:
+	      MDH1W: ["B3.5"]
+	      MHF4U: ["D1.1"]
+	      MEL4E: ["C3.2"]
+	    grades:
+	      - 9
+	      - 12
+	    tags:
+	      - dan_meyer
+	      - 3_act
+	      - rates
+	      - unit_rate
+	      - estimation
+	    source:
+	      name: "Dan Meyer"
+	      logo: "/math/images/sources/danmeyer.png"
+	    lesson_plan:
+	      title: "Leaky Faucet - 3 Act Task"
+	      link: "https://docs.google.com/document/d/1Htl4oVo7rG_sn4UYe31KesR-iQo1CJdm2Wy3qs55kdc"      
+	
+	25_billion_apps:
+	    id:  25_billion_apps
+	    title: "25 Billion Apps"
+	    expectations:
+	      MDH1W: ["C4.4"]
+	      MFM2P: ["B1.3","B2.1"]
+	    grades:
+	      - 9
+	      - 10
+	    tags:
+	      - dan_meyer
+	      - 3_act
+	      - linear
+	      - linear_relation
+	      - slope
+	      - rate_of_change
+	    source:
+	      name: "Dan Meyer"
+	      logo: "/math/images/sources/danmeyer.png"
+	    lesson_plan:
+	      title: "25 Billion Apps - 3 Act Task"
+	      link: "https://drive.google.com/drive/folders/1yVp6zNTYeOhw-ogzC3ku73z2X0B2anlT"
+	
+	bolt:
+	    id: bolt
+	    title: "Bolt"
+	    expectations:
+	      MDH1W: ["C1.5"]
+	    grades:
+	      - 9
+	    tags:
+	      - dan_meyer
+	      - 3_act
+	      - equation
+	    source:
+	      name: "Dan Meyer"
+	      logo: "/math/images/sources/danmeyer.png"
+	    lesson_plan:
+	      title: "Bolt - 3 Act Task"
+	      link: "https://drive.google.com/drive/folders/1SekESLIK6T74y7uKFhijY11knif9HHd7"
+	
+	nanas_chocolate_milk:
+	    id: nanas_chocolate_milk
+	    title: "Nana's Chocolate Milk"
+	    expectations:
+	      MDH1W: ["E1.3"]
+	      MFM2P: ["A3.1"]
+	    grades:
+	      - 9
+	      - 10
+	    tags:
+	      - dan_meyer
+	      - 3_act
+	      - imperial
+	      - measurement
+	      - cooking
+	    source:
+	      name: "Dan Meyer"
+	      logo: "/math/images/sources/danmeyer.png"
+	    lesson_plan:
+	      title: "Nana's Chocolate Milk - 3 Act Task"
+	      link: "https://drive.google.com/drive/folders/1VG4HJ64Hquk5qRlqf9iXO4gUUBXH2wC6"
+	
+	yellow_starbursts:
+	    id: yellow_starbursts
+	    title: "Yellow Starbursts"
+	    expectations:
+	      MBF3C: ["D2.3"]
+	      MDM4U: ["B1.1", "B1.3", "B1.7","E1.4"]
+	    grades:
+	      - 11
+	      - 12
+	    tags:
+	      - dan_meyer
+	      - 3_act
+	      - probability
+	      - distribution
+	      - frequency
+	      - histogram
+	      - probability_distribution
+	      - discrete_random_variable
+	    source:
+	      name: "Dan Meyer"
+	      logo: "/math/images/sources/danmeyer.png"
+	    lesson_plan:
+	      title: "Yellow Starbursts - 3 Act Task"
+	      link: "https://drive.google.com/drive/folders/1MdZAvE_KXmEiQeNTylmR4wxpi4Ua9_MR"
+	
+	coke_vs_sprite:
+	    id:  coke_vs_sprite
+	    title: "Coke vs. Sprite"
+	    expectations:
+	      MDH1W: ["C4.4"]
+	      MFM2P: ["B1.3","B2.1"]
+	    grades:
+	      - 9
+	      - 10
+	    tags:
+	      - dan_meyer
+	      - 3_act
+	      - linear
+	      - linear_relation
+	      - slope
+	      - rate_of_change
+	    source:
+	      name: "Dan Meyer"
+	      logo: "/math/images/sources/danmeyer.png"
+	    lesson_plan:
+	      title: "Coke vs. Sprite - 3 Act Task"
+	      link: "https://drive.google.com/drive/folders/1DXrWgFYorYWCmjVxyU-y3GIabyPM0hNn"
+	
+	joulies:
+	    id:  joulies
+	    title: "Joulies"
+	    expectations:
+	      MBF3C: ["A1.1"]
+	      MCF3M: ["A1.2"]
+	      MCR3U: ["A1.5"]
+	      MPM2D: ["A4.2"]
+	      MFM2P: ["C3.1"]
+	    grades:
+	      - 10
+	      - 11
+	    tags:
+	      - dan_meyer
+	      - 3_act
+	      - quadratic
+	      - quadratic functions
+	      - functions
+	    source:
+	      name: "Dan Meyer"
+	      logo: "/math/images/sources/danmeyer.png"
+	    lesson_plan:
+	      title: "Joulies - 3 Act Task"
+	      link: "https://drive.google.com/drive/folders/1sqT2xyGmKliUquK46bVsRVCZtb3tB0SC"
+	
+	you_pour_i_choose:
+	    id:  you_pour_i_choose
+	    title: "You Pour, I Choose"
+	    expectations:
+	      MDH1W: ["E1.3"]
+	      MFM2P: ["A3.1", "A3.4"]
+	      MCT4C: ["D2.4"]
+	    grades:
+	      - 9
+	      - 10
+	      - 12
+	    tags:
+	      - dan_meyer
+	      - 3_act
+	      - imperial
+	      - measurement
+	      - volume
+	      - cylinder
+	    source:
+	      name: "Dan Meyer"
+	      logo: "/math/images/sources/danmeyer.png"
+	    lesson_plan:
+	      title: "You Pour, I Choose - 3 Act Task"
+	      link: "https://drive.google.com/drive/folders/1VYJSCTbJUEwEGo2hNomdhz1ayML13ncN"
+	
+	car_caravan:
+	    id:  car_caravan
+	    title: "Car Caravam"
+	    expectations:
+	    grades:
+	      - 10
+	    tags:
+	      - dan_meyer
+	      - 3_act
+	      - estimation
+	    source:
+	      name: "Dan Meyer"
+	      logo: "/math/images/sources/danmeyer.png"
+	    lesson_plan:
+	      title: "Car Caravan - 3 Act Task"
+	      link: "https://drive.google.com/drive/folders/1effx-ODCn_jh69uIpB-01ydFMoHMzL-4"
+	
+	domino_skyscraper:
+	    id: domino_skyscraper
+	    title: "Domino Skyscraper"
+	    expectations:
+	      MCR3U: ["C3.1"]
+	      MCF3M: ["B1.6"]
+	      MBF3C: ["B1.1"] 
+	    grades:
+	      - 11
+	    tags:
+	      - dan_meyer
+	      - 3_act
+	      - interest
+	      - exponential
+	      - growth
+	    source:
+	      name: "Dan Meyer"
+	      logo: "/math/images/sources/danmeyer.png"
+	    lesson_plan:
+	      title: "Domino Skyscraper - 3 Act Task"
+	      link: "https://drive.google.com/drive/folders/1l_3zFNALeaQg_zyE5lkfphg_apVf3wZP"      
+	
+	hot_coffee:
+	    id: hot_coffee
+	    title: "Hot Coffee"
+	    expectations:
+	      MDH1W: ["B3.5", "E1.3"]
+	      MFM2P: ["A3.3"]
+	      MCT4C: ["D2.4"]
+	      MAP4C: ["C1.3"]
+	      MEL4E: ["C1.1"]
+	    grades:
+	      - 9
+	      - 10
+	      - 12
+	    tags:
+	      - dan_meyer
+	      - 3_act
+	      - proportional_reasoning
+	      - proportions
+	      - imperial
+	      - volume
+	      - capacity
+	      - measurement
+	      name: "Dan Meyer"
+	      logo: "/math/images/sources/danmeyer.png"
+	    lesson_plan:
+	      title: "Domino Skyscraper - 3 Act Task"
+	      link: "https://drive.google.com/drive/folders/1Y74xI9BA99IvCcp7QjPTvmWHromuH1Xy"
+	
+	shrinking_dollar:
+	    id: shrinking_dollar
+	    title: "Incredible Shrinking Dollar"
+	    expectations:
+	      MCR3U: ["C3.1"]
+	      MCF3M: ["B1.6"]
+	      MBF3C: ["B1.1"] 
+	    grades:
+	      - 11
+	    tags:
+	      - dan_meyer
+	      - 3_act
+	      - interest
+	      - exponential
+	      - decay
+	    source:
+	      name: "Dan Meyer"
+	      logo: "/math/images/sources/danmeyer.png"
+	    lesson_plan:
+	      title: "Incredible Shrinking Dollar - 3 Act Task"
+	      link: "https://drive.google.com/drive/folders/1mLJiIZZI-aigVIOQsp5KQWYLfr6sbvy3"
+	
+	super_bear:
+	    id:super_bear
+	    title: "Super Bear"
+	    expectations:
+	       MDH1W: ["B3.5"]
+	       MEL4E: ["B2.3"]
+	    grades:
+	      - 9
+	      - 12
+	    tags:
+	      - dan_meyer
+	      - 3_act
+	      - proportions
+	      - proportional_reasoning
+	    source:
+	      name: "Dan Meyer"
+	      logo: "/math/images/sources/danmeyer.png"
+	    lesson_plan:
+	      title: "Super Bear - 3 Act Task"
+	      link: "https://drive.google.com/drive/folders/1xUWZGUr1H74szYNB93VgkcTdQpPIGgnw"
+	
+	shower_vs_bath:
+	    id:shower_vs_bath
+	    title: "Shower vs. Bath"
+	    expectations:
+	       MDH1W: ["B3.5"]
+	    grades:
+	      - 9
+	    tags:
+	      - dan_meyer
+	      - 3_act
+	      - rate
+	      - ratio
+	    source:
+	      name: "Dan Meyer"
+	      logo: "/math/images/sources/danmeyer.png"
+	    lesson_plan:
+	      title: "Shower vs. Bath - 3 Act Task"
+	      link: "https://drive.google.com/drive/folders/1qm0OmgTYCvydqA2k1OmFgaDpnx2SMfWN"
+	
+	will_it_hit_the_hoop:
+	    id:will_it_hit_the_hoop
+	    title: "Will It Hit The Hoop?"
+	    expectations:
+	       MFM2P: ["C2.2"]
+	       MPM2D: ["A1.2"]
+	    grades:
+	      - 10
+	    tags:
+	      - dan_meyer
+	      - 3_act
+	      - quadratic_functions
+	      - quadratics
+	    source:
+	      name: "Dan Meyer"
+	      logo: "/math/images/sources/danmeyer.png"
+	    lesson_plan:
+	      title: "Will It Hit The Hoop? - 3 Act Task"
+	      link: "https://drive.google.com/drive/folders/1U0dU4eXOLBDM5EaqE6HMPpxJocEeLkqP"
+	
+	obscure_geometry:
+	    id: obscure_geometry
+	    title: "Obscure Geometry"
+	    expectations:
+	       MPM2D: ["B2.5","B3.3"]
+	    grades:
+	      - 10
+	    tags:
+	      - dan_meyer
+	      - 3_act
+	      - coordinate_geometry
+	      - composite_shapes
+	      - percent
+	      - analytic_geometry
+	    source:
+	      name: "Dan Meyer"
+	      logo: "/math/images/sources/danmeyer.png"
+	    lesson_plan:
+	      title: "Obscure Geometry - 3 Act Task"
+	      link: "https://drive.google.com/drive/folders/1kpdS78TiWskCD6d9rjnx5woJWdkrurB-"
+	
+	speed_of_light:
+	    id:speed_of_light
+	    title: "Speed of Light"
+	    expectations:
+	       MDH1W: ["B3.5"]
+	       MEL4E: ["B2.3"]
+	    grades:
+	      - 9
+	      - 12
+	    tags:
+	      - dan_meyer
+	      - 3_act
+	      - proportions
+	      - proportional_reasoning
+	    source:
+	      name: "Dan Meyer"
+	      logo: "/math/images/sources/danmeyer.png"
+	    lesson_plan:
+	      title: "Speed of Light - 3 Act Task"
+	      link: "https://drive.google.com/drive/folders/1O1nLzBDQT3ZAAKaoHKddHzwdHhhm-Y0d"
+	      
+	pyramid_of_pennies:
+	    id:pyramid_of_pennies
+	    title: "Pyramid of Pennies"
+	    expectations:
+	       MFM2P: ["A3.4"]
+	    grades:
+	      - 10
+	    tags:
+	      - dan_meyer
+	      - 3_act
+	      - pyramid
+	      - geometry
+	      - volume
+	    source:
+	      name: "Dan Meyer"
+	      logo: "/math/images/sources/danmeyer.png"
+	    lesson_plan:
+	      title: "Pyramid of Pennies - 3 Act Task"
+	      link: "https://drive.google.com/drive/folders/1mSZW941i12CBLiwx6E0VebfnpjFSjM9m"
+	      
+	      
+	ticket_to_ride:
+	    id:ticket_to_ride
+	    title: "Ticket To Ride"
+	    expectations:
+	       MFM2P: ["A3.4"]
+	    grades:
+	      - 10
+	    tags:
+	      - dan_meyer
+	      - 3_act
+	      - circle
+	      - surface_area
+	    source:
+	      name: "Dan Meyer"
+	      logo: "/math/images/sources/danmeyer.png"
+	    lesson_plan:
+	      title: "Ticket To Ride - 3 Act Task"
+	      link: "https://drive.google.com/drive/folders/1HU0W2is59wiJKWb5ZPry70hnDsFto6-6"
+	
+	print_job:
+	    id: print_job
+	    title: "Print Job"
+	    expectations:
+	       MDH1W: ["B3.5"]
+	       MEL4E: ["B2.3"]
+	    grades:
+	      - 9
+	      - 12
+	    tags:
+	      - dan_meyer
+	      - 3_act
+	      - proportions
+	      - rates
+	      - ratios
+	    source:
+	      name: "Dan Meyer"
+	      logo: "/math/images/sources/danmeyer.png"
+	    lesson_plan:
+	      title: "Print Job - 3 Act Task"
+	      link: "https://drive.google.com/drive/folders/1Bgpg8NvEqd9S0fqscc-eW3oefPZfa-0d"
+	
+	world_record_airbag:
+	    id: world_record_airbag
+	    title: "World Record Airbag"
+	    expectations:
+	      MCR3U: ["A2.3"]
+	      MCF3M: ["B1.1"]
+	      MBF3C: ["B1.1"] 
+	    grades:
+	      - 11
+	    tags:
+	      - dan_meyer
+	      - 3_act
+	      - interest
+	      - exponential
+	      - decay
+	    source:
+	      name: "Dan Meyer"
+	      logo: "/math/images/sources/danmeyer.png"
+	    lesson_plan:
+	      title: "World Record Airbag - 3 Act Task"
+	      link: "https://drive.google.com/drive/folders/1zWn3VClWOw12bA5raCdfJe88U0UIMYip"
+	
+	percent_discount:
+	    id: percent_discount
+	    title: "Amazon Percent Discount"
+	    expectations:
+	      MDH1W: ["B3.5"]
+	      MEL3E: ["A3.1","A3.2","A3.4"]
+	    grades:
+	      - 9
+	      - 11
+	    tags:
+	      - dan_meyer
+	      - 3_act
+	      - proportions
+	      - percent
+	      - finance
+	      - discount
+	      - proportional_reasoning
+	    source:
+	      name: "Dan Meyer"
+	      logo: "/math/images/sources/danmeyer.png"
+	    lesson_plan:
+	      title: "Amazon Percent Discount - 3 Act Task"
+	      link: "https://drive.google.com/drive/folders/1zF9qJ69CTtkcGslgx-BrR_8OSjeqEDzK"
+	
+	apple_mothership:
+	    id: apple_mothership
+	    title: "Apple Mothership"
+	    expectations:
+	      MDH1W: ["B3.2"]
+	    grades:
+	      - 9
+	    tags:
+	      - dan_meyer
+	      - 3_act
+	      - unit fractions
+	      - proportions
+	    source:
+	      name: "Dan Meyer"
+	      logo: "/math/images/sources/danmeyer.png"
+	    lesson_plan:
+	      title: "Apple Mothership - 3 Act Task"
+	      link: "https://drive.google.com/drive/folders/1gQSrwY6vMV5YXpUFtmi-xx_QVHrfScEd"
+	
+	falling_glowsticks:
+	    id: falling_glowsticks
+	    title: "Falling Glowsticks"
+	    expectations:
+	      MCF3M: ["A1.1", "B2.2"]
+	      MCR3U: ["3.2"]
+	    grades:
+	      - 11
+	    tags:
+	      - dan_meyer
+	      - 3_act
+	      - exponential
+	      - quadratic
+	      - introductory
+	    source:
+	      name: "Dan Meyer"
+	      logo: "/math/images/sources/danmeyer.png"
+	    lesson_plan:
+	      title: "Falling Glowsticks - 3 Act Task"
+	      link: "https://drive.google.com/drive/folders/1FeQS_RUPXrxqGqoaNXeqwXgbu4UlPuXK"
+	
+	falling_rocks:
+	    id: falling_rocks
+	    title: "Falling Rocks"
+	    expectations:
+	      MCF3M: ["A1.1", "B2.2"]
+	      MCR3U: ["B3.2"]
+	      MBF3C: ["A1.1", "A3.2"]
+	    grades:
+	      - 11
+	    tags:
+	      - dan_meyer
+	      - 3_act
+	      - exponential
+	      - growth
+	      - introductory
+	    source:
+	      name: "Dan Meyer"
+	      logo: "/math/images/sources/danmeyer.png"
+	    lesson_plan:
+	      title: "Falling Rocks - 3 Act Task"
+	      link: "https://drive.google.com/drive/folders/1OqlCZupmld4nuQIvF8V9E2ibqE7loSEx"
+	
+	water_tank:
+	    id: water_tank
+	    title: "Water Tank"
+	    expectations:
+	      MDH1W: ["B3.2"]
+	      MFM2P: ["A3.4"]
+	    grades:
+	      - 9
+	      - 10
+	    tags:
+	      - dan_meyer
+	      - 3_act
+	      - volume
+	      - cylinder
+	      - rate
+	      - unit_rate
+	    source:
+	      name: "Dan Meyer"
+	      logo: "/math/images/sources/danmeyer.png"
+	    lesson_plan:
+	      title: "Water Tank - 3 Act Task"
+	      link: "https://drive.google.com/drive/folders/1sZsQfzAOcTyb4RpCZXjgXx_JTLAmUX6v"
+	
+	jugs_of_milk:
+	    id:jugs_of_milk
+	    title: "Jugs of Milk"
+	    expectations:
+	       MDH1W: ["B3.5"]
+	    grades:
+	      - 9
+	    tags:
+	      - kyle_pearce
+	      - 3_act
+	      - proportions
+	      - proportional_reasoning
+	    source:
+	      name: "Dan Meyer"
+	      logo: "/math/images/sources/kylepearce.png"
+	    lesson_plan:
+	      title: "Jugs of Milk - 3 Act Task"
+	      link: "https://drive.google.com/drive/folders/1I-IqRaa8B-qO7vswmLi_Gzk-atfqZDpQ"
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 
 
