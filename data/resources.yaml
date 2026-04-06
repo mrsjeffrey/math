@@ -1060,7 +1060,7 @@ resources:
         link: "https://drive.google.com/drive/folders/1mLJiIZZI-aigVIOQsp5KQWYLfr6sbvy3"
   
   super_bear:
-      id:super_bear
+      id: super_bear
       title: "Super Bear"
       expectations:
          MDH1W: ["B3.5"]
@@ -1081,7 +1081,7 @@ resources:
         link: "https://drive.google.com/drive/folders/1xUWZGUr1H74szYNB93VgkcTdQpPIGgnw"
   
   shower_vs_bath:
-      id:shower_vs_bath
+      id: shower_vs_bath
       title: "Shower vs. Bath"
       expectations:
          MDH1W: ["B3.5"]
@@ -1100,7 +1100,7 @@ resources:
         link: "https://drive.google.com/drive/folders/1qm0OmgTYCvydqA2k1OmFgaDpnx2SMfWN"
   
   will_it_hit_the_hoop:
-      id:will_it_hit_the_hoop
+      id: will_it_hit_the_hoop
       title: "Will It Hit The Hoop?"
       expectations:
          MFM2P: ["C2.2"]
@@ -1141,7 +1141,7 @@ resources:
         link: "https://drive.google.com/drive/folders/1kpdS78TiWskCD6d9rjnx5woJWdkrurB-"
   
   speed_of_light:
-      id:speed_of_light
+      id: speed_of_light
       title: "Speed of Light"
       expectations:
          MDH1W: ["B3.5"]
@@ -1162,7 +1162,7 @@ resources:
         link: "https://drive.google.com/drive/folders/1O1nLzBDQT3ZAAKaoHKddHzwdHhhm-Y0d"
         
   pyramid_of_pennies:
-      id:pyramid_of_pennies
+      id: pyramid_of_pennies
       title: "Pyramid of Pennies"
       expectations:
          MFM2P: ["A3.4"]
@@ -1183,7 +1183,7 @@ resources:
         
         
   ticket_to_ride:
-      id:ticket_to_ride
+      id: ticket_to_ride
       title: "Ticket To Ride"
       expectations:
          MFM2P: ["A3.4"]
@@ -1355,7 +1355,7 @@ resources:
         link: "https://drive.google.com/drive/folders/1sZsQfzAOcTyb4RpCZXjgXx_JTLAmUX6v"
   
   jugs_of_milk:
-      id:jugs_of_milk
+      id: jugs_of_milk
       title: "Jugs of Milk"
       expectations:
          MDH1W: ["B3.5"]
