@@ -260,7 +260,7 @@ resources:
 	      title: "Coin Counting - 3 Act Task"
 	      link: "https://drive.google.com/drive/folders/1h4qcvX5Z-bQDB3PriyCA1YIzmdO09YMg"
 	      
-	  nanas_lemon_water:
+	 nanas_lemon_water:
 	    id: nanas_lemon_water
 	    title: "Nana's Lemon Water"
 	    expectations:
