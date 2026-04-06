@@ -202,8 +202,8 @@ resources:
     id: marine_ramp
     title: "Marine Ramp"
     expectations:
-      MPM2D: ["C2.1","C2.3]
-      MPM2P: ["A2.1","A2.3]
+      MPM2D: ["C2.1","C2.3"]
+      MPM2P: ["A2.1","A2.3"]
     grades:
       - 10
     tags:
