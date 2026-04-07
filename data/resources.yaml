@@ -1,4 +1,7 @@
+
+
 resources:
+# BHN
   fractions_compare:
       id: fractions_compare
       title: "Representing & Comparing Fractions"
@@ -66,6 +69,7 @@ resources:
         - title: "Build Your Skills"
           link: "/math/files/grade9math/BHN_B2.1_B2.3_P.pdf"
   
+  # Dan Meyer
   penny_a_day:
       id: penny_a_day
       title: "Penny a Day"
@@ -78,8 +82,8 @@ resources:
         - 3-act
         - exponents
       source:
-        name: "Kyle Pearce"
-        logo: "/math/images/sources/TITM.png"
+        name: "Dan Meyer"
+        logo: "/math/images/sources/danmeyer.png"
       lesson_plan:
         title: "Penny A Day – 3 Act Task"
         link: "https://drive.google.com/drive/folders/1Vly0Yd1Qg9RIDMKYrzQFfzWy0moUVzOy"
@@ -1358,11 +1362,11 @@ resources:
       id: jugs_of_milk
       title: "Jugs of Milk"
       expectations:
-         MDH1W: ["B3.5"]
+        MDH1W: ["B3.5"]
       grades:
         - 9
       tags:
-        - kyle_pearce
+        - dan_meyer
         - 3_act
         - proportions
         - proportional_reasoning
@@ -1373,9 +1377,30 @@ resources:
         title: "Jugs of Milk - 3 Act Task"
         link: "https://drive.google.com/drive/folders/1I-IqRaa8B-qO7vswmLi_Gzk-atfqZDpQ"
   
-  
-  
-  
+  # Cathy Yenca
+  big_nickel:
+      id: big_nickel
+      title: "Big Nickel"
+      expectations:
+        MFM2P: ["C2.3"]
+        MPM2D: ["C2.3"]
+        MCF3M: ["C1.1"]
+        MBF3C: ["C2.1"]
+      grades:
+        - 10
+        - 11
+      tags:
+        - cathy_yencA
+        - 3_act
+        - bolume
+        - triangles
+        - trigonomety
+      source:
+        name: "Cathy Yenca"
+        logo: "/math/images/sources/cathyyenca.png"
+      lesson_plan:
+        title: "Big Nickel - 3 Act Task"
+        link: "https://drive.google.com/drive/folders/1PJK-t-ERElrJFGAmnU5157DALb3LE-j8"
   
   
   
