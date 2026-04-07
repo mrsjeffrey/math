@@ -1390,9 +1390,9 @@ resources:
         - 10
         - 11
       tags:
-        - cathy_yencA
+        - cathy_yenca
         - 3_act
-        - bolume
+        - volume
         - triangles
         - trigonomety
       source:
@@ -1402,13 +1402,32 @@ resources:
         title: "Big Nickel - 3 Act Task"
         link: "https://drive.google.com/drive/folders/1PJK-t-ERElrJFGAmnU5157DALb3LE-j8"
   
-  
-  
-  
-  
-  
-  
-  
+# Mathematics Knowledge Network
+
+  phone_plan:
+      id: phone_plan
+      title: "Shopping For A Phone Plan"
+      expectations:
+        MFM2P: ["B3.3"]
+        MPM2D: ["B1.2"]
+        MDH1W: ["C3.3"]
+      grades:
+        - 9
+        - 10
+      tags:
+        - linear_system
+        - system
+        - MKN
+        - poi
+        - substitution
+        - elimination
+      source:
+        name: "Mathematics Knowledge Network"
+        logo: "/math/images/sources/MKN.png"
+      lesson_plan:
+        title: "Shopping For A Phone Plan"
+        link: "/math/files/MKN_1W-C3.3_2P-B3.3_2D-B1.2.pdf"
+
   
   
   
