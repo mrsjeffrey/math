@@ -1428,7 +1428,243 @@ resources:
         title: "Shopping For A Phone Plan"
         link: "/math/files/MKN_1W-C3.3_2P-B3.3_2D-B1.2.pdf"
 
+  hockey_shots_lineofbestfit:
+      id: hockey_shots_lineofbestfit
+      title: "Hockey Shots - Line of Best Fit"
+      expectations:
+        MDH1W: ["D1.3"]
+        MDM4U: ["D2.4"]
+        MCT4C: ["D1.4","D1.5"]
+      grades:
+        - 9
+        - 12
+      tags:
+        - MKN
+        - line_of_best_fit
+        - regression
+      source:
+        name: "Mathematics Knowledge Network"
+        logo: "/math/images/sources/MKN.png"
+      lesson_plan:
+        title: "Hockey Shots - Line of Best Fit"
+        link: "/math/files/MKN_1W-D1.3_4C-D1.4-D1.5_4U-D2.4.pdf"
+
+  linear_relations_applications:
+      id: linear_relations_applications
+      title: "Interpreting Linear Relations In Context"
+      expectations:
+        MDH1W: ["C3.2","C4.1"]
+      grades:
+        - 9
+      tags:
+        - MKN
+        - linear
+        - linear_relation
+        - lines
+        - slope
+        - rate_of_change
+      source:
+        name: "Mathematics Knowledge Network"
+        logo: "/math/images/sources/MKN.png"
+      lesson_plan:
+        title: "Interpreting Linear Relations In Context"
+        link: "/math/files/MKN_1W-C3.2-C4.1.pdf"
+
+  zoo_architect:
+      id: zoo_architect
+      title: "Architect of a Zoo"
+      expectations:
+        MCT4C: ["C1.2","D2.3"]
+        MEL4E: ["C2.4"]
+      grades:
+        - 12
+      tags:
+        - MKN
+        - composite_shapes
+        - area
+        - measurement
+      source:
+        name: "Mathematics Knowledge Network"
+        logo: "/math/images/sources/MKN.png"
+      lesson_plan:
+        title: "Architect of a Zoo"
+        link: "/math/files/MKN_4C-C1.2-D2.3_4E-C2.4.pdf"
+
+  brick_a_house:
+      id: brick_a_house
+      title: "Brick a House"
+      expectations:
+        MDH1W: ["E1.5"]
+      grades:
+        - 9
+      tags:
+        - MKN
+        - right_triangle
+        - triangles
+        - pythagorean
+        - pythagorean_theorem
+      source:
+        name: "Mathematics Knowledge Network"
+        logo: "/math/images/sources/MKN.png"
+      lesson_plan:
+        title: "Brick a House"
+        link: "/math/files/MKN_1W-E1.5.pdf"
+
+  changing_linear_graphs:
+      id: changing_linear_graphs
+      title: "Changing Linear Graphs"
+      expectations:
+        MDH1W: ["C4.1"]
+      grades:
+        - 9
+      tags:
+        - MKN
+        - linear
+        - linear_relation
+        - lines
+        - slope
+        - rate_of_change
+      source:
+        name: "Mathematics Knowledge Network"
+        logo: "/math/images/sources/MKN.png"
+      lesson_plan:
+        title: "Changing Linear Graphs"
+        link: "/math/files/MKN_1W-C4.1.pdf"
+
+  rebound_height_experiment:
+      id: rebound_height_experiment
+      title: "Rebound Height Experiment"
+      expectations:
+        MDH1W: ["D1.3"]
+      grades:
+        - 9
+      tags:
+        - MKN
+        - two-variable_data
+        - prediction
+        - hypothesis
+        - data_collection
+      source:
+        name: "Mathematics Knowledge Network"
+        logo: "/math/images/sources/MKN.png"
+      lesson_plan:
+        title: "Rebound Height Experiment"
+        link: "/math/files/MKN_1W-C1.5-E1.2.pdf"
+
+  maximum_area_rectangle:
+      id: maximum_area_rectangle
+      title: "The Next Best Chocolate Bar"
+      expectations:
+        MDH1W: ["D1.3"]
+      grades:
+        - 9
+      tags:
+        - MKN
+        - maximization
+        - optimization
+        - area
+        - rectangle
+        - dimensions
+        - perimeter
+      source:
+        name: "Mathematics Knowledge Network"
+        logo: "/math/images/sources/MKN.png"
+      lesson_plan:
+        title: "The Next Best Chocolate Bar"
+        link: "/math/files/MKN_1W-E1.4.pdf"
+
+  minimum_perimeter_rectangle:
+      id: minimum_perimeter_rectangle
+      title: "Dream House Design Challenge"
+      expectations:
+        MDH1W: ["D1.3"]
+      grades:
+        - 9
+      tags:
+        - MKN
+        - minimization
+        - optimization
+        - area
+        - rectangle
+        - dimensions
+        - perimeter
+      source:
+        name: "Mathematics Knowledge Network"
+        logo: "/math/images/sources/MKN.png"
+      lesson_plan:
+        title: "The Next Best Chocolate Bar"
+        link: "/math/files/MKN_1W-E1.4_2.pdf"
+
+  balanced_budgets:
+      id: balanced_budgets
+      title: "Balanced Budgets"
+      expectations:
+        MDH1W: ["F1.4"]
+      grades:
+        - 9
+      tags:
+        - MKN
+        - finance
+        - financial_literacy
+        - budgets
+        - expenses
+        - research
+      source:
+        name: "Mathematics Knowledge Network"
+        logo: "/math/images/sources/MKN.png"
+      lesson_plan:
+        title: "Balanced Budgets"
+        link: "/math/files/MKN_1W-F1.4.pdf"
+
+  large_purchase_budgeting:
+      id: large_purchase_budgeting
+      title: "Large Purchase Budgeting"
+      expectations:
+        MDH1W: ["F1.4"]
+        MEL3E: ["C1.4"]
+        MEL4E: ["B2.4"]
+        MAP4C: ["B2.6"]
+      grades:
+        - 9
+        - 11
+        - 12
+      tags:
+        - MKN
+        - finance
+        - financial_literacy
+        - budgets
+        - expenses
+        - planning
+        - tax
+      source:
+        name: "Mathematics Knowledge Network"
+        logo: "/math/images/sources/MKN.png"
+      lesson_plan:
+        title: "Large Purchase Budgeting"
+        link: "/math/files/MKN_1W-F1.4_3E-C1.4_4E-B2.4_4C-B2.6.pdf"
+
+     
+     
   
+  
+
+
+   
+  
+  
+
+
+  
+  
+  
+
+
+  
+  
+  
+
+
+
   
   
 
